@@ -44,8 +44,8 @@ define([
         };
         this.arrApps = [
             {
-                name: 'Hominem-RRHH',
-                idapp: 'Hominem-RRHH',
+                name:   'Hominem-RRHH',
+                idapp:  'Hominem-RRHH',
                 init: false,
                 bookmarkApp: {
                     hasBookmarkDefaultUser: false,
@@ -54,8 +54,8 @@ define([
                 }
             },
             {
-                name: 'Hominem-RRHH-Seguridad',
-                idapp: 'Hominem-RRHH-Seguridad',
+                name:   'Hominem-RRHH-Seguridad',
+                idapp:  'Hominem-RRHH-Seguridad',
                 init: false,
                 bookmarkApp: {
                     hasBookmarkDefaultUser: false,
@@ -64,8 +64,8 @@ define([
                 }
             },
             {
-                name: 'Hominem-RRHH-ControlPresencia',
-                idapp: 'Hominem-RRHH-ControlPresencia',
+                name:   'Hominem-RRHH-ControlPresencia',
+                idapp:  'Hominem-RRHH-ControlPresencia',
                 init: false,
                 bookmarkApp: {
                     hasBookmarkDefaultUser: false,
