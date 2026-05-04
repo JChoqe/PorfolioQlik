@@ -1,0 +1,14 @@
+<div class="cover-object-sense" ng-class="[IsKpi == true ? 'mz-object-kpi' : '', SHOWSELECTIONBAR == true ? 'SHOWSELECTIONBAR' : '']">
+    <div id="box-current-selecctions" ng-if="BarSelection">
+        <div current-selections class="CurrentSelections" id="CurrentSelectionsFullSize"></div>
+    </div>    
+    <div class="speeldial-center" ng-click="ShowContextMenu($event, ObjectId, typeObject, AppId)" ng-if="!isFilterPane && !HideSpeel && !ObjectNotFound">
+        <i class="ri-more-2-line"></i>
+    </div>
+    <div class="qlik-embed" id="{{ObjectId}}" data-qlik-objid="{{ObjectId}}" ng-right-click="!isFilterPane && !HideSpeel && !isMzGenaro && !ObjectNotFound && ShowContextMenu($event,ObjectId, typeObject, AppId)">
+        <div class="full-size-cover" ng-include="'views/partial/loader_qlik.html'"></div>
+    </div>
+    <div class="themesSelector" ng-if="!isFilterPane && !HideSpeel && !ObjectNotFound && optionColorObject && hasProperties">
+        <i class="ri-equalizer-line ico-themes" ng-click="showThemes($event)"></i>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div id="page-nav" ng-controller="mainMenuCtrl" ng-class="[isNavVisible == true ? 'isNavVisible' : '', isShowSubmenu == true ? 'showSubmenu' : '' ]">
+    <div class="sc_menu clearfix">
+        <div id="box_ListaMenu">
+            <div class="pager-menu-nav pager-menu-nav-next" ng-if="isNavVisible" ng-click="prevPage()" q-title-translation="Tooltip.Previous" ng-disabled="disablePagination('prev')" ng-model="activePage">
+                <i class="icofont-curved-left"></i>
+            </div> 
+            <ul id="listaMenuContenidos"  ng-include="rutaMenuTop"></ul>
+
+            <div class="pager-menu-nav" ng-if="isNavVisible" ng-click="NextPage()" q-title-translation="Tooltip.Next" ng-disabled="disablePagination('next')" ng-model="activePage">
+                <i class="icofont-curved-right"></i>                
+            </div>
+        </div>
+        <objectstop data-ids="OBJECTSTOP"></objectstop>
+    </div>
+</div>
+<div id="box-current-selecctions">
+    <div class="CurrentSelections"></div>
+    <div id="addInsightAdvisor" ng-if="insightAdvisorVisible">
+        <a data-ui-sref="App.insightadvisor.View.insightadvisor">
+            <i class="ri-lightbulb-flash-line ico-14"></i>
+            <span class="texto-enlaces">Insight Advisor</span>
+        </a>
+    </div>
+    <mzoptionsbuttons ng-if="mzOptions"></mzoptionsbuttons>
+</div>
+<div id="cover-main-view">
+    <div class="row-page row m-0 p-0" id="page-container" ng-class="[SHEETSENSE == true ? 'SHEETSENSE' : '', SHEETFAVORITES == true ? 'SHEETFAVORITES' : '', SHEETVISUALIZACIONES == true ? 'SHEETVISUALIZACIONES' : '']" ui-view>
+    </div>
+</div>
+
+
+
+

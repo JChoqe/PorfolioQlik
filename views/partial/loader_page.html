@@ -1,0 +1,16 @@
+<div class="mz-block">
+    <div id="logo-block"></div>
+    <div class="flex-loader-cover">
+        <div class="status-notification">
+            <div class="message-box">
+                <div class="loading-animation">
+                    <div class="bubble"></div>
+                    <div class="pulse"></div>
+                </div>                
+            </div>
+        </div>
+        
+        <p>{{'views.label.esperar' | translate}}</p>
+        <div class="texto-loader" ng-bind-html="textoLoader" ng-controller="loaderPageCtrl"></div>
+    </div>
+</div>

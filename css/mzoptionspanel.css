@@ -1,0 +1,424 @@
+#panel-options{
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    right: -60%;
+    width: 50%;
+    z-index: 9;
+    background: #f3f4f5;
+    box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%), 0 4px 25px 0 rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+    transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+    display: flex;
+    flex-direction: column;
+}
+
+#panel-options.active{
+    right: 0px;
+}
+
+#panel-options #panel-options-header{
+    width: 100%;
+    height: 70px;
+    position: relative;
+    z-index: 1000;
+    background: #fff !important;
+    border-bottom: 1px solid #eae6e6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 8px 5px;
+}
+#panel-options #panel-options-header h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0.25px;
+    color: #444;
+    padding-left: 10px;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+#panel-options #panel-options-header h2 > i {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+#panel-options #panel-options-header .close-panel-options{
+    border: none;
+    background: none;
+    cursor: pointer;
+    background: #444c52;
+    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#panel-options #panel-options-header .close-panel-options .lui-icon--close{
+    color: #fff;
+    font-size: .8rem;
+}
+
+#panel-options-body{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    /* height: 100%; */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+/*Actualización*/
+#panel-options-body .tab-view-wrapper{
+    height: 100%;
+}
+#panel-options-body .tab-view-wrapper .lui-tabview{
+    height: 100%;
+}
+
+#panel-options-body .tab-view-wrapper .lui-tabview .tabs-content{
+    height: 100%;
+    height: calc(100% - 50px);
+    position: relative;
+}
+#panel-options-body .tab-view-wrapper .lui-tabview .tabs-content.ng-hide:not(.ng-hide-animate){
+    display: block !important;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    padding: 0;
+}
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset  {
+    background:#fff;
+    height:50px
+}
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    border:none;
+    height:50px;
+    max-width: inherit;
+}
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab .tab-item{
+    margin: 5px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    color: #6d6c6c;
+    transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+    font-size: 0.8rem;
+    border: 1px solid transparent;
+    padding-right: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+}
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab .tab-item .tab-item-ico{
+    font-size: 16px;
+    font-weight: lighter;  
+}
+
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab .tab-item > .badge{
+    left: 8px;
+    top: -7px;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;  
+    position: absolute;
+}
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab.lui-hovered, 
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab:hover{
+    background:transparent
+}
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab.lui-active .tab-item, 
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab .tab-item:hover {
+    background: rgb(178 217 230 / 26%);
+    border-radius: 4px;
+    border: 1px solid rgb(221 221 221 / 38%);
+    color: #365b6d;
+}
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab .tab-item > span {
+    margin: 0 3px;
+}
+#panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab .tab-item > span.texto{
+    font-size: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 0.35px;
+}
+/*Actualización*/
+
+
+
+
+
+
+#panel-options-body > .header-body-options{
+    width: 100%;
+    height: 50px;
+    background: #f9f9f9;
+    color: #fff;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+    /* border-left: 5px solid #1b63a2; */
+    position: relative;
+}
+#panel-options-body > .header-body-options::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+}
+#panel-options-body > .header-body-options .item_header{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+    margin: 0 5px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    color: #948686;
+    transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+    font-size: 0.8rem;
+    border: 1px solid transparent;
+    padding-right: 5px;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none; 
+}
+#panel-options-body > .header-body-options .item_header > span.-icofont{
+    font-size: 1rem;
+    margin: 0 2px;
+}
+
+#panel-options-body > .header-body-options .item_header > span{
+    margin: 0 3px;
+}
+
+#panel-options-body > .header-body-options .item_header.active,
+#panel-options-body > .header-body-options .item_header:hover{
+    background: rgb(178 217 230 / 26%);
+    border-radius: 4px;
+    border: 1px solid rgb(221 221 221 / 38%);
+    color: #365b6d;    
+}
+
+#panel-options-body > .content-body-options{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 50px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    padding: 0px;
+}
+#panel-options-body > .content-body-options .scroll-panel{
+display: flex;
+flex: 1;
+flex-wrap: nowrap;
+overflow: hidden;
+transition:         right .3s cubic-bezier(0.4, 0.4, 0.34, 0.82);
+}
+
+#panel-options-body > .content-body-options .scroll-panel .section-content-panel{
+    flex: 1 100%;
+    overflow: hidden;
+    overflow-y: hidden;
+    position: relative;
+    /* padding: 10px; */
+    padding-bottom: 0;
+}
+
+/*Sections generales*/
+.header-section-configurador{
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 0 10px;
+    border-bottom: 1px solid #ddd; 
+    background: #fff;
+    box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%), 0 4px 25px 0 rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);  
+}
+.header-section-configurador > h2{
+    font-size: 0.8rem;
+    color: #948686;
+}
+.header-section-configurador > .pin-active-visibility{
+    position: relative;
+    cursor: pointer;
+    padding: 3px;
+}
+.header-section-configurador > .pin-active-visibility > i{
+    color:#948686;
+    font-size: 1rem;
+}
+.header-section-configurador > .pin-active-visibility > i.pin-desanclar{
+    font-size: 0.6rem;
+    position: absolute;
+    top: 14px;
+    left: -1px;
+    opacity: 0;
+    visibility: hidden;
+}
+.header-section-configurador > .pin-active-visibility.active > i.pin-desanclar{
+    opacity: 1;
+    visibility: visible;
+}
+
+.content-section-configurador{
+    display: flex;
+    flex: 1;
+    max-height: 100%;
+    height: calc(100% - 30px);
+}
+.content-section-configurador .notificationsScroll {
+    width: 100%;
+    height: calc(100% - 0px);
+    max-height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 5px;
+    background: #F3F5F6;
+    margin: 0;
+}
+
+.content-section-configurador .notificationsScroll button:focus,
+.content-section-configurador .notificationsScroll button:active {
+    outline: none !important;    
+}
+
+.content-section-configurador .notificationsScroll .cuerpoFiltros .qlik-embed {
+    background: transparent;
+    box-shadow: none;
+}
+
+/*Responsive*/
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 767px) {
+    #panel-options {
+        width: 100%;
+        right:-110%;
+        top: 108px;
+    }
+    #panel-options-body .tab-view-wrapper {
+        height: 100%;
+        width: 100%;
+    }
+    .content-section-configurador .notificationsScroll .cuerposSelecciones .content-selecciones .selected-field-container > span .item-remove {
+        width: inherit;
+    }
+    .mz-btn-dark {
+        min-width: inherit;
+    }
+    .content-section-configurador .notificationsScroll .include-box, .content-section-configurador .notificationsScroll .include-box .tab-view-wrapper {
+        max-width: 100%;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+    #panel-options {
+        width: 75%;
+        right:-85%;
+        top: 108px;
+    }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+    #panel-options {
+        width: 80%;
+        right:-90%;
+        top: 120px;
+    }
+    #panel-options-body .tab-view-wrapper {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+    #panel-options {
+        width: 100%;
+        right:-110%;
+        top: 120px;
+    }
+    #panel-options-body .tab-view-wrapper {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px)  {
+    #panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab .tab-item > span.texto{
+        display: none;
+    }
+    #panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab {
+        min-width: inherit;
+        height: 38px;
+    }
+    #panel-options-body .tab-view-wrapper .lui-tabview .lui-tabset .lui-tab .tab-item{
+        padding: 0;
+    }
+}
+
+/* RESPONSIVE NUEVO DISEÑO */
+@media only screen and (min-width : 320px) and (max-width : 1024px) {
+    body#main #panel-options {
+        top: 0;
+    }
+}

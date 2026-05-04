@@ -1,0 +1,159 @@
+<div class="lui-dialog lui-dialog-mz mz-edit-alert-dialog" ng-class="{'lui-dialog--inverse': darkView}">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title">
+            <img src="include/mz-alerting/assets/Title-Config-Alertas.png" />
+            <span class="txt-headet-title">
+                {{'alerting.label.configuracion' | translate}}
+            </span>            
+        </div>
+    </div>
+    <div class="lui-dialog__body">
+
+        <div class="col-sm-12 col-12 page">
+
+                        <div id="box-general-alertas">
+                <div class="btn-list">
+                    <label class="section-title"> {{'alerting.label.configuracion.general' | translate}} </label>
+                </div>
+                <div class="inner-form-alerts row m-0 p-0">
+                    <div class="item-dialog-alert">
+                        <span class="label"> {{'alerting.label.configuracion.alerta' | translate}} </span>
+                        <div class="cover-imputs">
+                            <input type="text" class="lui-input" ng-class="{'lui-input--inverse': darkView}" ng-model="model.name" />
+                        </div>
+                    </div>
+                    <div class="item-dialog-alert">
+                        <span class="label"> {{'alerting.label.configuracion.mensaje' | translate}} </span>
+                        <div class="cover-imputs">
+                            <input type="text" class="lui-input" ng-class="{'lui-input--inverse': darkView}" ng-model="model.message" />
+                        </div>
+                    </div>
+                    <div class="item-dialog-alert">
+                        <span class="label"> {{'alerting.label.configuracion.tipo' | translate}} </span>
+                        <div class="cover-select">
+                            <select class="lui-select" ng-class="{'lui-select--inverse': darkView}" ng-model="model.types"
+                                ng-options="option.name for option in masters.types track by option.id">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item-dialog-alert">
+                        <span class="label"> {{'alerting.label.configuracion.app' | translate}} </span>
+                        <div class="cover-select">
+                            <select disabled class="lui-select" ng-class="{'lui-select--inverse': darkView}" ng-model="model.app"
+                                ng-options="option.name for option in masters.apps track by option.id">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item-dialog-alert">
+                        <span class="label"> {{'alerting.label.configuracion.hoja' | translate}} </span>
+                        <div class="cover-select">
+                            <select disabled class="lui-select" ng-class="{'lui-select--inverse': darkView}" ng-model="model.sheet_data"
+                                ng-options="option.name for option in masters.sheets track by option.id">
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+
+                                                          </div>
+
+
+
+            </div>
+            <div id="box-alert-separate">
+
+                            </div>
+
+
+                                    <div id="box-medidas-alertas">
+                <div class="btn-list">
+                    <label class="section-title">{{'alerting.label.configuracion.medidaCondiciones' | translate}} </label>
+                </div>
+                <div class="inner-form-alerts row m-0 p-0">
+                    <div class="item-dialog-alert">
+                        <span class="label"> {{'alerting.label.configuracion.medida' | translate}} </span>
+                        <div class="cover-select">
+                            <select class="lui-select" ng-class="{'lui-select--inverse': darkView}" ng-model="model.measure"
+                            ng-options="option.name for option in model.object.measures track by option.id">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item-dialog-alert">
+                        <span class="label">{{'alerting.label.configuracion.valores' | translate}} </span>
+                        <div class="cover-radio">
+                            <label class="lui-radiobutton" ng-repeat="option in masters.conditionTypes"
+                                ng-class="{'lui-radiobutton--inverse': darkView}">
+                                <input class="lui-radiobutton__input" type="radio" name="condType" value="{{option.id}}"
+                                    ng-model="model.condition_type">
+                                <div class="lui-radiobutton__radio-wrap">
+                                    <span class="lui-radiobutton__radio"></span>
+                                    <span class="lui-radiobutton__radio-text">{{option.name}}</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="item-dialog-alert">
+                        <span class="label"> {{'alerting.label.configuracion.tipoCondicion' | translate}} </span>
+                        <div class="cover-select">
+                            <select class="lui-select" ng-class="{'lui-select--inverse': darkView}"
+                                ng-model="model.range_type_data"
+                                ng-options="option.name for option in masters.rangeTypes track by option.id">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item-dialog-alert" ng-if="isMax()">
+                        <span class="label" > {{'alerting.label.configuracion.maximo' | translate}} </span>
+                        <div class="item">                                
+                            <span class="value" ng-if="model.condition_type=='perc'">
+                                <input type="text" class="lui-input" ng-class="{'lui-input--inverse': darkView}"
+                                    percentage-field percentage-max-value="1000" percentage-max-decimals="2"
+                                    ng-model="model.range_max" placeholder="%" />
+                            </span>
+                            <span class="value" ng-if="model.condition_type=='static'">
+                                <input type="number" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" class="lui-input"
+                                    ng-class="{'lui-input--inverse': darkView}" ng-model="model.range_max" />
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="item-dialog-alert" ng-if="isMin()">
+                        <span class="label"> {{'alerting.label.configuracion.minimo' | translate}} </span>
+                        <div class="item">                                
+                            <span class="value" ng-if="model.condition_type=='perc'">
+                                <input type="text" class="lui-input" ng-class="{'lui-input--inverse': darkView}"
+                                    percentage-field percentage-max-value="1000" percentage-max-decimals="2"
+                                    ng-model="model.range_min" placeholder="%" />
+                            </span>
+                            <span class="value" ng-if="model.condition_type=='static'">
+                                <input type="number" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" class="lui-input"
+                                    ng-class="{'lui-input--inverse': darkView}" ng-model="model.range_min" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="lui-dialog__footer">
+        <button class="lui-button lui-dialog__button" ng-class="{'lui-button--inverse': darkView}" ng-click="save(model);">
+            <i class="icofont icofont-save"></i> {{'alerting.label.configuracion.guardar' | translate}}
+        </button>
+        <button class="lui-button lui-dialog__button" ng-class="{'lui-button--inverse': darkView}" ng-click="openDelete(model)" ng-if="model.id">
+            <i class="icofont icofont-delete-alt"></i> {{'alerting.label.configuracion.eliminar' | translate}}
+        </button>        
+        <button class="lui-button lui-dialog__button" ng-class="{'lui-button--inverse': darkView}" ng-click="close();">
+            <i class="icofont icofont-ui-close"></i> {{'alerting.label.configuracion.cerrar' | translate}}
+        </button>
+    </div>
+</div>
+
+<toast></toast>

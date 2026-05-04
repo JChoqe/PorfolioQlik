@@ -1,0 +1,13 @@
+<div class="lui-dialog lui-dialog-mz" style="width: 600px;">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title" q-translation="AlternateState.Dialog.Add.Title"></div>
+    </div>
+    <div class="lui-dialog__body">
+        <label class="control-label" for="titleState" q-translation="AlternateState.NewStateName"></label>
+        <input class="lui-input" id="titleState" ng-model="titleState" type="text" autofocus>           
+    </div>
+    <div class="lui-dialog__footer">        
+        <button class="lui-button lui-dialog__button close-button" ng-click="setStateName();">{{'views.modal.crear' | translate}}</button>
+        <button class="lui-button lui-dialog__button" ng-click="closeDialog();">{{'views.modal.cerrar' | translate}}</button>
+    </div>
+</div>

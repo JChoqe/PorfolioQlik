@@ -1,0 +1,133 @@
+.mz-alerting-attr{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* top: 100%; */
+    bottom: 0;
+    right: 0px;
+    left: 0px;
+    padding: 0 0 10px 10px;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+div[mz-alerting-attr],
+objectsense[mz-alerting-attr]{
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+} 
+
+div:hover > .mz-alerting-attr,
+objectsense:hover > .mz-alerting-attr {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+}
+
+.mz-alerting-attr .content {
+    /* background-color: rgba(31, 153, 160, 0.56); */
+    color: #404040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border-radius: 0px;
+}
+
+/*.mz-alerting-attr:hover {
+    opacity: 1;
+    visibility: visible;
+}*/
+
+.mz-alerting-attr .content .icon {
+    cursor: pointer;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+/* Estilo del valor de los KPIs que tengan una alerta activa */
+#main .alertaActiva[data-type=danger] .mz-box-kpi .mz-box-kpi-inner .qlik-embed .kpi-tile .value-container .value,
+#main .alertaActiva[data-type=danger] .qv-inner-object .text-container .first-container .value>span,
+#main .alertaActiva[data-type=danger] .MzKPI .kpi-tile .text-container .compares-items .vcomp-container .value-vcomp>span,
+#main .alertaActiva[data-type=danger] .qv-object-kpi .sn-kpi-value .sn-kpi-ellips-text {
+    color: #ca171d !important;
+}
+
+#main .alertaActiva[data-type=warning] .mz-box-kpi .mz-box-kpi-inner .qlik-embed .kpi-tile .value-container .value,
+#main .alertaActiva[data-type=warning] .qv-inner-object .text-container .first-container .value>span,
+#main .alertaActiva[data-type=warning] .MzKPI .kpi-tile .text-container .compares-items .vcomp-container .value-vcomp>span,
+#main .alertaActiva[data-type=warning] .qv-object-kpi .sn-kpi-value .sn-kpi-ellips-text {
+    color: #ffd24d !important;
+}
+
+#main .alertaActiva[data-type=info] .mz-box-kpi .mz-box-kpi-inner .qlik-embed .kpi-tile .value-container .value,
+#main .alertaActiva[data-type=info] .qv-inner-object .text-container .first-container .value>span,
+#main .alertaActiva[data-type=info] .MzKPI .kpi-tile .text-container .compares-items .vcomp-container .value-vcomp>span,
+#main .alertaActiva[data-type=info] .qv-object-kpi .sn-kpi-value .sn-kpi-ellips-text {
+    color: #1fbed6 !important;
+}
+
+#main .alertaActiva[data-type=success] .mz-box-kpi .mz-box-kpi-inner .qlik-embed .kpi-tile .value-container .value,
+#main .alertaActiva[data-type=success] .qv-inner-object .text-container .first-container .value>span,
+#main .alertaActiva[data-type=success] .MzKPI .kpi-tile .text-container .compares-items .vcomp-container .value-vcomp>span,
+#main .alertaActiva[data-type=success] .qv-object-kpi .sn-kpi-value .sn-kpi-ellips-text {
+    color: #4bc365 !important;
+}
+
+#main.mz-white .definicionActiva::after{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-family: LUI icons;
+    content: "bell";
+    color: #768b8e;
+    font-size: 1rem;
+}
+
+
+
+#main.mz-white .btn-insertAlert::before{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-family: LUI icons;
+    content: "bell";
+    color: black;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* .btn-insertAlert{
+    padding: 5px 8px;
+    color: #fff;
+    border: 1px solid rgb(29, 31, 31);
+    font-size: 0.8rem;
+    font-family: QlikView Sans,sans-serif;
+    letter-spacing: 0.25px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: var(--header-bgcolor); 
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+} */
+
+#main .alertaActiva::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-family: LUI icons;
+    content: "bell";
+}

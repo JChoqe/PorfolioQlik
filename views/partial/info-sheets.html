@@ -1,0 +1,46 @@
+<div class="lui-dialog lui-dialog-mz lui-dialog-mz-sheets" style="width: 80%; height: 80%;">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title">{{'sheets.menu.sheet' | translate}}</div>
+    </div>
+    <div class="lui-dialog__body">
+        <div id="avisoEmptySheets">
+            <div class="txt-info-add">
+                <h2 id="anchor-2" tabindex="-1">Crear una nueva hoja</h2>
+                <p>Puede crear una nueva hoja en la app desde la vista general de app o desde el navegador de hojas. </p>
+                <div class="tip">
+                    Para acceder al navegador de hojas desde la vista de hojas se hace clic en <img src="./assets/img/core/ic_sheet.svg" alt="Objetos de app">  en la barra de herramientas.
+                </div>
+                <p>Haga lo siguiente:</p>
+                <ol>
+                    <li>Desde la vista general de app, haga clic en <img src="./assets/img/core/ic_sheet.svg" alt="Objetos de app">  para ver las hojas.</li>
+                    <li>Haga clic en <img src="./assets/img/core/ic_plus.svg" alt="Crear nuevo"> o en <span class="ui_item">Crear nueva hoja</span>.</li>
+                    <li>Asigne un título a la hoja con la siguiente nomenclatura:
+                        <ul class="ul-list">
+                            <li>Comience  con el prefijo definido <strong>{{PrefSheets}}</pre></li>
+                            <li>Añada el módulo al que pertence la hoja, terminando con un punto.
+                                Los nombres de los módulos son:
+                                <ul class="ul-list-modulos">
+                                    <li ng-repeat="modulo in MODULOS | orderBy:'module'">
+                                        <strong>{{modulo.module}}</strong>
+                                    </li>
+                                </ul>
+                                
+                            </li>
+                            <li>Termine con el nombre de la hoja</li>
+                        </ul>
+                    </li>
+                    <li>Añada una descripción.</li>
+                    <li>Haga clic fuera del área de texto para guardar el título y la descripción.</li>
+                    <li>Ejemplo : <span class="example">{{PrefSheets}}{{MODULOS[0].module}}.Dashboard Informe Tablas</span></li>
+                </ol>
+                <p>Se ha creado una nueva hoja. Sus hojas son privadas hasta que las haga públicas. Para más información, vea <a href="https://help.qlik.com/es-ES/cloud-services/Subsystems/Hub/Content/Sense_Hub/Share/make-public-or-private.htm" target="_blank"><i>Otorgar acceso a hojas, marcadores e historias</i></a>.</span></p>
+            </div>           
+        </div>
+    </div>
+    <div class="lui-dialog__footer">
+        <button class="lui-button lui-dialog__button" ng-click="closeDialog();">{{'views.modal.cerrar' | translate}}</button>
+
+    </div>
+</div>
+
+

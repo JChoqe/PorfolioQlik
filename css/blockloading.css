@@ -1,0 +1,147 @@
+/*Bloqueo de pantalla entre secciones*/
+.mz-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    /* background:#fff url('./../assets/img/wellcomeImages/Background-003a.jpg'); */
+    background-size: cover;
+    transition: all 0.8s ease-in-out 0s;
+}
+.mz-block.active{
+    top:-110%;
+}
+
+.mz-block #logo-block {
+    position: absolute;
+    top: 5%;
+    z-index: 999999;
+    width: 300px;
+    height: 200px;
+    background: url(./../assets/img/logos/Logo-Hominem-001a.png) no-repeat center;
+    background-size: 100% auto;
+}
+
+.mz-block .flex-loader-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0,0,0,0.4);
+}
+.mz-block .loaderEquializador {
+    font-size: 10px;
+    margin: 50px auto;
+    text-indent: -9999em;
+    width: 11em;
+    height: 11em;
+    border-radius: 50%;
+    background: #ffffff;
+    background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    position: relative;
+    -webkit-animation: load3 1.4s infinite linear;
+    animation: load3 1.4s infinite linear;
+    transform: translateZ(0);
+}
+.mz-block .loaderEquializador:before {
+    width: 50%;
+    height: 50%;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    transform: translate3d(1px, 0, 0);
+    border-top: 4px solid var(--menu-bg-color);
+    border-left: 4px solid var(--menu-bg-color);
+}
+.mz-block .loaderEquializador:after {
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: transparent;
+    border: 2px solid var(--menu-bg-color);
+}
+.mz-block .flex-loader-cover .texto-loader {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: loaderLion;
+    animation-name: loaderLion;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    color: #444444;
+}
+@-webkit-keyframes loaderLion {
+    0% {
+        color: #979797;
+    }
+    50% {
+        color: #444444;
+    }
+    100% {
+        color: #979797;
+    }
+}
+
+@keyframes loaderLion {
+    0% {
+        color: #979797;
+    }
+    50% {
+        color: #444444;
+    }
+    100% {
+        color: #979797;
+    }
+}
+#pont-1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.8;
+  }
+  #pont-2{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.4;
+  }
+  #pont-3{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.8;
+  }
+  #pont-4{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.8;
+  }

@@ -1,0 +1,40 @@
+<div class="m-0 p-0 timeline" qva-outside="close($event)" ng-if="ShowAnios || ShowMeses" ng-class="ShowTimeLine== true ? 'ShowTimeLine': ''">
+    <div class="btn-timeline" ng-click="toogleTimeLine()">
+        <i class="ri-calendar-line"></i>
+    </div>
+    
+    <div id="cover-timeline">
+        <div class="time-line-box anios" ng-if="ShowAnios" ng-mouseenter="addSeleccionesAniosEvent()">
+            
+            <div class="item itemYear itemYearVal" ng-click="toogleYear(item.val, $event)"
+                ng-repeat="item in anios | orderBy:'-val' | limitTo:limitYear track by $index"
+                data-valor="{{ item.val }}"
+                ng-class="item.active == 'S' ? 'active' : ''">
+                {{item.text}}
+            </div>
+            <div class="item itemYear" id="moreyears" ng-if="anios.length > limitYear" ng-class="isMoreYearsShow == true ? 'active' : ''">
+                <div id="box-icon" ng-click="showMoreYears()">
+                    <i class="ri-arrow-down-s-line" ng-if="!isMoreYearsShow"></i>
+                    <i class="ri-arrow-up-s-line" ng-if="isMoreYearsShow"></i>
+                </div>            
+                <div class="boxMoreYears">
+                    <div class="item itemYear itemYearVal" ng-click="toogleYear(item.val, $event)"
+                        ng-repeat="item in anios | orderBy:'-val' | limitTo:anios.length:limitYear track by $index"
+                        data-valor="{{ item.val }}"
+                        ng-class="item.active == 'S' ? 'active' : ''">
+                        {{item.text}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="time-line-box meses" ng-if="ShowMeses" ng-mouseenter="addSeleccionesMesesEvent()">
+            
+            <div class="item itemMonth" ng-click="toogleMonth(item.val, $event)"
+                ng-repeat="item in meses track by $index"
+                data-valor="{{ item.val }}"
+                ng-class="item.active == 'S' ? 'active' : ''">
+                {{item.text}}
+            </div>
+        </div>
+    </div>
+</div>

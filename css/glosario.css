@@ -1,0 +1,197 @@
+#glossary {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -800px;
+    z-index: 9999;
+    background: #f3f4f5;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, .56), 0 4px 25px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+    width: 750px;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+#glossary.active {
+    right: 0px;
+}
+
+#header-glossary {
+    width: 100%;
+    height: 70px;
+    position: relative;
+    z-index: 1000;
+    background: #fff !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 5px;
+}
+
+#header-options .mz-list-options .item-option  #header-glossary h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0.25px;
+    color: #444;
+    padding-left: 10px;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+#header-options .mz-list-options .item-option  #header-glossary h2 > i {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+#header-glossary .liGlosarioClose > a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: #444c52;
+    border-radius: 8px;
+}
+#header-glossary .liGlosarioClose > a .selectionsButtom {
+    font-size: .8rem;
+    color: #fff;
+}
+
+.glossary-title {
+    background-color: var(--menu-bg-color);
+    height: auto;
+    line-height: auto;
+    width: auto;
+    white-space: nowrap;
+    -webkit-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    font-weight: 400;
+    border-bottom: 1px solid transparent;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    height: 40px;
+}
+
+
+.glossary-title:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #f8981d;
+}
+
+.glossary-box {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 110px;
+}
+
+#glossary-search {
+    height: 40px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#glossary-scroll {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 50px;
+    padding: 10px;
+    overflow: auto;
+}
+
+.glossary-item {
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.glossary-item-type>span {
+    line-height: 25px;
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+.glossary-item-name>span {
+    display: inline-block;
+    padding: 4px 8px;
+    background: var(--main-color);
+    color: #fff;
+    border-radius: 3px;
+}
+
+.glossary-item-name>p {
+    padding: 4px 8px 4px 0;
+    margin: 0;
+    font-size: 12px;
+    line-height: 140%;
+    margin-bottom: 5px;
+}
+
+.glossary-item-name>p .highlighted {
+    background: #009688;
+    color: #fff;
+    padding: 3px;
+}
+
+.glossary-item-tags {
+    padding: 8px 0 8px;
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+    #glossary {
+        width: 100%;
+        right: -120%;
+    }
+}
+
+
+#box-glasario-cover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0, 0, 0, .4);
+}
+
+#box-glasario-cover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+#box-glasario-cover.active {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,0 +1,321 @@
+.box_object_kpi {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 0px;
+    width: 100%;
+    min-width: 100%;
+}
+
+.mz-box-kpi {
+    display: flex;
+    flex: auto;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.mz-box-kpi > .mz-box-kpi-inner {
+    display: flex;
+    flex: 1;
+    margin: 0;
+    position: relative;
+    align-content: center;
+    align-items: center;
+}
+.mz-box-kpi > .mz-box-kpi-inner .MuiSvgIcon-root {
+    fill: #fff;
+    font-size: 1.5rem !important;
+}
+
+.mz-box-kpi > .mz-box-kpi-inner .qlik-embed {
+    top: 0;
+    bottom: 0;
+    right: 0px;
+    left: 0px;
+    background: #07284c;
+    /* padding: 0; */
+    /* background: none; */
+}
+
+.mz-box-kpi > .mz-box-kpi-inner .qlik-embed .qv-object {
+    border: 0;
+}
+
+.box_mix .qv-object-kpi .measure-wrapper,
+.box_mix .qv-object-kpi .value-wrapper,
+.box_mix .qv-object-kpi .sn-kpi-measure-wrapper,
+.box_mix .qv-object-kpi .sn-kpi-value-wrapper {
+    justify-content: flex-start !important;
+}
+
+
+.box_mix .qv-object-kpi .measure-wrapper .measure-title,
+.box_mix .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-measure-title {
+    font-size: 1rem;
+}
+
+.box_mix .qv-object-kpi .value-wrapper .kpi-value .ellips-text,
+.box_mix .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-value .sn-kpi-ellips-text {
+    /* color: #fff; */
+    font-size: 1.8rem;
+}
+
+.box_object_kpi .qv-object-kpi .measure-wrapper .measure-title,
+.box_object_kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-measure-title {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.box_object_kpi .qv-object-kpi .value-wrapper .kpi-value .ellips-text,
+.box_object_kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-value .sn-kpi-ellips-text {
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.box_object_kpi.qv-object-kpi .value-wrapper .kpi-secondary-wrapper .kpi-value > .ellips-text .kpi-title.kpi-ellips-text,
+.box_object_kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-secondary-wrapper >.sn-kpi-ellips-text .sn-kpi-title.sn-kpi-ellips-text{
+    color: #fff;
+    font-size: 10px !important;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+}
+
+
+.qv-object-kpi .value-wrapper .kpi-secondary-wrapper .kpi-value .ellips-text,
+.qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-secondary-wrapper .sn-kpi-value .sn-kpi-ellips-text{
+    font-size: 1.2rem;
+}
+.qv-object-kpi .value-wrapper .kpi-secondary-wrapper .kpi-value > .ellips-text,
+.qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-secondary-wrapper >.sn-kpi-ellips-text{
+    padding-left: 5px;
+}
+
+body#main .qlik-embed.qlik-embed-kpi[data-url-page],
+body#main .qlik-embed.qlik-embed-kpi[data-url-page] .qv-viz {
+    cursor: pointer !important;
+}
+
+@media screen and (max-height: 640px) {
+    body#main .box_object_kpi{
+        height: auto;
+    }
+    body#main .box_object_kpi .mz-box-kpi {
+        min-height: 175px;
+    }
+}
+@media screen and (max-width: 576px) {
+    body#main .box_object_kpi,
+    body#main .box_object_kpi > .row,
+    body#main .box_object_kpi > .row > .row{
+        height: auto;
+        min-height: auto;
+    }
+    body#main .box_object_kpi .mz-box-kpi {
+        min-height: 175px;
+    }
+}
+
+
+/*.mz-box-kpi > .mz-box-kpi-inner .kpi-tile .value-container .value {
+    font-size: 1.6rem;
+}
+
+.mz-box-kpi > .mz-box-kpi-inner .kpi-tile .vpp-desc-container .label-vpp,
+.mz-box-kpi > .mz-box-kpi-inner .kpi-tile .vaa-desc-container .label-vaa {
+    font-size: 1rem;
+}
+
+.mz-box-kpi > .mz-box-kpi-inner .kpi-tile .vpp-desc-container .value-vpp {
+    font-size: 1.3rem;
+}
+
+.mz-box-kpi > .mz-box-kpi-inner .kpi-tile .value-container .label {
+    font-size: 1.3rem;
+}
+
+.box_object_kpi.box_object_kpi-line {
+    padding: 0 0px 0 10px;
+}
+
+.box_object_kpi.box_object_kpi-line .mz-box-kpi {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.box_object_kpi.box_object_kpi-line .mz-box-kpi .qlik-embed {
+    box-shadow: none !important;
+    margin: 0 0 10px 0 !important;
+}
+
+.mz-white .mz-box-kpi > .mz-box-kpi-inner .qlik-embed {
+    background: #fff;
+}*/
+
+/*Kpi*/
+
+/*.mz-white .box_mix .box_object_inner_kpi .qlik-embed-kpi .qv-object-kpi .measure-wrapper .measure-title {
+    color: #808080 !important;
+    font-size: 16px
+}
+
+.mz-white .box_mix .box_object_inner_kpi .qlik-embed-kpi .qv-object-kpi .kpi-value .ellips-text {
+    color: #808080 !important;
+    font-size: 26px;
+}
+
+
+.mz-white .mz-box-kpi .qv-object-kpi .kpi-value .ellips-text,
+.mz-white .mz-box-kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-ellips-text {
+    color: #808080;
+}
+
+.mz-white .mz-box-kpi .qv-object-kpi .measure-wrapper .ellips-text
+.mz-white .mz-box-kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-ellips-text {
+    color: #808080;
+}
+
+@media (min-width: 576px) {
+    .mz-white .mz-box-kpi .qv-object-kpi .kpi-value .ellips-text,
+    .mz-white .mz-box-kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-ellips-text {
+        color: #808080;
+    }
+
+    .mz-white .mz-box-kpi .qv-object-kpi .measure-wrapper .ellips-text
+    .mz-white .mz-box-kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-ellips-text {
+        color: #808080;
+    }
+}
+
+@media (min-width: 768px) {
+    .mz-white .mz-box-kpi .qv-object-kpi .kpi-value .ellips-text,
+    .mz-white .mz-box-kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-ellips-text {
+        color: #808080;
+    }
+
+    .mz-white .mz-box-kpi .qv-object-kpi .measure-wrapper .ellips-text
+    .mz-white .mz-box-kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-ellips-text {
+        color: #808080;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .mz-white .mz-box-kpi .qv-object-kpi .kpi-value .ellips-text,
+    .mz-white .mz-box-kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-ellips-text {
+        color: #808080;
+    }
+
+    .mz-white .mz-box-kpi .qv-object-kpi .measure-wrapper .ellips-text
+    .mz-white .mz-box-kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-ellips-text {
+        color: #808080;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .mz-white .mz-box-kpi .qv-object-kpi .kpi-value .ellips-text,
+    .mz-white .mz-box-kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-ellips-text {
+        color: #808080;
+    }
+
+    .mz-white .mz-box-kpi .qv-object-kpi .measure-wrapper .ellips-text,
+    .mz-white .mz-box-kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-ellips-text {
+        color: #808080;
+    }
+}
+
+body#main .qlik-embed.qlik-embed-kpi[data-url-page],
+body#main .qlik-embed.qlik-embed-kpi[data-url-page] .qv-viz {
+    cursor: pointer !important;
+}*/
+/*Kpi*/
+
+/*.mz-box-kpi .qv-object-kpi .kpi-value .ellips-text,
+.mz-box-kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-ellips-text {
+    color: #fff;
+    font-size: 26px;
+}
+
+.mz-box-kpi .qv-object-kpi .measure-wrapper .ellips-text,
+.mz-box-kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-ellips-text {
+    color: #fff;
+    font-size: 22px;
+}
+
+@media (min-width: 576px) {
+    .mz-box-kpi .qv-object-kpi .kpi-value .ellips-text,
+    .mz-box-kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-ellips-text {
+        color: #fff;
+        font-size: 26px;
+    }
+
+    .mz-box-kpi .qv-object-kpi .measure-wrapper .ellips-text,
+    .mz-box-kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-ellips-text {
+        color: #fff;
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 768px) {
+    .mz-box-kpi .qv-object-kpi .kpi-value .ellips-text,
+    .mz-box-kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-ellips-text {
+        color: #fff;
+        font-size: 22px;
+    }
+
+    .mz-box-kpi .qv-object-kpi .measure-wrapper .ellips-text,
+    .mz-box-kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-ellips-text {
+        color: #fff;
+        font-size: 18px;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .mz-box-kpi .qv-object-kpi .kpi-value .ellips-text,
+    .mz-box-kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-ellips-text {
+        color: #fff;
+        font-size: 26px;
+    }
+
+    .mz-box-kpi .qv-object-kpi .measure-wrapper .ellips-text,
+    .mz-box-kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-ellips-text {
+        color: #fff;
+        font-size: 22px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .mz-box-kpi .qv-object-kpi .kpi-value .ellips-text,
+    .mz-box-kpi .qv-object-kpi .sn-kpi-value-wrapper .sn-kpi-ellips-text {
+        color: #fff;
+        font-size: 1.6vw;
+    }
+
+    .mz-box-kpi .qv-object-kpi .measure-wrapper .ellips-text,
+    .mz-box-kpi .qv-object-kpi .sn-kpi-measure-wrapper .sn-kpi-ellips-text {
+        color: #fff;
+        font-size: 0.7vw;
+    }
+}
+
+.box_mix .qv-object-kpi .measure-wrapper,
+.box_mix .qv-object-kpi .value-wrapper,
+.box_mix .qv-object-kpi .sn-kpi-measure-wrapper,
+.box_mix .qv-object-kpi .sn-kpi-value-wrapper {
+    justify-content: flex-start !important;
+}
+
+body#main .qlik-embed.qlik-embed-kpi[data-url-page],
+body#main .qlik-embed.qlik-embed-kpi[data-url-page] .qv-viz {
+    cursor: pointer !important;
+}*/
+
+/*Mz-KPI*/
+/*
+.mz-white .MzKPI .kpi-tile .container-icon i {
+    color: #808080;
+}*/

@@ -1,0 +1,44 @@
+<div class="item-action" ng-click="toggleHelp($event)">
+    <i class="ri-question-mark"></i>
+</div>
+<div id="helpPanel">
+    <div id="contentHelp">
+        <div id="headerHelp">
+            <i class="ri-question-mark"></i>
+            <h3 class="ml-12">{{'views.acciones.ayuda' | translate}}</h3>            
+            <i class="icofont icofont-close-circled closeHelpIcon toRight" ng-click="toggleHelp($event)"></i>
+        </div>
+        <div id="covervideohelp">
+            <div id="video-full" ng-if="noVideos == false">
+                <div id="big-video">
+                    <video id="video" class="video-element" controls ng-if="CARGAVIDEOSFULL == true">
+                        <source ng-src="{{urlContentLibrary[0]}}" type="video/mp4">
+                    </video> 
+                </div>
+            </div>
+            <div id="video-list" ng-if="noVideos == false">
+                <div class="item-folder" ng-repeat="item in urlContentLibrary track by $index" ng-if="loadVideos == true"> 
+                    <div class="video-demo-container">
+                        <div class="cover-video" ng-click="loadVideo(item,  $event)" ng-class="$index == 0 ? 'active' : ''"><i class="ri-play-circle-line"></i></div>                                        
+                        <itemvideo id="{{item}}">
+                            <span>Load..</span>
+                        </itemvideo>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="avisoTxtHelpl" class="row m-0 p-0" ng-if="noVideos == true">
+                <p class="avisoTxt">{{'label.novideos' | translate}}</p>
+            </div>
+            <div id="loadVideos" ng-if="loadVideos == false">
+                <p>{{'label.loadvideos' | translate}}</p>
+                <p>
+                    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                </p>
+            </div>
+        </div>
+        
+
+    </div>
+    <div id="helpOver" ng-click="toggleHelp($event)"></div>
+</div>

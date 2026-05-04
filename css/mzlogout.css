@@ -1,0 +1,161 @@
+.lui-dialog.dialogo-logout-mz{
+    width: 25%;
+    height: 40%;
+    min-width: 300px;
+    min-height: 300px;   
+    border-radius: 0;
+    background-color: #fff;
+    border: none;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    overflow: hidden;
+}
+
+.lui-dialog.dialogo-logout-mz .lui-dialog__body {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.lui-dialog.dialogo-logout-mz .lui-dialog__body .body-content .close-logout{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 2rem;
+    color: rgb(24, 23, 23);
+    border-radius: 50%;
+    border:1px solid #808080; 
+    cursor: pointer;
+}
+
+.lui-dialog.dialogo-logout-mz .lui-dialog__body .body-content{
+    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+
+.lui-dialog.dialogo-logout-mz .lui-dialog__body .body-content p{
+    margin: 0;
+    width: 60%;
+    font-size: 2rem;
+    color: #07284C;
+    line-height: 140%;
+    font-weight: 700;
+}
+
+.lui-dialog.dialogo-logout-mz .lui-dialog__body .body-footer{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.lui-dialog.dialogo-logout-mz .lui-dialog__body .body-footer .lui-button{
+    height: 50px;
+    width: 65%;
+    margin: 0;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    background-color:#07284C ;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border:1px solid #fff
+}
+.lui-dialog.dialogo-logout-mz .lui-dialog__body .body-footer .lui-button:hover,
+.lui-dialog.dialogo-logout-mz .lui-dialog__body .body-footer .lui-button:focus,
+.lui-dialog.dialogo-logout-mz .lui-dialog__body .body-footer .lui-button:active{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+
+/*Responsive*/
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 480px) {
+    .lui-dialog.dialogo-logout-mz{
+        width: 90%;
+        height: 90%;
+        min-width: 300px;
+        min-height: 300px;   
+    }
+    .lui-dialog.dialogo-logout-mz .lui-dialog__body .body-content {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    .lui-dialog.dialogo-logout-mz .lui-dialog__body .body-content p {
+        width: 100%;
+    }
+}
+
+@media only screen 
+and (min-width : 481px) 
+and (max-width : 767px) {
+    .lui-dialog.dialogo-logout-mz{
+        width: 85%;
+        height: 80%;
+        min-width: 300px;
+        min-height: 300px;   
+    }
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) {
+    .lui-dialog.dialogo-logout-mz{
+        width: 65%;
+        height: 45%;
+        min-width: 300px;
+        min-height: 300px;   
+    }
+}
+
+@media only screen 
+and (max-height : 767px) and 
+(min-width : 1024px) {
+    .lui-dialog.dialogo-logout-mz{
+        width: 35%;
+        height: 45%;
+        min-width: 300px;
+        min-height: 300px;   
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+    .lui-dialog.dialogo-logout-mz{
+        width: 35%;
+        height: 45%;
+        min-width: 300px;
+        min-height: 300px;   
+    }
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+    .lui-dialog.dialogo-logout-mz{
+        width: 25%;
+        height: 40%;
+        min-width: 300px;
+        min-height: 300px;   
+    }
+}

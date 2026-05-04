@@ -1,0 +1,20 @@
+
+<div class="lui-dialog dialogo-help-mz lui-dialog-mz" style="width: 80%; height:90%;"> 
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title">
+            {{'views.acciones.ayuda'  | translate}}           
+        </div>
+        <div id="list-languages" ng-if="multilanguage">
+            <div class="item-list" ng-repeat="item in IDIOMASAPI track by $index" ng-class="item.codigo.toLowerCase() == language ? 'active' : ''" ng-click="changeTextEditor(item, $event)">
+                <span>{{item.codigo}}</span></div>
+        </div>
+    </div>
+    <div class="lui-dialog__body lui-dialog-help-object">
+        <div  dx-html-editor="htmlEditorOptions" id="html-editor"></div>
+    </div>
+    <div class="lui-dialog__footer">
+        
+        <button class="lui-button  lui-dialog__button" ng-disabled="isDisabledSave" ng-click="save();">{{'views.modal.guardar'  | translate}}</button>
+        <button class="lui-button  lui-dialog__button" ng-click="closeDialog();">{{'views.modal.cerrar'  | translate}}</button>
+    </div>
+</div>

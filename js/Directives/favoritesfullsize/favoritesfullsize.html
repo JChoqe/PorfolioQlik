@@ -1,0 +1,15 @@
+<div class="item-favorite isFavoriteItem full-size"  data-id="{{ObjectId}}" data-app="{{IdApp}}"  defaultfilters="{{Uisref}},{{IdApp}}">
+    <div class="inner-item-favorite">
+        <div class="header-item-favorite">
+            <h4><span class="container-text" title="{{Created}}">Fecha añadido: {{Created}}</span></h4>
+            <div class="action-item-favorite">
+                <i class="icofont-resize lui-list__aside" ng-click="toggleItemFullsize(null,$event)" title="{{'contextmenu.label.normalsize' | translate}}"></i>
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon icofont-external-link btn-CursorPointer" title="{{'Favorites.itemaction.gotopage' | translate}}" ng-click="clearFullItem(); gotoPage(Uisref)"></i>
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon lui-icon--bin btn-CursorPointer" title="{{'Favorites.itemaction.deletefavorite' | translate}}" ng-click="deleteFavorite(IndexObject, ObjectId, $event)" ></i>
+            </div>
+        </div>
+        <div class="body-item-favorite">
+            <objectsense object-id="{{ObjectId}}" is-kpi="true" app-id="{{IdApp}}"></objectsense>
+        </div>
+    </div>
+</div>

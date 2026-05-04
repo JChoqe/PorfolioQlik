@@ -1,0 +1,137 @@
+#main-content {
+    transition-property: top,bottom,width;
+    transition-duration: .2s,.2s,.35s;
+    transition-timing-function: linear,linear,ease;
+    -webkit-overflow-scrolling: touch;
+}
+
+#main-content {
+    padding: 0;
+    width: calc(100% - 220px);
+    height: calc(100% - 70px);
+    right: 0;
+    z-index: 0;
+    position: absolute;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#content_iframe iframe{
+    width: calc(100% + 10px);
+    height: calc(100% + 97px);
+    border: none;
+    margin-top: -101px;
+}
+
+#page-container {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 90px);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 90px;
+    overflow: auto;
+    overflow-x: hidden;
+    z-index: 0;
+    padding: 10px 10px 0 0px !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.view-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+#main-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background-main-page);
+    background-size: cover;
+}
+
+.mz-white #main-page:before {
+    display: none;
+}
+.container-view,
+ui-view {
+    flex: 1;
+    margin: 0 !important;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.box_object {
+    float: left;
+}
+
+
+#page-container .qv-selection-toolbar {
+    top: -9px !important;
+}
+
+.sidebar-collapsed #main-content {
+    width: calc(100% - 80px) !important;
+}
+/*Título Objetos*/
+.qv-object .qv-object-title {
+    font-size: 14px !important;
+    min-height: 19px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+    .options-responsive {
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        z-index: 9;
+        color: #808080;
+    }
+
+    .kpi-page .options-responsive {
+        display: block;
+        position: absolute;
+        top: -66px;
+        right: 0px;
+        z-index: 9;
+        color: #808080;
+    }
+
+    speeldial {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        z-index: -9999;
+    }
+}
+body#main .scrollbar-track.fade {
+    opacity: 1;
+}
+
+/* RESPONSIVE NUEVO DISEÑO */
+@media only screen and (min-width : 320px) and (max-width : 1024px) {
+    body#main #main-content {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    body#main #page-container {
+        height: calc(100% - 120px);
+        top: 120px;
+        padding: 10px 0px 0 0px !important;
+    }
+}

@@ -1,0 +1,100 @@
+<header id="top-header">
+    <div id="header-options">
+
+        <div class="mz-list-options" id="item-left">
+            <div class="item-option ico-menu-collapse">
+                <a id="btn-collapse-sidebar" href="javascript:void(0)" ng-click="toogleSidebar()">
+                    <i class="icofont icofont-navigation-menu"></i>
+                </a>
+            </div>
+
+            <div class="item-option ico-menu-hide">
+                <a id="btn-collapse-sidebar" href="javascript:void(0)" ng-click="toogleMenu()">
+                    <i class="icofont icofont-navigation-menu"></i>
+                </a>
+            </div>
+            <div class="item-option breadcrumb-trail">
+                <span id="breadcrumb-trail" ng-bind-html="tituloSeccion"></span>
+            </div>
+        </div>
+
+        
+        <div class="mz-list-options mz-item-options" ng-if="!mzOptions">
+            <div class="item-option">
+                <bookmarks idapp="{{appID}}"></bookmarks>
+            </div>
+        </div>
+        <div class="mz-list-options mz-item-options" ng-if="IdFiltros && mzOptions == false">
+            <div class="item-option">
+                <filters idfiltro="{{IdFiltros}}" isarray="{{isArray}}"></filters>
+            </div>
+        </div>
+
+        <div class="mz-list-options mz-item-options" ng-if="!mzOptions">
+            <div class="item-option">
+                <glosario idapp="{{appID}}"></glosario>
+            </div>
+        </div>
+        <div class="mz-list-options mz-item-options" ng-if="!mzOptions && mzAlerting == true">
+            <div class="item-option">
+                <mz-alerting-toolbar></mz-alerting-toolbar>
+            </div>
+        </div>
+        <div class="mz-list-options mz-item-options" ng-if="!mzOptions">
+            <div class="item-option">
+                <help></help>
+            </div>
+        </div>
+
+        
+        <modeview class="mz-item-options" ng-if="ModeView && !mzOptions"></modeview>
+
+
+        
+        <div class="mz-list-options mz-item-options" ng-if="isVisibleLinkMarcadores && mzOptions">
+            <div class="item-option">
+                <bookmarks idapp="{{appID}}"></bookmarks>
+            </div>
+        </div>
+        <div class="mz-list-options mz-item-options" ng-if="IdFiltros && mzOptions &&  isVisibleLinkFilters == true">
+            <div class="item-option">
+                <filters idfiltro="{{IdFiltros}}" isarray="{{isArray}}"></filters>
+            </div>
+        </div>
+
+        <div class="mz-list-options mz-item-options" ng-if="isVisibleLinkGlosario && mzOptions">
+            <div class="item-option">
+                <glosario idapp="{{appID}}"></glosario>
+            </div>
+        </div>
+        <div class="mz-list-options mz-item-options" ng-if="isVisibleLinkAlertas && mzOptions && mzAlerting == true">
+            <div class="item-option">
+                <mz-alerting-toolbar></mz-alerting-toolbar>
+            </div>
+        </div>
+        <div class="mz-list-options mz-item-options" ng-if="isVisibleLinkHelp && mzOptions">
+            <div class="item-option">
+                <help></help>
+            </div>
+        </div>
+
+        
+        <modeview class="mz-item-options" ng-if="ModeView && mzOptions && isVisibleLinkMode"></modeview>
+
+        <div class="mz-list-options" ng-if="HasLogin">
+            <div class="item-option">
+                <mzlogout></mzlogout>
+            </div>
+        </div>
+        
+        <div class="mz-list-options"  ng-if="multilanguage">
+            <div class="item-option">
+                <switchlang idapp="{{appID}}"></switchlang>
+            </div>
+        </div>
+    </div>
+    <div id="logo-app">
+        <img src="assets/img/logos/Logo-Cliente-001.svg" ng-if="modoWhite" />
+        <img src="assets/img/logos/Logo-Cliente-002.svg" ng-if="!modoWhite" />
+    </div>
+</header>

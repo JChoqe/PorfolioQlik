@@ -1,0 +1,63 @@
+<div class="panel" id="template_distributionplot" ng-controller="distributionPlotProperties">
+    <div id="collapsePresentacion">
+        <div class="em-section-content">
+            <div class="em-grouped">
+                <div class="col-lg-12 border-bottom mzh-50">
+                    <div class="em-component em-data-component em-list-component">
+
+                        <ul class="em-item-selection-list em-item-list-2">
+                            <li ng-class="{'em-active' : orientacion == 'vertical'}" aria-hidden="false">
+                                <button ng-class="{'selected' : orientacion == 'vertical'}" title="{{ 'equalizer.title.vertical' | translate}}" class="item" ng-click="changeOrientacion('vertical')">
+                                    <div class="em-component em-icon-item-component lui-icon">
+                                        direction_up_down
+                                    </div>
+                                </button>
+                                <div class="label" aria-hidden="false">
+                                    <span>{{'equalizer.label.vertical'  | translate}}</span>
+                                </div>
+                            </li>
+                            <li ng-class="{'em-active' : orientacion == 'horizontal'}" aria-hidden="false">
+                                <button ng-class="{'selected' : orientacion == 'horizontal'}" title="{{ 'equalizer.title.horizontal' | translate}}" class="item" ng-click="changeOrientacion('horizontal')">
+                                    <div class="em-component em-icon-item-component lui-icon">
+                                        direction_left_right
+                                    </div>
+                                </button>
+                                <div class="label" aria-hidden="false">
+                                    <span>{{'equalizer.label.horizontal'  | translate}}</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12 border-bottom">
+                    <div class="em-item em-slider-component">
+                        <div class="label">{{'equalizer.label.tamanioburbuja'  | translate}}</div>
+                        <div class="value">
+                            <div class="slider" id="slider-range" ng-model="value"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 border-bottom">
+                    <div class="em-switch-component">
+                        <div class="label" aria-disabled="false">
+                            <div class="title">{{'equalizer.label.puntosfluctuacion'  | translate}}</div>
+                            <div class="value">{{puntosFluctuacionLabel}}</div>
+                        </div>
+
+                        <div lui-class-list="classList" class="lui-switch lui-switch--inverse">
+                            <label class="lui-switch__label" for="showPuntosFluctuacion">
+                                <input type="checkbox" ng-model="isFluctuacion" class="lui-switch__checkbox" aria-label="Label" id="showPuntosFluctuacion" ng-change="changePuntosFluctuacion($event, isFluctuacion)" ng-checked="isFluctuacion" />
+                                <span class="lui-switch__wrap">
+                                    <span class="lui-switch__inner"></span>
+                                    <span class="lui-switch__switch"></span>
+                                </span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

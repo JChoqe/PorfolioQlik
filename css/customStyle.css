@@ -1,0 +1,127 @@
+#la-vie-tooltip .pic-tooltip .pic-tooltip-content {
+    background-color: #fff !important;
+    background: #fff !important;
+    /* border: 1px solid #b8b5b5 !important; */
+    color: #444 !important;
+    font-size: .8rem !important;
+    border: 1px solid rgba(0, 0, 0, .2) !important;
+    border-radius: 0.3rem !important;
+    /* font-family: 'Lato', sans-serif !important; */
+}
+
+#la-vie-tooltip .pic-tooltip .pic-tooltip-arrow {
+    color: #fff !important;
+    display: none;
+}
+
+.listbox-popover .MuiPaper-root {
+    background-color: #fff !important;
+}
+
+#filters-panel .css-1te1p31 {
+    background-color: transparent;
+    color: #444;
+}
+
+body#main .qv-filterpane .qv-filterpane-collapsed,
+body#main .qv-filterpane .qv-filterpane-expanded {
+    margin-top: 7px;
+}
+
+body#main .qv-filterpane .qv-filterpane-collapsed:first-child,
+body#main .qv-filterpane .qv-filterpane-expanded:first-child {
+    margin-top: 0;
+}
+
+body#main.mzg-body-full-size #top-header,
+body#main.mzg-body-full-size #main-menu,
+body#main.mzg-body-full-size #page-nav,
+body#main.mzg-body-full-size #box-current-selecctions,
+body#main.mzg-body-full-size .speeldial-center {
+    z-index: 0;
+}
+
+/*COLORES FONDOS MAIN MENU FORMATO NUEVO*/
+body,
+html,
+#main-menu,
+#box-current-selecctions,
+#main #box-current-selecctions .CurrentSelections .qv-panel-current-selections,
+#main #box-current-selecctions .CurrentSelections .qv-panel-current-selections .buttons,
+#main #box-current-selecctions .CurrentSelections .qv-panel-current-selections .buttons .qv-subtoolbar-button,
+#main #box-current-selecctions .CurrentSelections .qv-panel-current-selections .buttons-end,
+#main #box-current-selecctions .CurrentSelections .qv-panel-current-selections .buttons-end .qv-subtoolbar-button,
+#main .bright.qv-panel-current-selections .wrap,
+filters #filters-panel {
+    background: var(--main-color) !important;
+    background-color: var(--main-color) !important;
+}
+
+/* #box_selecciones, #box_selecciones > ul {
+    background: var(--main-color)!important;
+} */
+#cuerpoFiltros {
+    background-color: #F3F5F6 !important;
+}
+
+.mz-box-kpi>.mz-box-kpi-inner .qlik-embed {
+    background-color: var(--second-color);
+}
+
+#main-content,
+#top-header {
+    background-color: #bfcfd0;
+    background-color: #e6e6e6;
+}
+
+#main-menu {
+    border-radius: 0;
+    box-shadow: none;
+    /* padding-left: 10px; */
+}
+
+#main-content {
+    margin: 15px;
+    width: calc(100% - var(--main-menu-width) - 15px);
+    height: calc(100% - 30px);
+    border-radius: 10px;
+}
+
+#top-header,
+.sidebar-collapsed #top-header {
+    padding-left: 0;
+}
+
+.sidebar-collapsed #main-content {
+    width: calc(100% - 110px) !important;
+}
+
+#page-container {
+    height: calc(100% - 160px);
+    top: 160px;
+}
+
+body#main .qv-global-selections {
+    top: 175px;
+    width: calc(100% - var(--main-menu-width) - 15px);
+    height: calc(100% - 190px) !important;
+    left: 235px;
+    right: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+body#main.sidebar-collapsed .qv-global-selections {
+    top: 175px;
+    width: calc(100% - 110px) !important;
+    height: calc(100% - 190px) !important;
+    left: 95px;
+    right: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+/*COLORES FONDOS MAIN MENU FORMATO NUEVO*/
+
+.box_object .qs-container .qsc-item-wrapper {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}

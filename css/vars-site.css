@@ -1,0 +1,74 @@
+:root {
+    --font-family: 'Outfit', sans-serif;
+    --main-menu-width: 235px;
+}
+:root body[color-mode='mz-white'] {
+    --main-color: #1f7e78;
+    --second-color:#279790;
+    --bg-color-main:#EFEFEF;
+    --body-bgcolor: #EFEFEF;
+    --header-bgcolor: #FFFFFF;
+    --page-nave-bgcolor: #EFEFEF;
+    --qv-panel-current-selections-bgcolor: #1f7e78;
+    --menu-bg-color: #1f7e78;
+    --color-page-nave-links: #8c8c8c;
+    --color-grey: #808080;
+    --color-text-main: #ffffff;
+    --color-text-white: #ffffff;
+    --color-text-secondary: #acbbc1;
+    --color-text-contraste: #00C1DE;
+    --color-text-header: #444;
+    --color-active: #e0092c;
+    --color-clone-active: #5aaf2e;
+    --background-body-dark: #2D2F2F;
+    --background-white: #ffffff;
+    --background-main-page: none;
+    --background-transparent: transparent;
+    --background-semi-transparent: rgba(0,0,0,0.6);
+    --object-background: #fff;
+    --object-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    --object-border: 1px solid #e4e4e4;
+    --clear-object-shadow: none;
+    --menu-top-bgColor: #1f7e78;
+    --background-tables: #ffffff;
+    --color-icons:#444444;
+
+}
+:root body[color-mode='mz-dark'] {
+    --main-color: #24292D;
+    --second-color:#0a7460;
+    --bg-color-main:#2C3135;
+    --body-bgcolor: transparent;
+    --header-bgcolor: rgba(0,0,0,0.35);
+    --page-nave-bgcolor: #2F363E;
+    --qv-panel-current-selections-bgcolor: #2F363E;
+    --menu-bg-color: rgba(0,0,0,.125);
+    --color-page-nave-links: #ffffff;
+    --color-grey: #808080;
+    --color-text-main: #ffffff;
+    --color-text-white: #ffffff;
+    --color-text-secondary: #acbbc1;
+    --color-text-contraste: #8f9295;
+    --color-contraste: #0A7460;
+    --color-text-header: #444;
+    --color-active: #e0092c;
+    --color-clone-active: #5aaf2e;
+    --background-body-dark: #2D2F2F;
+    --background-white: #ffffff;
+    --background-main-page: url(../assets/img/bg/19.jpg);
+    --background-transparent: transparent;
+    --background-semi-transparent: rgba(0,0,0,0.6);
+    --object-background: rgba(0,0,0,.4);
+    --object-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    --object-border: 1px solid #192e35;
+    --clear-object-shadow: none;
+    --menu-top-bgColor: #002e44;
+    --background-tables: #24292D;
+    --color-icons:#444444;
+    /* Ejemplo Color dark */
+    /* --header-bgcolor:#2B2D33;
+    --menu-bg-color:#2B2D33;
+    --background-main-page:#35373D;
+    --page-nave-bgcolor:#37393F;
+    --qv-panel-current-selections-bgcolor:#37393F; */
+}

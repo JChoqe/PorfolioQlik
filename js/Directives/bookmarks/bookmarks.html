@@ -1,0 +1,59 @@
+<div class="item-header-options" data-app="{{dataApp}}" ng-click="toggleBookmark($event)">
+    <span class="title-option title-option-bookmark">
+        <span class="txt-xs"><span class="lui-icon lui-icon--bookmark qs-no-margin" aria-hidden="true"></span></span>
+        
+        
+    </span>
+</div>
+<div class="list-bookmark" ng-class="{ 'active' : OpenBookmark}">
+    <div class="mz-header-bookmark">
+        <h2><i class="lui-icon  lui-icon--bookmark float-left"></i> Bookmark</h2>
+        <div class="nav-item liBookmarkClose" ng-click="toggleBookmark($event)">
+            <a href="javascript:void(0)" class="nav-link">
+                <span class="selectionsButtom">
+                    <i class="lui-icon lui-icon--close"></i>                            
+                </span>                        
+            </a>
+        </div>
+        
+    </div>
+    <div class="wrapper-bookmark">
+        <div class="item-bookmark" ng-repeat="bookmark in listBookmark | orderBy:['creationDate','title'] track by $index" data-rel="{{bookmark.id}}" ng-class="{'active': bookmark.active == true}">
+            <div class="content-options">
+                <div class="coverbookmar" ng-click="applyBookmark(bookmark.id, bookmark, $event)" title="{{'views.acciones.aplicarmarcadores' | translate}}"></div>
+                <div class="info-bokkmark">
+                    <span class="title-bookmark">{{bookmark.title}}</span>
+                    <span ng-if="bookmark.isDefaultBookmarkByUser === true" class="bm-val">{{"label.Bookmarks.StartBookmarkHint" | translate}}</span>
+                    <div class="item-bookmark-description item-bookmark-info" ng-if="bookmark.description">
+                        <span><span class="lui-icon lui-icon--edit"></span> {{'views.modal.crearmarcadordescripcion' | translate}}:</span>
+                        {{bookmark.description}}
+                    </div>
+                    <div class="item-bookmark-selectionFields item-bookmark-info" ng-if="bookmark.selectionFields">
+                        <span><span class="lui-icon lui-icon--database"></span> {{'views.modal.selecciones' | translate}}:</span>
+                        {{bookmark.selectionFields}}
+                    </div>
+                    <div class="item-bookmark-creationDate item-bookmark-info" ng-if="bookmark.creationDate">
+                        <span><span class="lui-icon lui-icon--calendar"></span>{{'views.modal.fechaCreacion' | translate}}:</span>
+                        {{bookmark.creationDate}}
+                    </div>
+                    <div ng-if="defaultBookmarkId === bookmark.id" class="lui-tag" translate-attr="{ title: 'Tooltip.Bookmarks.StartBookmark' }">{{"label.Bookmarks.StartBookmark" | translate}}</div>
+                    <div ng-if="bookmark.isDefaultBookmarkByUser === true" class="lui-tag" title="{{'label.Bookmarks.StartBookmarkUser' | translate}}">{{"label.Bookmarks.StartBookmarkUser" | translate}}</div>
+                </div>
+                
+                <div class="options-bookmark">
+                    <button class="item-option-bookmark" ng-click="deleteBookmark(bookmark.id)" ng-disabled="!bookmark.canDelete" title="{{'views.acciones.eliminar' | translate}}"><i class="lui-icon lui-icon--bin"></i></button>                    
+                    <button ng-if="!bookmark.isDefaultBookmarkByUser && bookmark.canPublish && bookmark.published==false"  class="item-option-bookmark" ng-click="publishBookmark(bookmark, 0)" title="{{'views.acciones.publicarmarcador' | translate}}"><i style="color: #0eb921" class="lui-icon lui-icon--unlock"></i></button>
+                    <button ng-if="!bookmark.isDefaultBookmarkByUser && bookmark.canPublish && bookmark.published==true" class="item-option-bookmark" class="item-option-bookmark" ng-click="unPublishBookmark(bookmark, 1)" title="{{'views.acciones.despublicarmarcador' | translate}}"><i style="color: #ce2121" class="lui-icon lui-icon--lock"></i></button>
+                    
+                    <button class="item-option-bookmark" ng-click="editBookmark(bookmark.id, bookmark)"  title="{{'views.acciones.editarmarcadores' | translate}}" ng-disabled="!bookmark.canUpdate"><i class="lui-icon lui-icon--edit"></i></button>
+                    <button class="item-option-bookmark item-option-bookmark-active" ng-click="applyBookmark(bookmark.id, bookmark, $event)" title="{{'views.acciones.aplicarmarcadores' | translate}}"><i class="lui-icon lui-icon--tick"></i></button>                   
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+    <div id="mz-add-bookmark">
+        <button  class="mz-btn-dark" ng-click="newBookmark();"><i class="lui-icon  lui-icon--plus float-left"></i> {{'views.acciones.aniadirmarcadores'  | translate}}</button>
+    </div>
+</div>

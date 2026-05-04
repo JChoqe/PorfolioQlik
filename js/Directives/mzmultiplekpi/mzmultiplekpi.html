@@ -1,0 +1,20 @@
+
+<div  class="multiplekpi qlik-embed" object-id="{{KPIID}}">
+    <div class="cover-multiple-kpi">
+        <label class="label-multiple-kpi" title="{{titKpi}}">{{titKpi}}</label>
+        <label class="value-multiple-kpi">
+            <span title="{{valKpi}}">{{valKpi}}</span>
+            <div class="secondKpi" ng-if="hasSecondVal">
+                <label class="second-value-multiple-kpi" title="{{valSecondKpi}}">{{valSecondKpi}}</label>
+                <label class="second-titel-multiple-kpi" title="{{titSecondKpi}}">{{titSecondKpi}}</label>
+            </div>
+        </label>
+
+        
+        
+    </div>
+    <div class="qlik-embed-invisible"></div>
+    <div ng-if="!loaded" class="ellipsis-filters-cover">
+        <div class="ellipsis-filters"><div></div><div></div><div></div><div></div></div>
+    </div>
+</div>

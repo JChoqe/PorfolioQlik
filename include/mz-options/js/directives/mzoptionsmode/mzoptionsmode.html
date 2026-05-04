@@ -1,0 +1,17 @@
+<div class="header-section-configurador">
+    <h2>{{'views.label.modeview' | translate}}</h2>    
+    <span class="pin-active-visibility" ng-attr-title="{{message}}" ng-click="anclarThis($event)" ng-class="isActive == true ? 'active' : ''">
+        <i class="icofont icofont-tack-pin"></i>
+        <i class="icofont icofont-minus-circle pin-desanclar"></i>
+    </span>
+</div>
+<div class="content-section-configurador">
+    <div class="notificationsScroll">
+        <div class="link-Dark-Reader">
+            <a href="javascript:void(0)" ng-click="toggleModeColorOptions()">
+                <i class="icofont icofont-sun-alt icofont-2x" ng-if="modoWhite"></i>
+                <i class="icofont icofont-moon icofont-2x" ng-if="!modoWhite"></i>
+            </a>
+        </div>
+    </div>
+</div>

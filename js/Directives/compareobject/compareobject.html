@@ -1,0 +1,365 @@
+<div id="compare-wrapper">
+    <div id="box-compare-list-cover" ng-click="closeListObject()"></div>
+    <div id="loadingCompare" ng-class="ShowLoading == true ? '' : 'animate__animated animate__fadeOut' ">
+        <div class="mz-block blockloading">
+            <div class="boxes">
+                <div class="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <span id="loading-txt">{{'views.label.esperar' | translate}} </span>
+        </div>        
+    </div>
+    <div id="compare-list-object">
+        <div id="compare-list-object-header">
+            <div lui-class-list="classList" class="qv-gs-searchfield lui-search">
+                <span class="lui-icon  lui-icon--search  lui-search__search-icon"></span>
+                <input class="lui-search__input ng-valid ng-valid-maxlength ng-dirty ng-touched ng-empty" maxlength="255"
+                     ng-model="queryobject" autocomplete="" spellcheck="false"
+                    ng-trim="false" type="text" aria-label="" aria-invalid="false">
+                <button class="lui-search__clear-button ng-hide" ng-show="queryobject.length"
+                    ng-click="clearSearchObject($event)" title="Borrar campo de búsqueda" aria-hidden="true">
+                    <span class="lui-icon  lui-icon--small  lui-icon--close">
+                    </span></button>
+            </div>
+        </div>
+        <div id="compare-list-object-body">
+            <div id="compare-list-object-loading" ng-if="listObject.length == 0">
+                <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                <p>{{txtLoadObject}}</p>
+            </div>
+            <div class="item-object animate__animated animate__fadeIn" ng-repeat="item in listObject | filter:queryobject | orderBy:['!active'] track by item.id" ng-click="addObjectTolist(item)" data-id="{{item.id}}" data-active="{{item.active}}" ng-class="[item.id == IDOBJECTCOMPARE ? 'active' : '']">
+                
+                <div class="lui-icon lui-list__aside lui-icon--boxplot" ng-if="item.type==='boxplot'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--distributionplot" ng-if="item.type==='distributionplot'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--combo-chart" ng-if="item.type==='combochart'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--bar-chart" ng-if="item.type==='barchart'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--scatter-chart" ng-if="item.type==='scatterplot'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--line-chart" ng-if="item.type==='linechart'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--pie-chart" ng-if="item.type==='piechart'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--waterfallchart" ng-if="item.type==='waterfallchart'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--histogram" ng-if="item.type==='histogram'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--gauge-chart" ng-if="item.type==='gauge'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--table" ng-if="item.type==='table'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--pivot-table" ng-if="item.type==='pivot-table'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--map" ng-if="item.type==='map'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--marimekko" ng-if="item.type==='mekkochart'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--treemap" ng-if="item.type==='treemap'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--bullet-chart" ng-if="item.type==='bulletchart'"></div>
+                <div class="lui-icon lui-list__aside lui-icon--kpi" ng-if="item.type==='kpi'"></div>
+                <div class="targetObject">
+                    <span title="{{item.title}}">{{item.title}}</span>
+                    <span title="{{item.section}}" class="objectSection">{{item.section}}</sp>
+                </div>
+            </div>
+        </div>
+        <div id="compare-list-object-footer">
+            <button ng-click="closeListObject()" class="boton-color">
+                <span>{{'equalizer.btn.cerrar' | translate}}</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="compare-header">
+        <div id="cover-compare-botonera">
+            <div id="wrapper-seach" ng-show="isShowFilter">
+                <div lui-class-list="classList" class="qv-gs-searchfield lui-search" placeholder="{{placeholdersearch}}" maxlength="255" >
+                    <span class="lui-icon  lui-icon--search  lui-search__search-icon"></span>
+                    <input class="lui-search__input ng-valid ng-valid-maxlength ng-dirty ng-touched ng-empty" maxlength="255"
+                        translate-attr="{ placeholder: placeholdersearch}"
+                        ng-model="query" autocomplete="" spellcheck="false"
+                        ng-trim="false" type="text" aria-invalid="false">
+                    <button class="lui-search__clear-button ng-hide" q-title-translation="Common.ClearSearch" ng-show="query.length"
+                        ng-click="clearSearch($event)" aria-hidden="true">
+                        <span class="lui-icon  lui-icon--small  lui-icon--close">
+                        </span></button>
+                </div>
+            </div>
+            <fieldset id="showFieldsLabel" ng-show="isShowFilter">                
+                <label class="lui-checkbox">
+                    <input class="lui-checkbox__input" type="checkbox" aria-label="{{'GlobalSelections.ShowFields'|translate}}" ng-model="showfield" ng-change="showfieldItems()"/>
+                    <div class="lui-checkbox__check-wrap">
+                      <span class="lui-checkbox__check"></span>
+                      <span class="lui-checkbox__check-text">{{'GlobalSelections.ShowFields'|translate}}</span>
+                    </div>
+                </label>
+            </fieldset>
+            <div id="nameEstadoObject">
+                <i class="ri-check-line state-icon"></i>
+                {{nameEstadoObject}}                
+            </div>
+            <button ng-click="closeCompare($event)" class="boton-color" title="{{'compare.tooltips.close' | translate}}" data-toggle="tooltip" data-placement="bottom">
+                <i class="ri-close-line compare-btn-icons"></i>
+                <span class="compare-btn-txt">{{'equalizer.btn.cerrar' | translate}}</span>
+            </button>
+            <button ng-click="openDialogStateName($event)" class="boton-color" title="{{'compare.tooltips.createsatate' | translate}}" data-toggle="tooltip" data-placement="bottom">
+                <i class="ri-add-line compare-btn-icons"></i>
+                <span class="compare-btn-txt">{{'compare.btn.newstate' | translate}}</span>
+            </button>
+            <div id="wrapper-list-states" qva-outside="closeStateList()">
+                <div lui-class-list="classList" class="lui-popover popover-list-states" ng-class="visibleListStates ? 'active' : 'hidden'" >
+                    <ul class="lui-list">
+                        <li class="lui-list__item lui-list__action"
+                            ng-repeat="item in NAMESTATES" ng-class="item.active == true ? 'active': ''">
+                            <span class="lui-list__text"  ng-click="loadState(item)" title="{{item.stateNameTxt}}">{{item.stateNameTxt}}</span>
+                            <span ng-if="item.stateName !='Mz_StateName_1' && item.active == false" class="icon-delete-state" ng-click="deleteState(item.stateName)" title="{{'views.acciones.eliminar' | translate}}"><i class="lui-icon lui-icon--bin"></i></span>
+                        </li>
+                    </ul>
+                </div>
+                <button ng-click="showStateList($event)" class="boton-color" ng-disabled="NAMESTATES.length < 2" title="{{'compare.tooltips.openliststates' | translate}}" data-toggle="tooltip" data-placement="bottom">
+                    <i class="ri-list-check-2 compare-btn-icons"></i>
+                    <span class="compare-btn-txt">{{'compare.btn.listastaters' | translate}}</span>
+                </button>
+            </div>
+            
+            <button ng-click="initExportPdf($event)" ng-disabled="disableddPdf" class="boton-color" title="{{'compare.btn.exportpdf' | translate}}" data-toggle="tooltip" data-placement="bottom">
+                <i class="ri-file-pdf-line compare-btn-icons"></i>
+                <span class="compare-btn-txt">{{'compare.btn.exportpdf' | translate}}</span>
+            </button>
+            <button ng-click="toggleFilterSection($event)" class="boton-color" title="{{'compareobject.btn.hideFilterSection' | translate}}" ng-if="isShowFilter" data-toggle="tooltip" data-action="filters" data-placement="bottom">
+                <i class="ri-sound-module-line compare-btn-icons"></i>
+                <span class="compare-btn-txt">{{'compareobject.btn.hideFilterSection' | translate}}</span>
+            </button>
+            <button ng-click="toggleFilterSection($event)" class="boton-color" title="{{'compareobject.btn.showFilterSection' | translate}}" ng-if="!isShowFilter" data-toggle="tooltip" data-action="filters" data-placement="bottom">
+                <i class="ri-sound-module-line compare-btn-icons"></i>
+                <span class="compare-btn-txt">{{'compareobject.btn.showFilterSection' | translate}}</span>
+            </button>
+
+            
+            <button ng-click="toggleModeView($event)" class="boton-color" title="{{'compare.acciones.vistaColumna' | translate}}"  data-toggle="tooltip"  data-placement="bottom" ng-if="!columView">
+                <i class="ri-layout-column-line compare-btn-icons"></i>
+                <span class="compare-btn-txt">{{'compare.acciones.normalsize' | translate}}</span>
+            </button>
+            <button ng-click="toggleModeView($event)" class="boton-color" title="{{'compare.acciones.vistaRow' | translate}}"  data-toggle="tooltip"  data-placement="bottom" ng-if="columView">
+                <i class="ri-layout-row-line compare-btn-icons"></i>
+                <span class="compare-btn-txt">{{'compare.acciones.normalsize' | translate}}</span>
+            </button>
+            
+            <button ng-click="getFullSixe($event)" class="boton-color" title="{{'compare.acciones.fullsize' | translate}}"  data-toggle="tooltip"  data-placement="bottom" ng-if="!fullSize">
+                <i class="ri-fullscreen-line compare-btn-icons"></i>
+                <span class="compare-btn-txt">{{'compare.acciones.fullsize' | translate}}</span>
+            </button>
+            <button ng-click="lostFullSixe($event)" class="boton-color" title="{{'compare.acciones.normalsize' | translate}}"  data-toggle="tooltip"  data-placement="bottom" ng-if="fullSize">
+                <i class="ri-fullscreen-exit-line compare-btn-icons"></i>
+                <span class="compare-btn-txt">{{'compare.acciones.normalsize' | translate}}</span>
+            </button>
+            
+
+
+
+        </div>
+        <div id="compare-filters" ng-class="isShowFilter == false ? 'hideFilters' : ''">
+            
+            <div class="compare-filters-wrapper">
+                <div id="compare-fields-main">
+                    <div title="{{item.qName}}" data-type="{{item.type}}" ng-repeat="item in listFieldMain  | filter:{qName:query, type:filterFunction} | orderBy:['!active', 'qName']  track by item.qName" class="item-fields" ng-click="addFieldMain($event, item)" ng-class="item.active == true ? 'active' : ''">
+                            <span>{{item.qName}}</span>
+                    </div>
+                </div>
+    
+                <div id="compare-filters-box-main">
+                    <div id="compare-filters-mensaje-main" ng-if="lstModelFieldMain.length < 1">
+                        <label>{{'compare.label.filtersMensaje' | translate}}</label>
+                    </div>
+                    <div id="compare-filters-scroll-main">
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <div class="compare-filters-wrapper">
+                <div id="compare-fields-select">
+                    <div title="{{item.qName}}" data-type="{{item.type}}" ng-repeat="item in listField  | filter:{qName:query, type:filterFunction} | orderBy:['!active', 'qName']  track by item.qName" class="item-fields" ng-click="addField($event, item)" ng-class="item.active == true ? 'active' : ''">
+                            <span>{{item.qName}}</span>
+                    </div>
+                </div>
+    
+                <div id="compare-filters-box">
+                    <div id="compare-filters-mensaje" ng-if="lstModelField.length < 1">
+                        <label>{{'compare.label.filtersMensaje' | translate}}</label>
+                    </div>
+                    <div id="compare-filters-scroll">
+                        
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <div id="compare-body">
+        
+        <div id="compare-current-object">
+            <div class="title-object">
+                {{'compare.pdf.objetoPrincipal' | translate}}
+                <div class="options-object">
+                    
+                    
+                    <button class="btn-list-options" ng-click="downloadImage('main')" title="{{'compare.tooltips.exportimagen' | translate}}" data-toggle="tooltip" data-placement="bottom">
+                        <i class="ri-image-line"></i>
+                    </button>
+                    <button class="btn-list-options" ng-click="downloadDatos('main')" title="{{'compare.tooltips.exportdatos' | translate}}" data-toggle="tooltip" data-placement="bottom">
+                        <i class="ri-file-excel-line"></i>
+                    </button>
+                    <button class="btn-list-options" ng-click="reinitObjectMain($event)" title="{{'compare.tooltips.estadoInicial' | translate}}" data-toggle="tooltip" data-placement="bottom">
+                        <i class="ri-home-line"></i>
+                    </button>
+                </div>
+
+            </div>
+            <div class="cover-inner-object">
+                <div class="cover-compare-selections">
+                    <div class="title-selctions">
+                        <span class="lui-icon lui-icon--filterpane qs-no-margin" aria-hidden="true"></span>
+                        <span>{{"compare.pdf.selecciones" | translate}}</span>
+                    </div>
+                    <ul class="content-selecciones">
+                        <li class="selected-field-container clearfix"
+                            ng-repeat="item in ARRSELECCIONES | orderBy:'index'  track by item.index">
+                            <span class="label label-info selected-field" title="{{item.fieldName}}">
+                                <span class="selected-field-txt">{{item.fieldName}}</span>
+                            </span>
+                            <p class="selectedelements">{{item.selectedStr}}</p>
+                            <span class="ri-delete-bin-line btn-delete-field" ng-click="deleteFilterMain(item.fieldName)"></span>
+                        </li>
+    
+                    </ul>
+                </div>
+                <div class="cover-object">
+                    <div id="cover-object-sense-compare">
+    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div id="compare-selected-object">
+            <div class="title-object">
+                {{'compare.pdf.objetoSecundario' | translate}}
+                <div class="options-object">
+                    <button class="btn-list-options" ng-click="openSameObject($event)" ng-disabled="sameObject"  title="{{'compare.tooltips.sameobject' | translate}}" data-toggle="tooltip" data-placement="bottom">
+                        <i class="ri-flag-2-line compare-btn-icons"></i>
+                    </button>
+                    <button class="btn-list-options" ng-click="openListObject($event)" title="{{'compare.tooltips.listobject' | translate}}" data-toggle="tooltip" data-placement="bottom">
+                        <i class="ri-play-list-add-line compare-btn-icons"></i>
+                    </button>
+
+
+                    <button class="btn-list-options" ng-click="downloadImage('selected')" title="{{'compare.tooltips.exportimagen' | translate}}" data-toggle="tooltip" data-placement="bottom" ng-disabled="!INITOBJECTSELECTED">
+                        <i class="ri-image-line"></i>
+                    </button>
+                    <button class="btn-list-options" ng-click="downloadDatos('selected')" title="{{'compare.tooltips.exportdatos' | translate}}" data-toggle="tooltip" data-placement="bottom" ng-disabled="!INITOBJECTSELECTED">
+                        <i class="ri-file-excel-line"></i>
+                    </button>
+                    <button class="btn-list-options" ng-click="reinitObjectSelected($event)" title="{{'compare.tooltips.estadoInicial' | translate}}" data-toggle="tooltip" data-placement="bottom" ng-disabled="!INITOBJECTSELECTED">
+                        <i class="ri-home-line"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cover-inner-object">
+                <div id="cover-object-sense-compare-selected" class="cover-object">
+                    <div id="compare-message-open">
+                        <p>{{'compareobject.btn.messageopen' | translate}}</p>
+                        <div id="wrapper-select-object">
+                            <button ng-click="openSameObject()" class="boton-color">
+                                <span>{{'compareobject.btn.sameobject' | translate}}</span>
+                            </button>
+                            <button ng-click="openListObject()" class="boton-color">
+                                <span>{{'compareobject.btn.listobject' | translate}}</span>
+                            </button>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="cover-compare-selections">
+                    <div class="title-selctions">
+                        <span class="lui-icon lui-icon--filterpane qs-no-margin" aria-hidden="true"></span>
+                        <span>{{"compare.pdf.selecciones" | translate}}</span>
+                    </div>
+                    <ul class="content-selecciones">
+                        <li class="selected-field-container clearfix"
+                            ng-repeat="item in ARRSELECCIONESCOMPARE | orderBy:'index'  track by item.index">
+                            <span class="label label-info selected-field" title="{{item.fieldName}}">
+                                <span class="selected-field-txt">{{item.fieldName}}</span>
+                            </span>
+                            <p class="selectedelements">{{item.selectedStr}}</p>
+                            <span class="ri-delete-bin-line btn-delete-field" ng-click="deleteFilter(item.fieldName)"></span>
+                        </li>
+    
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="loadingPdf" ng-if="loadPDF">
+            <div class="boxes">
+                <div class="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div id="loadingPdf-txt">
+                <span>{{'compare.modal.mensajepdf' | translate}} </span>
+                <span id="mensajeCarga">{{mesajeCargaDatos}}</span>
+                <div id="load-wrapper">
+                    <div id="load-progress" ng-style="{'width' : progress + '%' }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="download-partial" ng-if="isDownload">
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <errorcontrol></errorcontrol>
+</div>
+
+
+
+
+
+

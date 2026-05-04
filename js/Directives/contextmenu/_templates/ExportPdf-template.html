@@ -1,0 +1,68 @@
+<div lui-class-list="classList" id="print-dialog" class="lui-dialog lui-dialog-mz">
+    <lui-dialog-header>
+        <lui-dialog-title q-translation="Print.Pdf.Title"></lui-dialog-title></lui-dialog-header>
+        <lui-dialog-body class="print-dialog lui-dialog__body">
+            <div class="section">
+                <div class="section-title" q-translation="Print.PaperSize"></div>
+                <div class="component-wrapper">
+                    <lui-select tid="print-paper-size" ng-model="selectedSize"  ng-options="size.label for size in paperSizes" ng-change="onSizeChange(selectedSize)" ng-disabled="state === states.PENDING"></lui-select>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title" q-translation="Print.Image.Dpi"></div>
+                <div class="print-image">
+                    <qui-input-number qui-tid="print-pdf-dpi" qui-model="print.dpi" qui-disabled="state === states.PENDING" qui-min="72" qui-max="300" qui-with-buttons="true"></qui-input-number>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title" q-translation="Print.Layout"></div>
+                <div class="lui-buttongroup">
+                    <button class="lui-button" tid="print-orientation-portrait" ng-class="{ 'lui-active': 'portrait' === selectedLayout.orientation }" q-translation="Print.Portrait" ng-click="onPrintLayout(layout[0])" ng-click="changeAspectRatio(layout[0])" ng-disabled="state === states.PENDING"></button>
+                    <button class="lui-button" tid="print-orientation-landscape" ng-class="{ 'lui-active': 'landscape' === selectedLayout.orientation }" q-translation="Print.Landscape" ng-click="onPrintLayout(layout[1])" ng-click="changeAspectRatio(layout[1])" ng-disabled="state === states.PENDING"></button>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title" q-translation="Print.Layout.Aspect"></div>
+                <label class="lui-radiobutton">
+                    <input class="lui-radiobutton__input" type="radio" name="print-aspect" ng-value="0" ng-model="print.aspectRatio" ng-disabled="state === states.PENDING">
+                    <div class="lui-radiobutton__radio-wrap">
+                      <span class="lui-radiobutton__radio"></span>
+                      <span class="lui-radiobutton__radio-text" q-translation="Print.Layout.CurrentSize"></span>
+                    </div>
+                  </label>
+
+                  <label class="lui-radiobutton">
+                    <input class="lui-radiobutton__input" type="radio" name="print-aspect" ng-value="2" ng-model="print.aspectRatio" ng-disabled="state === states.PENDING">
+                    <div class="lui-radiobutton__radio-wrap">
+                      <span class="lui-radiobutton__radio"></span>
+                      <span class="lui-radiobutton__radio-text" q-translation="Print.Layout.BestFitNoPreserveAspectRatio"></span>
+                    </div>
+                  </label>
+                
+            </div>
+            <div ng-if="state === states.PENDING" class="loading-screen">
+                <div class="spinner">
+                    <div class="qv-loader"></div>
+                </div>
+            </div>
+            <div ng-if="state === states.COMPLETED">
+                <div class="section">
+                    <a ng-href="{{printUrl}}" target="_blank" q-translation="Print.Pdf.CompletedLink"></a>
+                </div>
+            </div>
+            <div ng-if="state === states.TIMEOUT">
+                <div class="section">
+                    <p class="dm-p" q-translation="Print.Failed.TimeoutMessage"></p>
+                </div>
+            </div>
+            <div ng-if="state === states.FAILED">
+                <div class="section">
+                    <p class="dm-p" q-translation="Print.Failed.GenericMessage"></p>
+                </div>
+            </div>
+        </lui-dialog-body>
+        <lui-dialog-footer>
+            <lui-button ng-click="$event.preventDefault(); closeDialog()" name="cancel" q-translation="Common.Cancel" tid="print-cancel"></lui-button>
+            <lui-button ng-click="$event.preventDefault(); pdfExport()" name="confirm" autofocus q-translation="Print.Download" ng-disabled="state === states.PENDING" tid="print-export"></lui-button>
+        </lui-dialog-footer>
+</div>

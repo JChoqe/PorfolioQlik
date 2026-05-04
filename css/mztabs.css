@@ -1,0 +1,250 @@
+:root {
+    --alto-titulo: 35px;
+}
+
+mztabs .tab-view-wrapper {
+    background: white;
+    border-radius: 5px;
+    /* margin-left: -5px;
+    margin-right: -15px;
+    height: calc(100% - 10px);
+    display: flex; */
+}
+
+mztabs .tab-view-wrapper.con-titulo {
+    background: white !important;
+}
+
+mztabs .mz-tabs-titulo {
+    height: var(--alto-titulo);
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: rgb(128, 128, 128);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+mztabs .lui-tabview {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+mztabs .tab-view-wrapper.con-titulo .lui-tabview {
+    height: calc(100% - var(--alto-titulo)) !important;
+    padding: 0 10px 10px 10px !important;
+}
+
+mztabs .lui-tabset {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    min-height: 35px;
+    max-height: 40px;
+}
+
+/* Paginadores */
+mztabs .tabs-page-prev {
+    display: flex;
+    align-items: flex-start;
+}
+
+mztabs .tabs-page-prev i {
+    font-size: 1.4rem;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    margin-right: 3px;
+    width: 23px;
+    height: calc(100% - 4px);
+    height: 100%;
+    cursor: pointer;
+    background: var(--menu-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+    z-index: 99;
+}
+
+mztabs .tabs-page-next {
+    display: flex;
+    align-items: flex-start;
+}
+
+mztabs .tabs-page-next i {
+    font-size: 1.4rem;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    /* margin-left: 3px; */
+    margin-right: 3px;
+    width: 23px;
+    height: calc(100% - 4px);
+    height: 100%;
+    cursor: pointer;
+    background: var(--menu-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+    z-index: 99;
+}
+
+mztabs .tabs-container {
+    display: flex;
+    overflow: hidden;
+    /* Necesario para scroll de paginador */
+}
+
+mztabs .tabs-container:not(.paginacion-ON) {
+    width: 100%;
+}
+
+mztabs .tabs-container.paginacion-ON {
+    width: calc(100% - 52px);
+}
+
+mztabs .lui-tab {
+    flex: 1;
+    justify-content: center;
+    height: 100%;
+    min-height: 100%;
+    max-width: unset;
+    /* min-width: 125px; */
+    /* Se determina con Javascript */
+}
+
+mztabs .lui-tab.lui-active,
+mztabs .lui-tab.lui-focused,
+mztabs .lui-tab:focus {
+    border-bottom: 2px solid #c79392;
+}
+
+mztabs .lui-tab:not(.lui-active) {
+    font-weight: normal;
+    background: rgba(199, 199, 199, 0.25);
+}
+
+mztabs .tab-item {
+    padding: 0 !important;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    /* display: flex;
+                    align-items: center; 
+                    justify-content: center; */
+    letter-spacing: 0.25px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+mztabs .tabs-content {
+    flex: 1;
+}
+
+mztabs .tabs-content>div {}
+
+mztabs .tabs-content>div>objectsense {}
+
+mztabs .tabs-content>div>objectsense .speeldial-center {}
+
+mztabs .box_object:not(.object-full-size) .speeldial-center {
+    /* left: 5px; */
+}
+
+mztabs .tabs-content>div>objectsense .qlik-embed {
+    margin: 0;
+}
+
+mztabs .tab-view-wrapper.hide-speeldial div[class^="speeldial"] {
+    display: none;
+}
+
+
+/* Estilo redondeado */
+mztabs .tab-view-wrapper.redondeado {
+    background: transparent;
+}
+
+mztabs .tab-view-wrapper.redondeado .lui-tabset {
+    border-radius: 5px 5px 0 0;
+    max-height: 50px;
+}
+
+
+mztabs .tab-view-wrapper.redondeado .lui-tab {
+    position: relative;
+    border-radius: 8px 8px 0 0;
+    border-right: none;
+    overflow: visible;
+}
+
+mztabs .tab-view-wrapper.redondeado .lui-tab:not(:last-child) {
+    margin-right: 3px;
+}
+
+mztabs .tab-view-wrapper.redondeado .lui-tab.lui-active,
+mztabs .tab-view-wrapper.redondeado .lui-tab.lui-focused,
+mztabs .tab-view-wrapper.redondeado .lui-tab:focus {
+    border-bottom: none;
+    background: #274c76;
+    color: white;
+}
+
+
+mztabs .tab-view-wrapper.redondeado.con-titulo .lui-tab.lui-active {
+    background: #274c76;
+    color: white;
+}
+
+mztabs .tab-view-wrapper.redondeado .lui-tabview .lui-tabset>.lui-tab.lui-active:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: 0px;
+    height: 100%;
+    width: 25px;
+    right: -25px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 -25px 0 0 #ffffff;
+    transform: scaleY(-1) scaleX(-1);
+    z-index: 9;
+}
+
+mztabs .tab-view-wrapper.redondeado .lui-tabview .lui-tabset>.lui-tab.lui-active:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: 0px;
+    height: 100%;
+    width: 25px;
+    left: -25px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 -25px 0 0 #ffffff;
+    transform: scaleY(-1);
+    z-index: 9;
+}
+
+mztabs .tab-view-wrapper.redondeado .tabs-content>div>objectsense .qlik-embed {
+    box-shadow: rgb(99 99 99 / 70%) 0px 3px 8px -5px !important;
+    border-radius: 0 0 5px 5px;
+}
+
+
+/* Quitar título a los objetos, CUANDO NO ESTAMOS EN EL EQUALIZADOR NI A PANTALLA COMPLETA y el título de la tab es igual al título del objeto (.no-title), 
+    ya que estaría repetido al ser igual que el nombre de la pestaña */
+mztabs .box_object.no-title:not(.object-full-size):not(.object-full-size-equializador) .qv-object .qv-object-title {
+    font-size: 14px !important;
+    display: none;
+}
+
+
+/* .object-full-size mztabs .lui-tab:not(.lui-active),
+.object-full-size-equializador mztabs .lui-tab:not(.lui-active){
+    display: none;
+} */

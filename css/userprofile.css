@@ -1,0 +1,244 @@
+/* user-profile */
+.dialogo-profile-mz{
+    width: 80%; 
+    height:80%;
+    max-height: 80%;
+    border-radius: 15px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 2px 25px rgb(0 0 0 / 40%);
+    overflow: hidden;  
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body {
+    padding: 40px 40px 0px 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    height: calc(100% - 60px);
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-left{
+    padding: 2rem;
+    background-color:var(--main-color);
+}
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-left #img-user{
+    width:100%;
+    height:25%;
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-left #img-user > img{
+    height:100%;
+    width: auto;
+}
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-left #datos-user .itemDato{
+    padding-bottom: 0.8rem;
+    color:#f9f9f9;
+    font-size:.8rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-family);
+    letter-spacing:0.25px
+}
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-left #datos-user .itemDato .literalDato,
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-left #datos-user .itemDato .valueDato{
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        min-width: 100px;
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-left #datos-user .itemDato .valueDato{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-left #datos-user{
+    width:100%;
+    height:75%;
+    overflow: auto;
+    padding: 20px 0;
+}
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right{
+    overflow: hidden;
+    padding: 0 0 0 40px;
+}
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview{
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .lui-tabset{
+    position: relative;
+    height: 50px;
+    min-height: 50px;
+}
+
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .lui-tabset::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color:#ddd;
+    bottom:0px;
+    left:0;
+    right:0;
+    z-index: -1;
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .lui-tabset .lui-tab{
+    border-left:none;
+    border-right: none;
+    height: 50px;
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .lui-tabset .lui-tab:focus,
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .lui-tabset .lui-tab:hover,
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .lui-tabset .lui-tab:active{
+    background-color:transparent;
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .lui-tabset .lui-tab.lui-active, 
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .lui-tabset .lui-tab.lui-focused, 
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .lui-tabset .lui-tab:focus {
+    border-bottom: 2px solid var(--main-color);
+}
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .tabs-content{
+    padding: 30px 0;
+    overflow:auto;
+    flex:1;
+}
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .tabs-content .preList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    height: calc(100% - 50px);
+    height: -moz-calc(100% - 50px);
+    font-size: 0.8em;
+    overflow-x: auto;
+    flex-direction: row;
+    padding: 0px 5px;
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .tabs-content .preList .rosterlist {
+    flex: 0 0 33.3%;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    padding: 8px;
+    white-space: nowrap;
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-content .user-col-right .lui-tabview .tabs-content .preList .rosterlist label {
+    margin: 0;
+    max-width: calc(100% - 25px);
+    font-size: 13px;
+}
+.lui-dialog.dialogo-profile-mz .lui-checkbox .lui-checkbox__input:checked+.lui-checkbox__check-wrap .lui-checkbox__check, 
+.lui-dialog.dialogo-profile-mz .lui-checkbox .lui-checkbox__input:indeterminate+.lui-checkbox__check-wrap .lui-checkbox__check {
+    background:var(--main-color);
+}
+.lui-dialog.dialogo-profile-mz .lui-checkbox.lui-checkbox.lui-checkbox.lui-hovered .lui-checkbox__check, 
+.lui-dialog.dialogo-profile-mz .lui-checkbox.lui-checkbox.lui-checkbox:active .lui-checkbox__check,
+.lui-dialog.dialogo-profile-mz .lui-checkbox.lui-checkbox.lui-checkbox:focus .lui-checkbox__check,
+.lui-dialog.dialogo-profile-mz .lui-checkbox.lui-checkbox.lui-checkbox .lui-checkbox__check {
+    box-shadow:none !important;
+}
+
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-footer {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-footer .lui-button {
+    height: 50px;
+    width: 65%;
+    max-width: 250px;
+    margin: 0;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: var(--main-color);
+    transition: all 0.3s ease;
+    border: 1px solid #fff;
+}
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-footer .lui-button:hover,
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-footer .lui-button:focus,
+.lui-dialog.dialogo-profile-mz .lui-dialog__body .body-footer .lui-button:active{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#user-profile{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    padding: 4px 8px 0 8px;
+    /* border-bottom: 1px solid #12365f; */
+    cursor: pointer;
+}
+.noUser #user-profile{
+    cursor: default;
+}
+#user-profile #img-user{
+    height: 50px;
+    width:50px;
+}
+#user-profile #img-user > img{
+    width: 100%; 
+    height: 100%;
+}
+#user-profile #name-user{
+    color: #fff;
+    font-size:0.8rem;
+    line-height:140%;
+    margin-top: .8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    width:90%;
+    transition: all 0.4s ease-out;
+}
+.sidebar-collapsed #user-profile #name-user{
+    opacity: 0;
+}
+
+.sidebar-collapsed #footer-options .mz-list-options,
+.sidebar-collapsed #footer-options .mz-list-options .item-option,
+.sidebar-collapsed #footer-options .mz-list-options .item-option .item-header-options.lastUpdate {
+    width: 100%;
+}
+
+#name-useer-collapse {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+}
+#name-useer-collapse>svg {
+    fill: #fff;
+} 

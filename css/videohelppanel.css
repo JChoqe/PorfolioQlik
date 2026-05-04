@@ -1,0 +1,171 @@
+/*HELP PANEL*/
+/*notificationsPanel*/
+#contentHelp {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: -101%;
+    bottom: 0;
+    z-index: 99999999;
+    background: #fff;
+}
+#helpOver {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    right: -100%;
+    z-index: 999;
+    opacity: 0;
+    background: var(--background-semi-transparent);
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+}
+#contentHelp #headerHelp {
+    position: relative;
+    height: 80px;
+    max-height: 80px;
+    min-height: 80px;
+    z-index: 10;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    background-color: var(--main-color) !important;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center flex-start;
+    align-items: center;
+    color: #fff;
+    padding: 0 10px;
+    font-size: 16px;
+}
+#contentHelp #headerHelp > h3{
+    margin-left: 8px;
+}
+#contentHelp #headerHelp > .toRight{
+    margin-left: auto;
+    order: 0;
+}
+#contentHelp #headerHelp > .closeHelpIcon {
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+#contentHelp #headerHelp > i {
+    font-size: 1.5rem;
+}
+
+#contentHelp #covervideohelp{
+    width: 100%;
+    position: relative;
+    height: calc(100% - 80px);
+    display: flex;    
+}
+
+#contentHelp #covervideohelp #video-full{
+    height: 100%;
+    flex:1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+#contentHelp #covervideohelp #video-full #big-video{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contentHelp #covervideohelp #video-full #big-video video{
+    width: 80%;
+    height: 100%;
+}
+#contentHelp #covervideohelp #video-list{
+    width: 300px;
+    height: 100%;
+    padding: 30px 0;
+    overflow: auto;
+}
+#contentHelp #covervideohelp #video-list .item-folder{
+    position: relative;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contentHelp #covervideohelp #video-list .item-folder .video-demo-container {
+    display: flex;
+}
+#contentHelp #covervideohelp #video-list .item-folder .video-demo-container .video-element{
+    height: 100%;
+    width: 100%;
+}
+#contentHelp #covervideohelp #video-list .item-folder .video-demo-container .cover-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;  
+    cursor: pointer; 
+    opacity: .5;
+    transition: all .3s ease-in-out; 
+}
+#contentHelp #covervideohelp #video-list .item-folder .video-demo-container .cover-video:hover{ 
+    opacity: 1;
+}
+#contentHelp #covervideohelp #video-list .item-folder .video-demo-container .cover-video.active::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: rgba(255,255,255,.6);
+}
+#contentHelp #covervideohelp #video-list .item-folder .video-demo-container .cover-video > i{
+    font-size: 3rem;
+    color: #fff;           
+}
+#contentHelp #covervideohelp #video-list .item-folder .video-demo-container .cover-video:hover > i{
+    color: #fff;
+}
+
+
+#avisoTxtHelpl{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #444;
+}
+#avisoTxtHelpl .avisoTxt,
+.tabs-content #loadVideos p{
+    font-size: 1.2rem;
+    color: #444;
+}
+
+#loadVideos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.2rem;
+    color: #444;
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 999;
+}
+
+

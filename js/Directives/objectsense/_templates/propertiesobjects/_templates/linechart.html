@@ -1,0 +1,81 @@
+<div class="panel" id="template_linechart" ng-controller="lineChartProperties">
+    <div id="collapsePresentacion">
+        <div class="innerCollapse">
+            <div class="em-section-content">
+                <div class="em-grouped">
+                    <div class="em-switch-component">
+                        <div class="label ">
+                            <div class="title">{{ 'equalizer.label.etiquetavalores' | translate }}</div>
+                            <div class="value">{{ etiquetaValoresLabel }}</div>
+                        </div>
+                        <div class="lui-switch"> <label class="lui-switch__label" for="showEtiquetaValores"> <input
+                                    type="checkbox" ng-model="showEtiquetaValores" class="lui-switch__checkbox"
+                                    aria-label="Label" id="showEtiquetaValores"
+                                    ng-change="changeEtiquetaValores($event, showEtiquetaValores)"
+                                    ng-checked="showEtiquetaValores" /> <span class="lui-switch__wrap"> <span
+                                        class="lui-switch__inner"></span> <span class="lui-switch__switch"></span>
+                                </span> </label> </div>
+                    </div>
+                    <div class="em-item em-item-inner em-selection-list-component">
+                        <ul class="em-item-selection-list em-item-list-2">
+                            <li ng-class="{'em-active' : orientacion == 'vertical'}" aria-hidden="false"> <button
+                                    ng-class="{'selected' : orientacion == 'vertical'}"
+                                    title="{{ 'equalizer.title.vertical' | translate}}" class="item"
+                                    ng-click="changeOrientacion('vertical')">
+                                    <div class="em-component em-icon-item-component lui-icon"> direction_up_down </div>
+                                </button>
+                                <div class="label" aria-hidden="false"> <span>{{ 'equalizer.label.vertical' | translate
+                                        }}</span> </div>
+                            </li>
+                            <li ng-class="{'em-active' : orientacion == 'horizontal'}" aria-hidden="false"> <button
+                                    ng-class="{'selected' : orientacion == 'horizontal'}"
+                                    title="{{ 'equalizer.title.horizontal' | translate}}" class="item"
+                                    ng-click="changeOrientacion('horizontal')">
+                                    <div class="em-component em-icon-item-component lui-icon"> direction_left_right
+                                    </div>
+                                </button>
+                                <div class="label" aria-hidden="false"> <span>{{ 'equalizer.label.horizontal' |
+                                        translate }}</span> </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="em-item em-item-inner em-selection-list-component">
+                        <ul class="em-item-selection-list em-item-list-2">
+                            <li ng-class="{'em-active' : tipoFormato == 'line'}"> <button
+                                    ng-class="{'selected' : tipoFormato == 'line'}"
+                                    title="{{'equalizer.label.linea'  | translate}}" class="item"
+                                    ng-click="changeFormato('line')">
+                                    <div class="em-component em-icon-item-component"> line_chart_line </div>
+                                </button>
+                                <div class="label"> <span class="ng-binding">{{ 'equalizer.label.linea' | translate
+                                        }}</span> </div>
+                            </li>
+                            <li ng-class="{'em-active' : tipoFormato == 'area'}"> <button
+                                    ng-class="{'selected' : tipoFormato == 'area'}"
+                                    title="{{'equalizer.label.area'  | translate}}" class="item"
+                                    ng-click="changeFormato('area')">
+                                    <div class="em-component em-icon-item-component"> line_chart_area </div>
+                                </button>
+                                <div class="label"> <span class="ng-binding">{{ 'equalizer.label.area' | translate
+                                        }}</span> </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="em-switch-component">
+                        <div class="label ng-scope">
+                            <div class="title ng-binding">{{ 'equalizer.label.escalalogaritmica' | translate }}</div>
+                            <div class="value ng-binding">{{ escalaLogaritmicaLabel }}</div>
+                        </div>
+                        <div class="lui-switch lui-switch--inverse"> <label class="lui-switch__label"
+                                for="showEscalaLogaritmica"> <input type="checkbox" ng-model="showEscalaLogaritmica"
+                                    class="lui-switch__checkbox" aria-label="Label" id="showEscalaLogaritmica"
+                                    ng-change="changeEscalaLogaritmica($event, showEscalaLogaritmica)"
+                                    ng-checked="showEscalaLogaritmica" /> <span class="lui-switch__wrap"> <span
+                                        class="lui-switch__inner"></span> <span class="lui-switch__switch"></span>
+                                </span> </label> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

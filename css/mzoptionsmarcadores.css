@@ -1,0 +1,227 @@
+mzoptionsmarcadores{    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+
+}
+
+.content-section-configurador .notificationsScroll .list-bookmark {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+}
+
+.content-section-configurador .notificationsScroll .list-bookmark .mz-add-bookmark{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* .content-section-configurador .notificationsScroll .list-bookmark .mz-add-bookmark > button{
+    width: 50%;
+} */
+
+.content-section-configurador .notificationsScroll .list-bookmark .wrapper-bookmark {
+    width: 100%;
+    max-height: inherit;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: all .3s ease 0s;
+    position: relative;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark.active {
+    background-color: #e2e4e5 !important;
+}
+
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark:hover{
+    background-color: #ecedee;
+}
+
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .content-options {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .content-options .coverbookmar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .info-bokkmark {
+    display: flex;
+    /* align-content: flex-start; */
+    /* align-items: flex-start; */
+    justify-content: flex-start;
+    flex-direction: column;
+    flex: 1;
+    font-size: 0.9rem;
+    color: #868383;
+    padding: 0 8px 0 0;
+    position: relative;
+    padding-left: 10px;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .info-bokkmark .lui-tag {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 24px;
+    min-width: 40px;
+    font-size: 13px;
+    border-radius: 12px;
+    background-color:var(--menu-bg-color);
+    border: none;
+    padding: 3px 10px;
+    margin: 1px;
+    list-style: none;
+    white-space: nowrap;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .info-bokkmark .item-bookmark-info{
+    padding-left: 10px;
+    margin-bottom: 8px;
+    font-size: 0.7rem;
+    display: flex;
+    /* align-content: flex-start; */
+    /* align-items: flex-start; */
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .info-bokkmark .item-bookmark-info > span{
+    font-family: var(--font-family);
+    margin-bottom: 3px;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .info-bokkmark .item-bookmark-info > span > span{
+    font-size: 0.7rem;
+    margin-right: 5px;
+    color: var(--main-color);
+}
+
+
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .title-bookmark {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+    font-size: 0.9rem;
+    color: var(--main-color);
+    padding: 0 8px 0 0;
+    position: relative;
+    padding-left: 10px;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .title-bookmark:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #2e4661;
+    position: absolute;
+    left: -5px;
+    border: 1px solid #fff;
+    outline: 1px solid #2e4661;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .info-bokkmark .bm-val{
+    font-size: .8rem;
+    padding-left: 10px;
+    margin-bottom: 8px;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .options-bookmark {
+    display: flex;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .options-bookmark .item-option-bookmark {
+    padding: 2px 5px;
+    margin-right: 3px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #141414;
+    background: #fff;
+    width: 32px;
+    height: 32px;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .options-bookmark .item-option-bookmark > i {
+    font-size: 1rem;
+    color: #868383;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .options-bookmark .item-option-bookmark.defaultBookmar {
+    background: #327e35;
+    border: 1px solid #85f389;
+    pointer-events: none;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .options-bookmark .item-option-bookmark.defaultBookmar > i{
+    color: #fff;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark .options-bookmark .item-option-bookmark:disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed !important;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark.active .item-option-bookmark-active {
+    background: #0eb921 !important;
+}
+.content-section-configurador .notificationsScroll .list-bookmark .item-bookmark.active .options-bookmark .item-option-bookmark-active > i {
+    color: #fff !important;
+}
+
+.content-section-configurador .notificationsScroll .list-bookmark #mz-add-bookmark {
+    width: 100%;
+    position: relative;
+    z-index: 999;
+    padding: 8px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #ddd;
+}
+.content-section-configurador .notificationsScroll .list-bookmark #mz-add-bookmark button i{
+    margin: 0 5px;
+}
+
+.content-section-configurador .notificationsScroll .list-bookmark .wrapper-bookmark .aviso-empty{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    font-size: 1rem;
+    color: #595959;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}

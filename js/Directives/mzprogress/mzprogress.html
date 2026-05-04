@@ -1,0 +1,14 @@
+<div class="col-12 mzh-100 cover-mz-progress m-0 p-0">
+    <div class="mz-progress" data-color="green-{{$index + 1}}" ng-repeat="item in PROGRESS track by $index">
+        <div class="mz-progress-wrapper" ng-class="item.ISNEGATIVE == true ? 'NEGATIVEVAL' : 'POSITIVEVAL'">
+            <div class="mz-progress-header">
+                <label class="mz-progress-title">{{item.HEADER}}</label>
+                <label class="mz-progress-value">{{item.VALUE}}</label>
+            </div>
+            <div class="mz-progress-bar" data-val="{{item.VALUE}}"></div>
+        </div>
+
+    </div>
+    <div class="qlik-embed-invisible"></div>
+    <div class="full-size-cover bg-white" ng-if="ISLOADING" ng-include="'views/partial/loader_qlik.html'"></div>
+</div>

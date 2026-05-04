@@ -1,0 +1,61 @@
+<div lui-class-list="classList"  class="lui-dialog lui-dialog-mz" style="width: 600px;">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title">{{'sheets.modal.title' | translate}}</div>
+    </div>
+    <div class="print-dialog lui-dialog__body">
+        <h1 class="title-sheet-custom"><i class="lui-icon lui-icon--sheet"></i>{{InfoSheet.name}}</h1>
+        <p class="desSheetInfo" ng-if="InfoSheet.description">{{InfoSheet.description}}</p>
+
+        <div class="modalSheetInfo" ng-if="InfoSheet.approved">
+            <div class="info_icon">
+                {{"order.menu.aprovado" | translate}}
+            </div>
+            <div class="info_detail">
+                {{InfoSheet.approved}}
+            </div>
+        </div>
+        <div class="modalSheetInfo" ng-if="InfoSheet.published">
+            <div class="info_icon">
+                {{"order.menu.publicado" | translate}}
+            </div>
+            <div class="info_detail">
+                {{InfoSheet.published}}
+            </div>
+        </div>
+        <div class="modalSheetInfo" ng-if="InfoSheet.publishTime">
+            <div class="info_icon">
+                {{"order.menu.fechapublicacion" | translate}}
+            </div>
+            <div class="info_detail">
+                {{InfoSheet.publishTime}}
+            </div>
+        </div>
+        <div class="modalSheetInfo" ng-if="InfoSheet.createdDate">
+            <div class="info_icon">
+                {{"order.menu.fechacreacion" | translate}}
+            </div>
+            <div class="info_detail">
+                {{InfoSheet.createdDate}}
+            </div>
+        </div>
+        <div class="modalSheetInfo" ng-if="InfoSheet.modifiedDate">
+            <div class="info_icon">
+                {{"order.menu.fechamodificacion" | translate}}
+            </div>
+            <div class="info_detail">
+                {{InfoSheet.modifiedDate}}
+            </div>
+        </div>
+        <div class="modalSheetInfo" ng-if="InfoSheet.owner">
+            <div class="info_icon">
+                {{"order.menu.propietario" | translate}}
+            </div>
+            <div class="info_detail">
+                {{InfoSheet.owner}}
+            </div>
+        </div>
+     </div>
+    <div class="lui-dialog__footer">
+        <button lui-class-list="classList" ng-click="$event.preventDefault(); close()" name="cancel" class=" lui-button">{{'views.modal.cerrar' | translate}}</button>        
+    </div>
+</div>

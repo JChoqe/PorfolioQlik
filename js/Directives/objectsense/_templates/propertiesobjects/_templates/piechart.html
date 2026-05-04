@@ -1,0 +1,86 @@
+<div class="panel" id="template_piechart" ng-controller="pieChartProperties">
+    <div id="collapsePresentacion">
+        <div class="em-section-content">
+            <div class="em-grouped">
+                <div class="col-lg-12 border-bottom">
+                    <div class="em-item em-item-inner em-selection-list-component">
+
+                        <ul class="em-item-selection-list em-item-list-2">
+
+                            <li ng-class="{'em-active' : showAsDonut == false}" class="em-active" aria-hidden="false">
+                                <button ng-class="{'selected' : showAsDonut == false}"
+                                    title="{{'equalizer.label.tarta'  | translate}}" class="item"
+                                    ng-click="changePresentacion(false)">
+                                    <div class="ng-isolate-scope">
+                                        <div class="em-component em-icon-item-component">
+                                            pie_chart_pie
+                                        </div>
+                                    </div>
+                                </button>
+                                <div class="label" aria-hidden="false">
+                                    <span>{{'equalizer.label.tarta' | translate}}</span>
+                                </div>
+                            </li>
+                            <li ng-class="{'em-active' : showAsDonut == true}" aria-hidden="false">
+                                <button ng-class="{'selected' : showAsDonut == true}"
+                                    title="{{'equalizer.label.donut'  | translate}}" class="item"
+                                    ng-click="changePresentacion(true)">
+                                    <div class="ng-isolate-scope">
+                                        <div class="em-component em-icon-item-component">
+                                            pie_chart_donut
+                                        </div>
+                                    </div>
+                                </button>
+                                <div class="label" aria-hidden="false">
+                                    <span>{{'equalizer.label.donut' | translate}}</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="em-item em-item-inner ng-binding ng-scope">{{'equalizer.label.etiquetavalores' |
+                        translate}}
+                    </div>
+                    <div class="em-item em-item-inner em-radiobuttons-component">
+                        <label class="lui-radiobutton  lui-radiobutton--inverse"
+                            title="{{'equalizer.label.ninguna'  | translate}}">
+                            <input class="lui-radiobutton__input" type="radio" ng-model="typeEtiquetas"
+                                ng-change="changeEtiqueta('none')" name="etiquetaVal" value="none">
+                            <span class="lui-radiobutton__radio-wrap" qva-tabindex="0">
+                                <span class="lui-radiobutton__radio"></span>
+                                <span class="lui-radiobutton__radio-text">{{'equalizer.label.ninguna' |
+                                    translate}}</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="em-item em-item-inner em-radiobuttons-component">
+                        <label class="lui-radiobutton  lui-radiobutton--inverse"
+                            title="{{'equalizer.label.cuota'  | translate}}">
+                            <input class="lui-radiobutton__input" type="radio" ng-model="typeEtiquetas"
+                                ng-change="changeEtiqueta('share')" name="etiquetaVal" value="share">
+                            <span class="lui-radiobutton__radio-wrap" qva-tabindex="0">
+                                <span class="lui-radiobutton__radio"></span>
+                                <span class="lui-radiobutton__radio-text">{{'equalizer.label.cuota' | translate}}</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="em-item em-item-inner em-radiobuttons-component">
+                        <label class="lui-radiobutton  lui-radiobutton--inverse"
+                            title="{{'equalizer.label.valores'  | translate}}">
+                            <input class="lui-radiobutton__input" type="radio" ng-model="typeEtiquetas"
+                                ng-change="changeEtiqueta('value')" name="etiquetaVal" value="value">
+                            <span class="lui-radiobutton__radio-wrap" qva-tabindex="0">
+                                <span class="lui-radiobutton__radio"></span>
+                                <span class="lui-radiobutton__radio-text">{{'equalizer.label.valores' |
+                                    translate}}</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

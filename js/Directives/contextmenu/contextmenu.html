@@ -1,0 +1,104 @@
+<div element-transclude  class="qv-contextmenu mz-contextmenu" tid="context-menu" qva-outside="close($event)" ng-class="[IsVisibleContexMenu == true ? 'visible': 'hidden']"  ng-model="IsVisibleContexMenu" ng-style="positionContextMenu" >
+    <div lui-class-list="classList" class="lui-popover">
+        <ul class="lui-list">
+            
+            <li class="lui-list__item lui-list__action" ng-click="volverInit($event)" ng-if="subMenuShow">
+                <i class="lui-list__aside back-icon lui-icon  lui-icon--triangle-left"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.volver' | translate}}">{{'contextmenu.label.volver' | translate}}</span>
+            </li>
+            
+            <li class="lui-list__item lui-list__action linkSize" ng-click="getFullSize($event, ObjectId)" ng-if="!isModeFullSize && !showItemDownload && !showItemExpand && !ISFAVORITOFULLSIZE">
+                <i class="lui-list__aside  item-icon  lui-icon lui-icon--expand"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.fullsize' | translate}}">{{'contextmenu.label.fullsize' | translate}}</span>
+            </li>
+            <li class="lui-list__item lui-list__action linkSize" ng-click="lostFullSize($event, ObjectId)" ng-if="isModeFullSize && !showItemDownload && !showItemExpand && !ISFAVORITOFULLSIZE">
+                <i class="lui-list__aside  item-icon  lui-icon lui-icon--collapse"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.normalsize' | translate}}">{{'contextmenu.label.normalsize' | translate}}</span>
+            </li>
+            
+            <li class="lui-list__item lui-list__action linkSize" ng-click="limpiarSoftPatches()" ng-if="objectHasSoftPatches && !showItemDownload && !showItemExpand">
+                <i class="lui-list__aside  item-icon  lui-icon lui-icon lui-icon--history"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.softPatches' | translate}}">{{'contextmenu.label.softPatches' | translate}}</span>
+            </li>
+            
+            <li class="lui-list__item lui-list__action" ng-click="copyToClipboard($event)" ng-if="isCopyCell && !showItemDownload && !showItemExpand">
+                <i class="lui-list__aside  item-icon  lui-icon lui-icon--copy"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.copyToClipboard' | translate}}">{{'contextmenu.label.copyToClipboard' | translate}}</span>
+            </li>
+            
+            <li class="lui-list__item lui-list__action  qv-contextmenu-has-submenu has-icon" tabindex="-1" ng-click="showItemsExpand()" ng-if="isPivotTable && !showItemDownload && !showItemExpand">            
+                
+                <span class="lui-list__text ng-binding"
+                    title="{{'contextmenu.label.expand' | translate}}">{{'contextmenu.label.expand' | translate}}</span>
+                <i class="next-icon lui-list__aside lui-icon lui-icon--triangle-right" aria-hidden="false"></i>
+            </li>
+
+            <li class="lui-list__item lui-list__action" ng-click="openEqualizer(ObjectId, THISAPP, indeApp)" ng-controller="equalizadorCtrl" ng-if="haveEqualizador && !showItemDownload && !showItemExpand" id="linkmenuexploracion">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--control"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.menuexploracion' | translate}}">{{'contextmenu.label.menuexploracion' | translate}}</span>
+            </li>
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="toggleDataViewTable($event, ObjectId)" ng-if="!tableView && !ObjectContainer && haveTableView && !showItemDownload && !showItemExpand">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--table"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.verdatos' | translate}}">{{'contextmenu.label.verdatos' | translate}}</span>
+            </li>
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="toggleDataViewTable($event, ObjectId)" ng-if="tableView && !ObjectContainer && haveTableView && !showItemDownload && !showItemExpand">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--object"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.vergrafico' | translate}}">{{'contextmenu.label.vergrafico' | translate}}</span>
+            </li>
+
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="toggleDataViewTable($event, ObjectId)" ng-if="ObjectContainer && haveTableView && !showItemDownload && !showItemExpand">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--object"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.vergrafico' | translate}}">{{'contextmenu.label.vergraficodatos' | translate}}</span>
+            </li>
+            <li class="lui-list__item lui-list__action  qv-contextmenu-has-submenu has-icon" tabindex="-1" ng-click="showItemsDownload()" ng-if="!showItemDownload && !showItemExpand && !isMzGenaro">
+               <i class="lui-list__aside  item-icon  lui-icon  lui-icon--download"></i>
+                <span class="lui-list__text ng-binding" title="{{'contextmenu.label.downloadas' | translate}}">{{'contextmenu.label.downloadas' | translate}}</span>
+                <i class="next-icon lui-list__aside lui-icon lui-icon--triangle-right" aria-hidden="false"></i>
+            </li>
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="ExportImage(ObjectId)" ng-if="!tableView && !isMzGenaro && showItemDownload && !showItemExpand">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--image"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.exportimagen' | translate}}">{{'contextmenu.label.exportimagen' | translate}}</span>
+            </li>
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="openPopupPDF(ObjectId)" ng-if="!tableView && !isMzGenaro && showItemDownload && !showItemExpand">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--export"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.exportpdf' | translate}}">{{'contextmenu.label.exportpdf' | translate}}</span>
+            </li>
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="exportDatos(ObjectId)" ng-if="haveExportarDatos && showItemDownload && !showItemExpand" ng-model="haveExportarDatos">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--insert"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.exportdatos' | translate}}">{{'contextmenu.label.exportdatos' | translate}}</span>
+            </li>
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="expandirTodo(ObjectId)" ng-if="isPivotTable && !showItemDownload && showItemExpand" ng-model="isPivotTable">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon--plus"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.expandirtodo' | translate}}">{{'contextmenu.label.expandirtodo' | translate}}</span>
+            </li>
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="contraerTodo(ObjectId)" ng-if="isPivotTable && !showItemDownload && showItemExpand" ng-model="isPivotTable">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon--minus"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.contraertodo' | translate}}">{{'contextmenu.label.contraertodo' | translate}}</span>
+            </li>
+            
+            <li class="lui-list__item lui-list__action btn-comparative" id="compare_link" tabindex="-1" ng-click="comparaObjeto(ObjectId)" ng-if="SHOWCOMPAREOBJECT && isComparable && !isMzGenaro && !showItemDownload && !showItemExpand && !ISFAVORITOFULLSIZE">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon lui-icon--copy"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.compararObjetos' | translate}}">{{'contextmenu.label.compararObjetos' | translate}}</span>
+            </li>
+            
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="toggleFavorites(ObjectId)" ng-if="mzFavoritos && !showItemDownload && !showItemExpand && !ISVISTAFAVORITOS && !ISVISTAPERSONALIZADA && THISOBJECTISFAVORITE">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon lui-icon--bin"></i>
+                <span class="lui-list__text" title="Favorites">{{'Favorites.label.deltetFavorites' | translate}}</span>
+            </li>
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="toggleFavorites(ObjectId)" ng-if="mzFavoritos && !showItemDownload && !showItemExpand && !ISVISTAFAVORITOS && !ISVISTAPERSONALIZADA && !THISOBJECTISFAVORITE">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon lui-icon--star"></i>
+                <span class="lui-list__text" title="Favorites">{{'Favorites.label.addFavorites' | translate}}</span>
+            </li>
+            <li class="lui-list__item lui-list__action" tabindex="-1" ng-click="embedObject(ObjectId)" ng-if="embedObject && !isMzGenaro && !showItemDownload && !showItemExpand && !ISVISTAPERSONALIZADA">
+                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--share"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.compartir' | translate}}">{{'contextmenu.label.compartir' | translate}}</span>
+            </li>
+            
+            <li class="lui-list__item lui-list__action linkSize" ng-click="showHelpObject(ObjectId)" ng-if="HELPOBJECT && !isMzGenaro && !showItemDownload && !showItemExpand">
+                <i class="lui-list__aside  item-icon  lui-icon lui-icon lui-icon--help"></i>
+                <span class="lui-list__text" title="{{'contextmenu.label.ayuda' | translate}}">{{'contextmenu.label.ayuda' | translate}}</span>
+            </li>
+        </ul>
+    </div>
+    
+</div>

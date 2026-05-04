@@ -1,0 +1,229 @@
+mzoptionsfilters{    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+
+}
+
+.content-section-configurador .notificationsScroll .cuerpoFiltros {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    max-width: 320px;
+    padding-left: 5px;
+}
+
+.content-section-configurador .notificationsScroll .cuerpoFiltros .cover_cuerpo_filtros{
+    background: #fff;
+    box-shadow: 0 12px 20px -10px rgb(0 0 0 / 28%), 0 4px 20px 0px rgb(0 0 0 / 12%), 0 7px 8px -5px rgb(0 0 0 / 20%) !important;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.content-section-configurador .notificationsScroll .cuerpoFiltros .cover_cuerpo_filtros .qlik-embed{
+    background: none;
+    box-shadow: none !important;
+    margin: 0;
+}
+.content-section-configurador .notificationsScroll .cuerposSelecciones{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    max-height: 100%;
+    width: calc(50% - 320px);
+}
+
+.content-section-configurador .notificationsScroll .cuerposSelecciones .coverSeleciones{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    max-height: 100%;
+    padding: 10px;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 0, 0, 0.2) !important;
+    /* margin: 0 0 10px 0px; */
+    margin: 0;
+
+}
+.content-section-configurador .notificationsScroll .cuerposSelecciones .content-selecciones{   
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.content-section-configurador .notificationsScroll .cuerposSelecciones .content-selecciones .selected-field-container{ 
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid rgb(96, 125, 139, 0.10);
+    background: rgb(96, 125, 139, 0.10);
+    margin-bottom: 5px;
+}
+.content-section-configurador .notificationsScroll .cuerposSelecciones .content-selecciones .selected-field-container > span {
+    text-decoration: none !important;
+    display: block;  
+    padding: 5px 0px;
+    color: #444;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.content-section-configurador .notificationsScroll .cuerposSelecciones .content-selecciones .selected-field-container > span > .wrapper{
+    position: relative;
+}
+
+
+.content-section-configurador .notificationsScroll .cuerposSelecciones .content-selecciones .selected-field-container > span .label-info {
+    padding: 8px;
+    margin-bottom: 3px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    width: 100%;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.content-section-configurador .notificationsScroll .cuerposSelecciones .content-selecciones .selected-field-container > span .label-info > span{
+    display: block;
+    width: calc(100% - 80px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content-section-configurador .notificationsScroll .cuerposSelecciones .content-selecciones .selected-field-container > span .selectedelements {
+    font-size: 0.7rem;
+}
+.content-section-configurador .notificationsScroll .cuerposSelecciones .content-selecciones .selected-field-container > span .item-remove {
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 3px;
+}
+
+.content-section-configurador .notificationsScroll .cuerposSelecciones .coverSeleciones .btn-clear-selections{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.content-section-configurador .notificationsScroll .cuerposSelecciones .content-selecciones #emptyFilters{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    font-size: 1rem;
+    color: #595959;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.content-section-configurador .notificationsScroll .cuerposSelecciones .coverSeleciones .clear-all > .span-clear {
+    display: flex;
+    margin: 5px;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 40%);
+    color: #FFF;
+    border-radius: 2px;
+    padding: .5rem 1.5rem;
+    border: none;
+    background-color: #009849;
+    margin: .5rem;
+    position: relative;
+    transition: all .2s ease;
+    overflow: hidden;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.content-section-configurador .notificationsScroll .cuerpoFiltros  .qlik-embed {
+    margin: 0 0 0px 10px;
+    padding: 5px 10px;
+}
+
+mzoptionsfilters #accordionPanel{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    padding: 0; 
+}
+
+mzoptionsfilters .cuerpoFiltros .innerCollapse {
+    overflow: auto;
+}
+mzoptionsfilters #accordionPanel .card{
+    border: none;
+}
+mzoptionsfilters .cuerpoFiltros  #accordionPanel .card .card-header {
+    padding: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    border-radius: 0;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+mzoptionsfilters .cuerpoFiltros  #accordionPanel .card .card-header .btn-link {
+    background-color: #22333e;
+    padding: .4rem .8rem;
+    font-weight: 400;
+    color: #fff;
+    font-size: .9rem;
+    font-family: var(--font-family) !important;
+    text-decoration: none;
+    width: 100%;
+    text-align: left;
+    border-radius: 0;
+    border-left: 5px solid transparent;
+}
+mzoptionsfilters .cuerpoFiltros  #accordionPanel .card .card-header .btn-link .text-header-card {
+    position: relative;
+    z-index: 1;
+}
+
+
+mzoptionsfilters .cuerpoFiltros  #accordionPanel .card .card-header .btn-link[aria-expanded="true"]:after {
+    background: #dc3739;
+}
+
+mzoptionsfilters .cuerpoFiltros  #accordionPanel .card .card-header .btn-link:after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: transparent;
+}
+
+
+
+
+mzoptionsfilters .box_object_filter_item{
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    /* height: 100% !important; */
+}
+
+/* Cambios en scroll de filtros - eliminar si no funciona correctamente por versión de Sense */
+/* mzoptionsfilters .box_object_filter_item{
+    overflow: hidden !important;
+    width: 100%!important ;
+    height: 100% !important;
+} */

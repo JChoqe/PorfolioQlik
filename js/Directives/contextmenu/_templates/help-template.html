@@ -1,0 +1,67 @@
+
+<div class="lui-dialog dialogo-help-mz lui-dialog-mz" style="width: 80%; height:90%;"> 
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title">
+            {{'views.acciones.ayuda'  | translate}}           
+        </div>
+    </div>
+    <div class="lui-dialog__body lui-dialog-help-object">
+        <div class="tab-view-wrapper">
+            <lui-tab-view id="lui-tabview">
+                <lui-tabset>
+                    <lui-tab ref="tab1"><span class="tab-item"> &nbsp; {{'help.label.descripcionTab' | translate}}</span></lui-tab>
+                    <lui-tab ref="tab2"  ng-if="QDIMENSIONLIST.length > 0 && QMEASURELIST.length >  0"><span class="tab-item"> &nbsp; {{'help.label.detalleTab' | translate}}</span></lui-tab>
+                    <lui-tab ref="tab3" ng-if="objectLayout" ng-click="showLayout();"><span class="tab-item"> &nbsp; {{'help.label.layoutTab' | translate}}</span></lui-tab>
+                    
+                </lui-tabset>
+
+                <lui-tab-content class="tabs-content tabs-content-help" ref="tab1">
+                    
+                    <div id="help-descriptions-cover">
+                        <div ng-if="DESCRIPCION" class="content-help" ng-bind-html="DESCRIPCION"></div>
+                        <div id="SNAPSHOT" style="height: 300px;"></div>
+                    </div>
+                </lui-tab-content>
+                <lui-tab-content class="tabs-content tabs-content-help" ref="tab2">
+                    <h1 class="title-object-details" ng-if="TITULO">{{TITULO}}</h1>
+                    <div class="cover-list-datos">
+                        <div class="cover-details" ng-if="QDIMENSIONLIST">
+                            <h4 class="detail-com">{{'equalizer.label.dimensiones'  | translate}}({{QDIMENSIONLIST.length}})</h4>
+                            <div class="item-detalle" ng-repeat="item in QDIMENSIONLIST track by $index">
+                                <span class="title-item"><i class="lui-icon lui-icon--pivot"></i> {{item.title}}</span>
+                                <span ng-if="item.description" class="description-item">{{item.description}}</span>
+                                <div class="tag-list">
+                                    <span ng-if="item.tags" class="tag-item" ng-repeat="tag in item.tags track by $index">{{tag}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cover-details" ng-if="QMEASURELIST">
+                            <h4 class="detail-com">{{'equalizer.label.medidas'  | translate}}({{QMEASURELIST.length}})</h4>
+                            <div class="item-detalle" ng-repeat="item in QMEASURELIST track by $index">
+                                <span class="title-item"><i class="lui-icon lui-icon--measure"></i> {{item.title}}</span>
+                                <span ng-if="item.description" class="description-item">{{item.description}}</span>
+                                <div class="tag-list">
+                                    <span ng-if="item.tags" class="tag-item" ng-repeat="tag in item.tags track by $index">{{tag}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cover-details cover-details-description" ng-bind-html="txtDetalleTab">
+                            
+                        </div>
+                    </div>
+
+                </lui-tab-content>
+                <lui-tab-content class="tabs-content tabs-content-codemirror" ref="tab3">
+                    <div class="col-md-12 m-0 p-0" id="editor-container">
+                        <div id="load-codemirror" class="full-size-cover" ng-include="'views/partial/loader_qlik.html'"></div>
+
+                    </div>
+                </lui-tab-content>
+            </lui-tab-view>
+        </div>
+    </div>
+    <div class="lui-dialog__footer">
+        <button class="lui-button  lui-dialog__button" ng-if="ISADMIN" ng-click="editDescriptions();">{{'help.btn.editar'  | translate}}</button>
+        <button class="lui-button  lui-dialog__button" ng-click="closeDialog();">{{'views.modal.cerrar'  | translate}}</button>
+    </div>
+</div>

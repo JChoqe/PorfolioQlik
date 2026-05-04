@@ -1,0 +1,33 @@
+<div class="lui-dialog lui-dialog-mz lui-dialog-embed">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title">{{'contextmenu.label.compartir' | translate}}</div>
+    </div>
+    <div class="lui-dialog__body">
+        <div class="qs-embed-configurator">
+            <div class="qs-embed-dialog__preview">
+                <div class="qs-embed-dialog__object__wrapper">
+                    <iframe title="preview" class="qs-embed-dialog__preview"
+                    src="{{urlIframe}}"
+                    ></iframe>
+                </div>                
+            </div>
+            
+            
+            <div class="qs-embed-dialog__copy">
+                <div class="qs-embed-dialog__input-group">
+                    <div class="lui-input-group">
+                        <input class="lui-input lui-input-group__item  lui-input-group__input"
+                            id="iframeUrl" readonly=""
+                            value="{{_htmlIframeValue}}">
+                        <button type="button" ng-click="copyValIframe()"
+                            class="lui-button lui-input-group__item  lui-input-group__button">Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lui-dialog__footer">
+        <button lui-class-list="classList" ng-click="$event.preventDefault(); close()" name="cancel"
+            q-translation="Common.Cancel" tid="print-cancel" class=" lui-button"></button>
+    </div>
+</div>

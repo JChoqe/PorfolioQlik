@@ -1,0 +1,95 @@
+<div class="col-12 mzh-100 m-0 p-0" id="bg-page">
+    <div id="menu-wellcome">
+        <div id="logo-init">
+            <img src="./assets/img/logos/Logo-Hominem-001a.png" id="logo_cliente" alt="Logo">
+        </div>
+        <nav id="list-menu">
+            <div title="Personal" class="item-wellcome-menu" ng-click="enterDashboard('App.Personal.View.Dashboard')">
+                <div class="item-content">
+                    <span class="icon-itemmenu">
+                        <i class="ri-user-line"></i>
+                    </span>
+                    <span class="namee">Quadox</span>
+                </div>
+            </div>
+            <div title="Absentismo" class="item-wellcome-menu"
+                ng-click="enterDashboard('App.Absentismo.View.Dashboard')">
+                <div class="item-content">
+                    <span class="icon-itemmenu">
+                        <i class="ri-sun-line"></i>
+                    </span>
+                    <span class="namee">Carreteras</span>
+                </div>
+            </div>
+
+            <div title="Formación" class="item-wellcome-menu" ng-click="enterDashboard('App.Formacion.View.Dashboard')">
+                <div class="item-content">
+                    <span class="icon-itemmenu">
+                        <i class="ri-book-3-line"></i>
+                    </span>
+                    <span class="namee">INE</span>
+                </div>
+            </div>
+    </div>
+    <div id="wellcome-content">
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 m-0" id="header-wellcome">
+            <div class="box-actions">
+                <div class="item-action item-action-user">
+                    <i class="ri-user-line"></i><span class="logged-user">{{Usuario}}</span>
+                </div>
+                <switchlangwellcome></switchlangwellcome>
+                <div class="item-action" ng-if="HasLogin">
+                    <mzlogout></mzlogout>
+                </div>
+                <videohelppanel ng-if="HasVideos"></videohelppanel>
+                <notificationspanel ng-if="mzAlerting"></notificationspanel>
+            </div>
+        </div>
+        <div id="top-content-inner-wellcome">
+            <div id="leyend-wwellcome">
+                <h2>{{'view.wellcome.title' | translate}}</h2>
+                <h1>{{'view.wellcome.bigText' | translate }}</h1>
+                <p>{{'view.wellcome.smallText' | translate}}</p>
+            </div>
+            <div id="cover-kpis" class="m-0 p-0">
+                <div class="glob-kpis m-0 p-0">
+                    <div class="mz-box-kpi" data-ui-sref="App.KPI.View.Dashboard">
+                        <div class="mz-box-kpi-inner">
+                            <objectsense object-id="twJkTG" app-id="0" is-kpi="true" is-kpi="true"></objectsense>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cards-projects" class="row m-0 p-0">
+            <div class="col-12 col-md-6 col-xl-4 mb-3">
+                <div class="card mz-project-card" ng-click="enterDashboard('App.Personal.View.Dashboard')">
+                    <div class="card-body">
+                        <h3 class="card-title">Proyecto Quadox</h3>
+                        <p class="card-text">Accede a tu panel personal con métricas y atajos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 mb-3">
+                <div class="card mz-project-card" ng-click="enterDashboard('App.Absentismo.View.Dashboard')">
+                    <div class="card-body">
+                        <h3 class="card-title">Proyecto Carreteras</h3>
+                        <p class="card-text">Visualiza la información de absentismo y movilidad.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 mb-3">
+                <div class="card mz-project-card" ng-click="enterDashboard('App.Formacion.View.Dashboard')">
+                    <div class="card-body">
+                        <h3 class="card-title">Proyecto INE</h3>
+                        <p class="card-text">Consulta los resultados y el avance en formación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img id="pont-1" src="assets/img/wellcomeImages/Point-001.png" alt="ImgFondo">
+    <img id="pont-2" src="assets/img/wellcomeImages/Point-002.png" alt="ImgFondo">
+    <img id="pont-3" src="assets/img/wellcomeImages/Point-003.png" alt="ImgFondo">
+    <img id="pont-4" src="assets/img/wellcomeImages/Point-004.png" alt="ImgFondo">
+</div>

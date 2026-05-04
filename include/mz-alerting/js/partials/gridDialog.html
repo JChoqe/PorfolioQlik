@@ -1,0 +1,36 @@
+<div class="lui-dialog lui-dialog-mz mz-grid-alert-dialog" ng-class="{'lui-dialog--inverse': darkView}">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title">
+            {{'alerting.label.todas' | translate}}
+        </div>
+    </div>
+    <div class="lui-dialog__body">
+
+        <table class="alert-table lui-list" ng-class="{'lui-list--inverse': darkView}">
+            <thead>
+                <tr class="lui-list__header">
+                    <th scope="col" class="lui-list__text">#</th>
+                    <th scope="col" class="lui-list__text">{{'alerting.label.fecha' | translate}}</th>
+                    <th scope="col" class="lui-list__text">{{'alerting.label.nombre' | translate}}</th>
+                    <th scope="col" class="lui-list__text">{{'alerting.label.mensaje' | translate}}</th>
+                    <th scope="col" class="lui-list__text">{{'alerting.label.fechaleida' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="lui-list__item" ng-repeat="alert in alerts">
+                    <th class="lui-list__text" scope="row">{{alert.id}}</th>
+                    <td class="lui-list__text">{{alert.created_at | date:'dd/MM/yyyy hh:mm:ss'}}</td>
+                    <td class="lui-list__text">{{alert.name}}</td>
+                    <td class="lui-list__text">{{alert.message}}</td>
+                    <td class="lui-list__text">{{alert.read_at | date:'dd/MM/yyyy hh:mm:ss'}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="lui-dialog__footer">
+        <button class="lui-button lui-dialog__button" ng-class="{'lui-button--inverse': darkView}" ng-click="close();">
+            {{'alerting.label.configuracion.cerrar' | translate}}
+        </button>
+    </div>
+</div>

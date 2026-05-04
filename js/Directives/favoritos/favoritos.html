@@ -1,0 +1,51 @@
+<div id="menu-list" ng-if="mzFavoritos" ng-class="favoritesFullSize == true ? 'full-size' : ''">
+    <div class="box-menu-list">
+        <div class="header-menu-list" ng-show="arrFavorites.length > 0">
+            <h4><i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon lui-icon--star"></i> {{'Favorites.title.label' | translate}}</h4>
+            <div class="actions-menu-list">
+                <span id="nameAppLoad" ng-bind-html="nameAppLoad" ng-if="nameAppLoad"></span>
+                <span id="favorites-search" ng-show="!showList"><input ng-model="searchTextFavorites" class="form-control" placeholder="{{'views.label.buscar'  | translate}}" /></span>                
+                <i class="icofont-spreadsheet" ng-class="showList == false ? 'active' : ''" ng-click="viewBoxes($event)" ng-if="arrFavorites.length > 0" title="{{'Favorites.Modo.Objeto' | translate}}"></i>
+                <i class="icofont-listing-number" ng-class="showList == true ? 'active' : ''" ng-click="viewList($event)" ng-if="arrFavorites.length > 0" title="{{'Favorites.Modo.Lista' | translate}}"></i>
+                
+            </div>
+        </div>
+        <div class="body-menu-list">
+            
+            <div id="box-items-favorites" class="box-items" ng-if="!showList && arrFavorites.length > 0" directive-when-scrolled="loadMore()">
+                <div class="item-favorite isFavoriteItem col-xxl-4 col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12 mzh-xxl-75 mzh-xl-75 mzh-lg-75 mzh-md-75 mzh-sm-75 mzh-xs-100" data-id="{{item.object_id}}" data-app="{{item.idApp}}" ng-repeat="item in arrFavorites | filter:searchTextFavorites | limitTo: limit track by $index" data-appindex="{{item.idApp}}" ng-class="item.idApp == appActive.index ? 'appLoaded' : ''">
+                    <div class="inner-item-favorite">
+                        <div class="header-item-favorite">
+                            <h4><span class="container-text" title="{{item.created_at}}">{{'Favorites.create.date' | translate}}: {{item.created_at}}</span></h4>
+                            <div class="action-item-favorite">
+                                <i class="icofont-automation lui-list__aside itemObjectNotFound" id="loadApp" ng-click="loadApp(item,$event)" title="{{'Favorites.itemaction.loadapp' | translate}}"></i>
+                                
+                                <i ng-if="item.uiSref" class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon icofont-external-link btn-CursorPointer itemObjectNotFound" id="clearFullItem" title="{{'Favorites.itemaction.gotopage' | translate}}" data-ui-sref="{{item.uiSref}}({idFav: '{{item.object_id}}'})" ng-click="clearFullItem()"></i>
+                                <i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon lui-icon--bin btn-CursorPointer" title="{{'Favorites.itemaction.deletefavorite' | translate}}" id="deleteFavorite" ng-click="deleteFavorite(item, $event)" ></i>
+                            </div>
+                        </div>
+                        <div class="body-item-favorite">
+                            <objectsense object-id="{{item.object_id}}" hide-speel="true" app-id="{{item.idApp}}"></objectsense>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="box-list-favorites" class="box-items" ng-if="showList && arrFavorites.length > 0">
+                <div id="gridContainer" dx-data-grid="gridOptions" dx-item-alias="row" class="mzh-100 grid-table">
+                    <div data-options="dxTemplate:{ name: 'accionesTemplate'}">
+                        <i class="icofont-resize lui-list__aside itemObjectNotFound" ng-click="toggleItemFullsize(row.data,$event)" title="{{'contextmenu.label.fullsize' | translate}}"></i>
+                        <i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon icofont-external-link btn-CursorPointer" title="{{'Favorites.itemaction.gotopage' | translate}}" ng-click="goToLocation(row)"></i>
+                        <i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon lui-icon--bin btn-CursorPointer" title="{{'Favorites.label.deltetFavorites' | translate}}" ng-click="deleteFavoriteGrid(row)" ></i>
+                      </div>
+                </div>
+                
+            </div>
+            
+            <div id="notFavoriteList" ng-if="arrFavorites.length < 1">
+                <div class="texto-detalle" ng-bind-html="wellcomeFavoritos">                 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

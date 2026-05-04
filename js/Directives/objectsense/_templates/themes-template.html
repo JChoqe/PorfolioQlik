@@ -1,0 +1,33 @@
+<lui-popover class="mz-popover">
+    <div class="lui-popover__header">
+        <div class="lui-popover__title">{{'label.colorOptions' | translate}}</div>
+        <i class="ri-drag-drop-line"></i>
+    </div>
+    <lui-popover-body>
+        <div class="col-lg-12 row m-0 p-0 themes-selector">
+            <h5 class="tituloList">{{'label.colorPalette' | translate}}</h5>
+            <select class="form-control cmbThemes" id="cmbThemes"></select>
+        </div>
+        <div class="col-lg-12 row m-0 p-0 color-Scale">
+            <div id="colors">
+                <div class="color-item" ng-repeat="item in arrayScales"
+                    ng-style="{'background-color':'{{item.color}}'}"></div>
+            </div>
+        </div>
+        <div class="cover-properties-object">
+            <propertiesobjects object-id="{{ObjectId}}"></propertiesobjects>
+        </div>
+
+    </lui-popover-body>
+    <div class="lui-popover__footer">
+        <button class="lui-button  lui-popover__button" ng-click="changeThemes()" ng-disabled="!haveTheme">
+            <span>{{'equalizer.btn.aplicar' | translate}}</span>
+        </button>
+        <button class="lui-button  lui-popover__button" ng-click="clearPatches($event)" ng-disabled="!_patches.length > 0">
+            <span>{{'equalizer.btn.descartar' | translate}}</span>
+        </button>
+        <button class="lui-button  lui-popover__button" ng-click="closePopover()">
+            <span>{{'equalizer.btn.cerrar' | translate}}</span>
+        </button>
+    </div>
+</lui-popover>

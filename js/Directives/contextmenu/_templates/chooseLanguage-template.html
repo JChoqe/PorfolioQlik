@@ -1,0 +1,22 @@
+
+<div class="lui-dialog dialogo-help-mz lui-dialog-mz" style="width: 600px; "> 
+    <div class="lui-dialog__body lui-dialog-help-object">
+        <div id="selectedIdioma">
+            <p>{{'help.txt.selectIdioma' | translate}}</p>
+        </div>
+        <div id="list-idiomas">
+            <label class="lui-radiobutton" ng-repeat="item in langs track by $index">
+                <input class="lui-radiobutton__input" type="radio" name="idiomaSelection" ng-model="data.selectedIdioma" ng-value="item.langKey" ng-checked="data.selectedIdioma">
+                <div class="lui-radiobutton__radio-wrap">
+                    <span class="lui-radiobutton__radio"></span>
+                    <span class="lui-radiobutton__radio-text">{{ item.lang }}</span>
+                </div>
+            </label>
+        </div>
+
+    </div>
+    <div class="lui-dialog__footer">        
+        <button class="lui-button  lui-dialog__button" ng-click="saveLanguage();">{{'views.modal.aceptar'  | translate}}</button>
+        <button class="lui-button  lui-dialog__button" ng-click="closeDialog();">{{'views.modal.cerrar'  | translate}}</button>
+    </div>
+</div>

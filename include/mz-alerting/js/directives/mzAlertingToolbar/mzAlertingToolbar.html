@@ -1,0 +1,58 @@
+<div class="mz-alerting">
+    <div class="item-header-options cursorpointer" ng-click="toggleAlerting($event)">
+        <span class="title-option">
+            <span ng-if="(alerts | filter:{read_at:null}).length>0" class="badge badge-default">{{(alerts | filter:{read_at:null}).length}}</span>
+            <span class="txt-xs"><span class="ri-notification-3-line qs-no-margin" aria-hidden="true"></span></span>
+
+                    </span>
+    </div>
+    <div class="list-alert" ng-class="{ 'active' : OpenAlerting}">
+        <div class="list-alert-title">
+            <h2><i class="ri-notification-3-line qs-no-margin"></i><span>{{'alerting.dial.alertas' | translate}} <span ng-if="(alerts | filter:{read_at:null}).length>0" class="badge list-alert-badge">{{(alerts | filter:{read_at:null}).length}}</span> </span></h2>
+            <div class="options-alert">
+                <label>{{'alerting.label.leertodas' | translate}}</label>
+                <button ng-disabled="(alerts | filter:{read_at:null}).length==0" title="{{'alerting.label.leertodas' | translate}}" class="item-option-alert item-option-alert-active" ng-click="readAll()">
+                    <i class="lui-icon lui-icon--tick"></i>
+                </button>
+            </div>
+            <div class="nav-item liAlertingClose" ng-click="toggleAlerting($event)">
+                <a href="javascript:void(0)" class="nav-link">
+                    <span class="selectionsButtom">
+                        <i class="lui-icon lui-icon--close"></i>                            
+                    </span>                        
+                </a>
+            </div>
+        </div>
+        <div class="read-all-box">
+
+                    </div>
+        <div class="wrapper-alert">
+            <div class="item-alert" ng-repeat="alert in alerts | filter:{read_at:null}">
+                <div class="content-options">
+                    <div class="item-alert-title" ng-click="goState(alert.sheet)">                        
+                        <span class="title-alert">{{alert.name}}</span>
+                    </div>                                
+                </div>
+
+                                <div class="item-alert-description" ng-if="alert.message">
+                    {{alert.message}}
+                </div>
+                <div class="item-alert-date">
+                    <div class="options-alert">
+                        <button title="{{'alerting.label.leeralerta' | translate}}" class="item-option-alert item-option-alert-active" ng-click="read($event,alert)"><i class="lui-icon lui-icon--tick"></i></button>
+                    </div>
+                    <i class="icofont icofont-ui-calendar"></i> 
+                    <span class="date-alert" ng-class="alert.type">{{alert.created_at | date:'dd/MM/yyyy HH:mm'}}</span>
+                </div>
+            </div>
+            <div class="no-alerts" ng-if="(alerts | filter:{read_at:null}).length==0">
+                <span>{{'alerting.label.noalertassinleer' | translate}}</span>
+            </div>
+        </div>
+        <div class="mz-add-alert">
+            <button class="mz-btn-dark lui-button" ng-click="viewAll();">
+                <i class="lui-icon  lui-icon--alert float-left"></i>{{'alerting.label.vertodas' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

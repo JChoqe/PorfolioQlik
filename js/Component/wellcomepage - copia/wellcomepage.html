@@ -1,0 +1,95 @@
+<div class="col-12 mzh-100 m-0 p-0" id="bg-page">
+    <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 mzh-xxl-20 mzh-xl-25 mzh-md-20 mzh-sm-15 mzh-xs-15 mzh-10 m-0"
+        id="header-wellcome">
+        <div id="logo-init">
+            <img src="./assets/img/logos/Logo-Hominem-001a.png" id="logo_cliente" alt="Logo">
+        </div>
+        <div class="box-actions">
+            <div class="item-action item-action-user">
+                <i class="ri-user-line"></i><span class="logged-user">{{Usuario}}</span>
+            </div>
+            <switchlangwellcome></switchlangwellcome>
+            <div class="item-action" ng-if="HasLogin"><mzlogout></mzlogout></div>
+            <videohelppanel ng-if="HasVideos"></videohelppanel>
+            <notificationspanel ng-if="mzAlerting"></notificationspanel>
+        </div>
+    </div>
+    <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 mzh-xxl-80 mzh-xl-75 mzh-md-80 mzh-sm-85 mzh-xs-85 mzh-90 m-0" id="content-wellcome">
+        <div id="leyend-wwellcome">
+            <h1>{{'view.wellcome.bigText' | translate }}</h1>
+            <p>{{'view.wellcome.smallText' | translate}}</p>
+        </div>
+        <div id="menu-wellcome">
+            <div class="menu-container">
+                <div title="Personal" class="item-wellcome-menu" ng-click="enterDashboard('App.Personal.View.Dashboard')">
+                    <div class="item-content">
+                        <span class="icon-itemmenu">
+                            <i class="ri-user-line"></i>
+                        </span>
+                        <span class="namee">Personal</span>
+                    </div>
+                </div>
+                <div title="Absentismo" class="item-wellcome-menu" ng-click="enterDashboard('App.Absentismo.View.Dashboard')">
+                    <div class="item-content">
+                        <span class="icon-itemmenu">
+                            <i class="ri-sun-line"></i>
+                        </span>
+                        <span class="namee">Absentismo</span>
+                    </div>
+                </div>
+                <div title="KPI" class="item-wellcome-menu" ng-click="enterDashboard('App.KPI.View.Dashboard')">
+                    <div class="item-content">
+                        <span class="icon-itemmenu">
+                            <i class="ri-bar-chart-line"></i>
+                        </span>
+                        <span class="namee">KPI</span>
+                    </div>
+                </div>
+                <div title="Formación" class="item-wellcome-menu" ng-click="enterDashboard('App.Formacion.View.Dashboard')">
+                    <div class="item-content">
+                        <span class="icon-itemmenu">
+                            <i class="ri-book-3-line"></i>
+                        </span>
+                        <span class="namee">Formación</span>
+                    </div>
+                </div>
+                <div title="Costes" class="item-wellcome-menu" ng-click="enterDashboard('App.Costes.View.Dashboard')">
+                    <div class="item-content">
+                        <span class="icon-itemmenu">
+                            <i class="ri-hand-coin-line"></i>
+                        </span>
+                        <span class="namee">Costes</span>
+                    </div>
+                </div>
+                <div title="Seguridad" class="item-wellcome-menu" ng-click="enterDashboard('App.Seguridad.View.Dashboard')">
+                    <div class="item-content">
+                        <span class="icon-itemmenu">
+                            <i class="ri-honour-line"></i>
+                        </span>
+                        <span class="namee">Seguridad</span>
+                    </div>
+                </div>
+                <div title="Control de Presencia" class="item-wellcome-menu" ng-click="enterDashboard('App.Presencia.View.Dashboard')">
+                    <div class="item-content">
+                        <span class="icon-itemmenu">
+                            <i class="ri-checkbox-line"></i>
+                        </span>
+                        <span class="namee">Control de Presencia</span>
+                    </div>
+                </div>
+                <div title="Selección" class="item-wellcome-menu" aria-disabled="true" disabled>
+                    <div class="item-content">
+                        <span class="icon-itemmenu">
+                            <i class="ri-user-search-line"></i>
+                        </span>
+                        <span class="namee">Selección</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img id="pont-1" src="assets/img/wellcomeImages/Point-001.png" alt="ImgFondo">
+    <img id="pont-2" src="assets/img/wellcomeImages/Point-002.png" alt="ImgFondo">
+    <img id="pont-3" src="assets/img/wellcomeImages/Point-003.png" alt="ImgFondo">
+    <img id="pont-4" src="assets/img/wellcomeImages/Point-004.png" alt="ImgFondo">
+</div>

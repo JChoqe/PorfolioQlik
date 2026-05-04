@@ -1,0 +1,103 @@
+.cover-mz-progress{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cover-mz-progress.init .full-size-cover{
+    opacity: 0;
+    z-index: -99999 !important;
+}
+.cover-mz-progress .mz-progress{
+    display: flex;
+    height: 100%;
+    flex: 1;
+    min-height: 25%;
+    position: relative;
+    margin-top: 10px;
+}
+.cover-mz-progress .mz-progress:first-child{
+    margin-top: 0px;
+}
+
+.cover-mz-progress .mz-progress .mz-progress-wrapper{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    padding: 10px;
+    z-index: 1;    
+    margin: 0;
+    border-radius: 0px;
+    display: flex; 
+    flex-direction: column; 
+}
+
+.mz-progress-header{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    flex: 1;
+    height: 100%;
+}
+.mz-progress-header label{
+    margin: 0;
+    font-size: .8rem;
+}
+.mz-progress-header label.mz-progress-title{
+    font-weight: normal;
+    color: #aba6a6;
+}
+.mz-progress-header label.mz-progress-value{
+    font-weight: bold;
+    color: #00555c;
+}
+.mz-progress-bar{
+    display: flex;
+    width: 100%;
+    height: 8px;
+    border-radius: 6px;
+    background-color: #efeef4;
+    position: relative;
+    overflow: hidden;
+}
+.mz-progress-bar::after{
+    content: '';
+    width: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 6px;
+    transition: width .6s ease-in-out;
+}
+
+[data-color="green-1"] .mz-progress-bar[data-val]::after{
+    width: var(--width-0);
+    background: #00bb86;
+    transition: width .6s ease-in-out;
+}
+[data-color="green-2"] .mz-progress-bar[data-val]::after{
+    width: var(--width-1);
+    background: #00555c;
+    transition: width .6s ease-in-out;
+}
+[data-color="green-3"] .mz-progress-bar[data-val]::after{
+    width: var(--width-2);
+    background: #dcf290;
+    transition: width .6s ease-in-out;
+}
+
+ [data-color] .NEGATIVEVAL .mz-progress-bar[data-val]::after{
+    background: #690815 !important;
+}
+.NEGATIVEVAL .mz-progress-header label.mz-progress-value {
+    color: #690815 !important;
+}
+.full-size-cover.bg-white{
+    background: #fff;
+    z-index: 1;
+}
+

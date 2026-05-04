@@ -1,0 +1,144 @@
+<div class="item-header-options" data-app="{{dataApp}}" ng-click="toggleFilters($event)">
+    <span class="title-option title-option-filters">
+        <span class="badge badge-default selectionsnotification badgeFilter" ng-if="!NoFiltersSelected">{{totalFiltros}}</span>
+        <span class="txt-xs"><span class="lui-icon lui-icon--filterpane qs-no-margin" aria-hidden="true"></span></span>
+    </span>
+</div>
+<div id="filters-panel" ng-class="{ 'activo' : OpenFiltros}">
+    <div id="cabeceraFiltros">
+        <div id="box_selecciones">
+            <ul class="nav pull-right">
+                <li class="nav-item" id="linkAbreFiltros">
+                    <a href="javascript:void(0);" ng-click="toggleFiltersSelected($event)">
+                        <span class="selectionsButtom" >
+                            {{'views.label.selecciones'  | translate}}
+                            <i class="icofont-simple-left" ng-class="OpenFiltersSelected == true ? 'd-none' : ''"></i>
+                            <i class="icofont-simple-right" ng-class="OpenFiltersSelected == true ? '' : 'd-none'"></i>
+                        </span>
+                        <span id="selectionsnotification" class="badge badge-default badgeFilterPanel" ng-if="!NoFiltersSelected">
+                            {{totalFiltros}}
+                        </span>
+                    </a>                    
+                </li>
+                <li class="nav-item liFiltrosClose" ng-click="toggleFilters($event)">
+                    <a href="javascript:void(0)" class="nav-link">
+                        <span class="selectionsButtom">
+                            <i class="lui-icon lui-icon--close"></i>                            
+                        </span>                        
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="cuerpoFiltros">
+        <div class="col-md-12 box_object box_object_filter_item clearfix" ng-if="!paneles">
+            <div class="qlik-embed filtrosHome" data-qlik-objid="{{IdFiltros}}" ng-model="model"></div>
+        </div>
+        <div id="accordion" ng-if="paneles"> 
+            <div class="card" ng-repeat="item in listPaneles track by $index">
+                <div class="card-header" id="headingOne">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{$index}}" aria-expanded="{{$index == 0 ? 'true' : ''}}" aria-controls="collapse{{$index}}" ng-click="openCollapse(item.id)">
+                        <span class="text-header-card"><span class="{{item.icon}} ico-20 pr-2"></span>{{ item.title}}</span>
+                    </button>
+                </div>
+
+                <div id="collapse{{$index}}" class="collapse" ng-class="$index == 0 ? 'show' : ''" data-parent="#accordion">
+                    <div class="innerCollapse">
+                    <div class="card-body box_object box_object_filter_item">
+                        <div class="qlik-embed filtrosHome" data-qlik-objid="{{item.id}}" ng-model="model"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div id="filtersTop-selections" ng-class="{ 'activo' : OpenFiltersSelected}">
+        <div class="header-filtersSelected-top">
+            <h2><i class="lui-icon lui-icon--filterpane qs-no-margin"></i>{{'views.label.selecciones'  | translate}}</h2>
+            <table class="tableFilter table-fixed">
+                <thead>
+                    <tr class="optionFilters">
+                        <td>
+                            <button class="qv-subtoolbar-button borderbox"  ng-click="back()" ng-disabled="disabledSelections.back"  title="{{'label.filtros.retroceder'  | translate}}">
+                                <i class="lui-icon lui-icon--selections-back"></i>
+                            </button>        
+                        </td>
+                        <td>
+                            <button class="qv-subtoolbar-button borderbox"  ng-click="forward()" ng-disabled="disabledSelections.forward"  title="{{'label.filtros.avanzar'  | translate}}">
+                                <i class="lui-icon lui-icon--selections-forward"></i>
+                              </button>
+                        </td>
+                        <td>
+                            <button id="clearselections" class="qv-subtoolbar-button borderbox" ng-disabled="NoFiltersSelected"  ng-click="clearAllFields()"   title="{{'label.filtros.limpiar'  | translate}}">
+                                <i class="lui-icon lui-icon--clear-selections"></i>
+                              </button>
+                        </td>
+                    </tr>                                
+                </thead>
+
+            </table>
+        </div>
+        <ul id="selections">
+            <li class="list-filters-selected" ng-if="!NoFiltersSelected">
+                <ul class="inner-selected">
+                    <li class='selected-field-container clearfix' id='{{item.field}}' ng-repeat="item in listFiltros | orderBy:'index'  track by item.index">                         
+                        <div class='row m-0 wrapper'>
+                            <div class='col-sm-12 col-xs-12 p-0'>
+                                <span class='label label-info selected-field'><span class="lui-icon lui-icon--filterpane qs-no-margin" aria-hidden="true"></span> {{item.field}}</span>
+                                <p class='selectedelements m-0'>
+                                    {{item.selectedStr}}
+                                </p>
+                            </div> 
+                            
+                            
+                        </div>
+                        <div class="row m-0">
+                            <table class="tableFilter table-fixed">
+                                <thead>
+                                    <tr class="optionFilters">
+                                        <td>
+                                            <button class="clearBtn" ng-click="selectAll(item)" ng-disabled="item.btnSelectAllDisable" title="{{'label.filtros.todo'  | translate}}">
+                                                <i class="lui-icon lui-icon--select-all"></i>
+                                            </button>        
+                                        </td>
+                                        
+                                        <td>
+                                            <button class="clearBtn" ng-click="selectAlternativos(item)" ng-disabled="item.btnSelectAlternativeDisable" title="{{'label.filtros.alternativos'  | translate}}">
+                                                <i class="lui-icon lui-icon--select-alternative"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="clearBtn" ng-click="selectExcluidos(item)" ng-disabled="item.btnSelectExcludedDisable" title="{{'label.filtros.excluidos'  | translate}}">
+                                                <i class="lui-icon lui-icon--select-excluded"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="clearBtn" ng-if="item.qLocked" ng-click="unlockFilter(item.field, $event)" title="{{'label.filtros.desbloquear'  | translate}}">
+                                                <i class="lui-icon lui-icon--lock unlock-field"></i>
+                                            </button>
+                                            <button class="clearBtn" ng-if="!item.qLocked" ng-click="lockFilter(item.field, $event)" title="{{'label.filtros.bloquear'  | translate}}">
+                                                <i class="lui-icon lui-icon--unlock"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="clearBtn" ng-disabled="item.btnClearDisable" ng-click="clearItemFilter(item.field, $event)" title="{{'label.filtros.borrar'  | translate}}">
+                                                <i class="lui-icon lui-icon--bin clear-field"></i>
+                                            </button>                                            
+                                        </td>
+                                    </tr>                                
+                                </thead>
+
+                            </table>
+                        </div>                        
+                    </li>                                
+                </ul>
+            </li>
+            <li id="emptyFilters" ng-if="NoFiltersSelected">{{'views.label.nofiltros' | translate}}</li>
+            <li class='clear-all' ng-if="!NoFiltersSelected" ng-click="!NoFiltersSelected && clearAllFilter($event)"><div class='mz-btn-dark' ng-class="{'disabled' : NoFiltersSelected}">{{'views.acciones.limpiarselecciones' | translate}}</div></li>
+        </ul>
+    </div>
+</div>
+<div class="cover-filter-blur" ng-class="{ 'activo' : OpenFiltersSelected}"></div>

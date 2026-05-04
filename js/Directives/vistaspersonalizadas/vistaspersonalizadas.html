@@ -1,0 +1,110 @@
+<div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-100 m-0 p-0">
+    <div id="coverlistBookmarkPersonalizados" class="col-12 mzh-100 m-0">
+        <div class="load-visualizaciones" id="load-visualizaciones">
+            <h2>{{"visualizaciones.buscando" | translate}}</h2>
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="cover-full" ng-if="endSearch && listBookmarkPersonalizados.length < 1">
+            <h2>{{"visualizaciones.noresultados" | translate}}</h2>
+        </div>
+    
+    
+    
+        <div id="box-visualizaciones" class="col-12 mzh-100 row m-0 p-0" ng-show="listBookmarkPersonalizados.length > 0">
+            <div id="list-visualizaciones">
+                <div class="header-list-visualizaciones">
+                    <h4><i class="lui-list__aside  item-icon  lui-icon  lui-icon--lui-icon lui-icon ri-archive-line"></i> {{'label.visualizaciones' | translate}}</h4>
+                    <div class="actions-menu-list">
+                        <div class="text-search__form" ng-show="!showList">
+                            
+                                <input class="form-control text-search__search-box laboratorio-datos" type="text"
+                                    placeholder="{{'placeholder.buscarvisualizaciones' | translate}}" ng-model="searchAll">
+                                
+                            
+                        </div>
+                        <i class="icofont-spreadsheet" ng-class="showList == false ? 'active' : ''" ng-click="viewBoxes($event)" ng-if="listBookmarkPersonalizados.length > 0" title="{{'Favorites.Modo.Objeto' | translate}}"></i>
+                        <i class="icofont-listing-number" ng-class="showList == true ? 'active' : ''" ng-click="viewList($event)" ng-if="listBookmarkPersonalizados.length > 0" title="{{'Favorites.Modo.Lista' | translate}}"></i>
+                    </div>
+ 
+                </div>
+
+                <div class="cover-items"  ng-if="!showList && listBookmarkPersonalizados.length > 0">
+                    <div class="item-bookmark col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12"
+                        ng-repeat="bookmark in listBookmarkPersonalizados | orderBy:'creationDate' | filter:{title:searchAll}  track by $index" data-user="{{bookmark.user}}" data-type="{{bookmark.typeObject}}">
+                        <div class="content-options">
+                            <div class="info-bokkmark">
+                                <span class="title-bookmark" title="{{bookmark.title}}">{{bookmark.title}}</span>
+                                <div class="item-bookmark-creationDate item-bookmark-info" ng-if="bookmark.creationDate">
+                                    <span><span class="lui-icon lui-icon--calendar"></span>{{'views.modal.fechaCreacion' |
+                                        translate}}:</span>
+                                    {{bookmark.creationDate}}
+                                </div>
+                                <div class="item-bookmark-creationDate item-bookmark-info" ng-if="bookmark.modificationDate">
+                                    <span><span class="lui-icon lui-icon--calendar"></span>{{'views.modal.fechaModificacion' |
+                                        translate}}:</span>
+                                    {{bookmark.modificationDate}}
+                                </div>
+                                <div class="item-bookmark-app-name item-bookmark-info" ng-if="bookmark.APPNAME">
+                                    <span><span class="lui-icon lui-icon--data-model"></span>{{'views.modal.appname' |
+                                        translate}}:</span>
+                                    {{bookmark.APPNAME}}
+                                </div>
+                                <div class="item-bookmark-user item-bookmark-info" ng-if="bookmark.user">
+                                    <span><span class="lui-icon lui-icon--person"></span>{{'views.modal.usuario' |
+                                        translate}}:</span>
+                                        <span class="user_vis">
+                                            {{ bookmark.user | getUserId}}
+                                        </span>
+                                    
+                                </div>
+                                <i class="bmIcon {{bookmark.type}}"></i>
+                            </div>
+    
+                            <div class="options-bookmark">
+                                <button class="item-option-bookmark" ng-click="deleteBookmark(bookmark, $event)"
+                                    ng-disabled="!bookmark.canDelete" title="{{'views.acciones.eliminar' | translate}}"><i
+                                        class="lui-icon lui-icon--bin"></i></button>
+                                <button ng-if="bookmark.canPublish && bookmark.published==false" title="{{'views.acciones.publicarvisualizacion' | translate}}"
+                                    class="item-option-bookmark" ng-click="publishBookmark(bookmark)"><i
+                                        style="color: #0eb921" class="lui-icon lui-icon--unlock"></i></button>
+                                <button ng-if="bookmark.canPublish && bookmark.published==true" class="item-option-bookmark" title="{{'views.acciones.despublicarvisualizacion' | translate}}"
+                                    ng-click="unPublishBookmark(bookmark)"><i style="color: #ce2121"
+                                        class="lui-icon lui-icon--lock"></i></button>
+                                <button class="item-option-bookmark item-option-bookmark-active"
+                                    ng-click="applyBookmark(bookmark, $event)"
+                                    title="{{'views.acciones.vervisualizacion' | translate}}"><i
+                                        class="lui-icon lui-icon--view"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cover-items"  ng-if="showList && listBookmarkPersonalizados.length > 0">
+                    <div id="gridContainer" dx-data-grid="gridOptions" dx-item-alias="row" class="mzh-100 grid-table">
+                        <div data-options="dxTemplate:{ name: 'accionesTemplate'}">                            
+                            <i class="lui-icon lui-icon--bin"  ng-click="deleteBookmark(row.data, $event)" ng-disabled="!bookmark.canDelete" title="{{'views.acciones.eliminar' | translate}}"></i>
+                            <i style="color: #0eb921" class="lui-icon lui-icon--unlock" ng-if="row.data.canPublish && row.data.published==false" ng-click="publishBookmark(row.data)" title="{{'views.acciones.publicarvisualizacion' | translate}}"></i>
+                            <i style="color: #ce2121" class="lui-icon lui-icon--lock" ng-if="row.data.canPublish && row.data.published==true" ng-click="unPublishBookmark(row.data)" title="{{'views.acciones.despublicarvisualizacion' | translate}}"></i>
+                            <i class="lui-icon lui-icon--view" ng-click="applyBookmark(row.data, $event)" title="{{'views.acciones.vervisualizacion' | translate}}" title="{{'views.acciones.vervisualizacion' | translate}}"></i>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div id="inject-object">
+                <div id="header-inject-object">
+                    <div class="inject-optioms">
+                        <div class="item-options" ng-click="closeVis()">
+                            <i class="lui-icon lui-icon--close"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="inner-inject-object" class="box_object">
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</div>

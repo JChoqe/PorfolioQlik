@@ -1,0 +1,45 @@
+
+mz-alerting-toolbar .title-option .badge {
+    right: 14px;
+    left: initial !important;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+}
+
+/* mz-alerting-toolbar .list-alert {
+    min-width: 400px;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+} */
+
+/* .item-option:hover mz-alerting-toolbar .list-alert {
+    opacity: 1;
+    visibility: visible;
+    top: 80%;
+    transform: scale(1);
+} */
+
+/* .item-option .list-alert:before {
+    content: "";
+    position: absolute;
+    right: 25px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #efefef transparent;
+    z-index: 9999;   
+} */
+
+mz-alerting-toolbar .item-alert-title{
+    cursor: pointer;
+    font-size: 0.8rem;
+    line-height: 140%;
+}

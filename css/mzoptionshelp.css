@@ -1,0 +1,57 @@
+mzoptionshelp{    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+}
+
+.content-section-configurador .notificationsScroll .include-box,
+.content-section-configurador .notificationsScroll .include-box .tab-view-wrapper
+{
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+.content-section-configurador .notificationsScroll .include-box .tab-view-wrapper .lui-tabview{
+    width: 100%;
+}
+.content-section-configurador .notificationsScroll .include-box .tab-view-wrapper .tabs-content{
+    flex: 1;
+    padding: 20px;
+    height: -webkit-calc(100% - 35px);
+    height: -moz-calc(100% - 35px);
+    height: calc(100% - 35px);
+}
+.content-section-configurador .notificationsScroll .include-box .tab-view-wrapper .tabs-content iframe {
+    width: 100% !important;
+    height: 98% !important;
+}
+.content-section-configurador .notificationsScroll .include-box .tab-view-wrapper .tabs-content p {
+    font-size: 0.8rem;
+    line-height: 140%;
+    margin: 10px 0;
+}
+.content-section-configurador .notificationsScroll .include-box .lui-tab .tab-item {
+    color: #dbe1e4;
+    font-weight: normal;
+    letter-spacing: 0.2px;
+}
+.video-wrapper{
+    overflow: auto;
+    padding:0;
+    margin:0;
+    justify-content:space-around;
+}
+.item-folder{
+    position: relative;
+    aspect-ratio: 16 / 9;
+}
+.item-folder .video-demo-container,
+.item-folder .video-demo-container .video-element{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+

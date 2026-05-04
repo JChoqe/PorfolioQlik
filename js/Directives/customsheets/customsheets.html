@@ -1,0 +1,97 @@
+<div id="personalSheets" ng-class="[HideMenuSheets == true ? 'collapsed' : 'HideMenuSheets', blockMenu == true ? 'blockMenu' : '']">
+    <div class="loader-perso">
+        <div class="full-size-cover" ng-include="'views/partial/loader_qlik.html'"></div>
+    </div>
+    <div class="iframe_cover_sense" ng-if="hasPersonalSheets">
+        <div id="contentSheets"></div>
+
+        <div id="menuSheets">
+            <h1 id="header-menu-sheets">
+                <div class="item-list-head search-box" ng-class="showBar == true ? 'active' : ''">
+                    <input ng-model="params.searchText" class="sheets-search" placeholder="{{'views.label.buscar'  | translate}}" ng-value="searchText" id="barsearch" name="barsearch" /></span>
+                    <i class="icofont icofont-close ico-close" ng-click="showSearch()"></i>
+                </div>
+                
+                <i class="ri-menu-unfold-line" ng-click="hideMenuSheets()"></i>
+                <div class="options-sheet">
+                    <span class="options-sheet-item" ng-if="params.searchText.length > 0" ng-click="clearSearchBar()"><i class="ri-eraser-line"></i></span>
+                    <span class="options-sheet-item" ng-click="changeSortOrder()" ng-if="!reverse"><i class="ri-sort-asc"></i></span>
+                    <span class="options-sheet-item" ng-click="changeSortOrder()" ng-if="reverse"><i class="ri-sort-desc"></i></span>
+                    <span class="options-sheet-item options-sheet-item-order" ng-click="showOrderby()">
+                        <i class="ri-list-ordered"></i>
+                        <div class="orderByBox" ng-class="showOrder == true ? 'active' : ''">
+                            <div class="arrow_box">
+                                <div class="item-orderByBox" ng-repeat="item in itemsOrder track by $index" ng-click="sortBy(item)" ng-if="item.visible">
+                                    <span class="icon-list check-list" ng-class="item.active == true ? '' : 'oculto'"><i class="ri-check-line"></i></span>
+                                    {{item.name | translate}}
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                    <span class="options-sheet-item options-sheet-item-search" ng-click="showSearch()"><i class="ri-search-2-line"></i></span>
+                </div>
+            </h1>
+            <ul id="list-menu-sheets">
+                <li ng-repeat="item in SHEETS | orderBy:propertyName:reverse | filter:params.searchText track by $index"  ng-class="item.active == true ? 'active' : ''" >
+                    <span ng-click="showIframe(item, $event)" class="txt-list" title="{{item.name}}">{{item.name}}</span>
+                    <div class="info-item-sheet">                        
+                        <span title="Info" class="icon-list info-list" ng-click="showInfoSheet(item)"><i class="ri-information-line"></i></span>
+                        <span class="icon-list check-list" ng-class="item.active == true ? '' : 'oculto'"><i class="ri-check-line"></i></span>
+                    </div>
+                    <div class="infoSituacion" ng-if="item.approved || item.published">
+                        <span ng-if="item.approved" title="{{'order.menu.aprovado' | translate}}">A</span>
+                        <span ng-if="item.published" title="{{'order.menu.publicado' | translate}}">P</span>
+                    </div>
+                </li>
+            </ul>
+            <div id="footer-menu-sheets">
+                <ul>
+                    <li>
+                        <div class="mz-btn-open" ng-click="openAppSense()">{{'sheets.openapp' | translate}}</div>                         
+                    </li>
+                    <li>
+                        <div class="mz-btn-open" ng-click="reloadAppSense()">Reload</div>
+                    </li>
+                </ul>
+            </div>
+            <div id="panel-show-menu" ng-click="hideMenuSheets()">
+                <i ng-if="HideMenuSheets" class="ri-menu-fold-line ng-scope"></i>
+            </div>
+        </div>
+    </div>
+    <div id="avisoEmptySheets" ng-if="!hasPersonalSheets">
+        <div class="txt-info-add">
+            <h2 id="anchor-2" tabindex="-1">Crear una nueva hoja</h2>
+            <p>Las hojas personalizadas se crean desde la aplicación Qlik Sense. Puede abrir la aplicación Qlik Sense conectada a este módulo pulsando el botón <strong>ABRIR_APLICACION</strong> </p>            
+            <p>Una vez haya abierto la aplicación, haga lo siguiente:</p>
+            <ol>
+                <li>Desde la vista general de app, haga clic en <img src="./assets/img/core/ic_sheet.svg" alt="Objetos de app" ng-if="modoWhite"> <img src="./assets/img/core/ic_sheet-white.svg" alt="Objetos de app" ng-if="!modoWhite"> para ver las hojas.</li>
+                <li>Haga clic en <img src="./assets/img/core/ic_plus.svg" alt="Crear nuevo" ng-if="modoWhite"> <img src="./assets/img/core/ic_plus-white.svg" alt="Crear nuevo" ng-if="!modoWhite"> o en <span class="ui_item">Crear nueva hoja</span>.</li>
+                <li>Asigne un título a la hoja con la siguiente nomenclatura:
+                    <ul class="ul-list">
+                        <li>Comience  con el prefijo definido <strong class="PrefSheets">{{PrefSheets}}</strong></li>
+                        <li>Añada el módulo al que pertence la hoja, terminando con un punto.
+                            Los nombres de los módulos son (cada uno es una aplicación distinta):
+                            <ul class="ul-list-modulos">
+                                <li ng-repeat="modulo in MODULOS | orderBy:'module'">
+                                    <strong>{{modulo.module}}</strong>
+                                </li>                                
+                            </ul>
+                            
+                        </li>
+                        <li>Termine el título de la hoja con el nombre por el que desea que se muestre la hoja personalizada.</li>
+                    </ul>
+                </li>
+                <li>Añada una descripción.</li>
+                <li>Haga clic fuera del área de texto para guardar el título y la descripción.</li>
+                <li>Ejemplo : <span class="example">{{PrefSheets}}{{MODULOS[0].module}}.Dashboard Informe Tablas</span></li>
+            </ol>
+            <p>Se ha creado una nueva hoja. Sus hojas son privadas hasta que las haga públicas. Para más información, vea <a href="https://help.qlik.com/es-ES/cloud-services/Subsystems/Hub/Content/Sense_Hub/Share/make-public-or-private.htm" target="_blank"><i>Otorgar acceso a hojas, marcadores e historias</i></a>.</span></p>
+            <p>Para poder visualizar la nueva hoja creada en deberá actualizar la página en el navegador</p>
+            <div class="mz-btn-open" ng-click="openAppSense()">{{'sheets.openapp' | translate}}</div>            
+        </div>
+        
+    </div>
+    
+</div>
+

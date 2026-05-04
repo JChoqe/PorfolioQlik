@@ -1,0 +1,24 @@
+.fullobject{
+    position: absolute;
+    top: -33px;
+    right: 0;
+    opacity: 0;
+    width: 28px;
+    height: 28px;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out 0s;
+    background: rgba(241, 232,232, 0.79);
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+.mz-kpi-multiple .box-kpi:hover .wrapper-object .fullobject{
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+}

@@ -1,0 +1,11 @@
+#header-wellcome .idiomas ul li > a {
+    padding: 0 8px;
+}
+#header-wellcome .idiomas ul li.active,
+#header-wellcome .idiomas ul li:hover {
+    background-color: rgb(96, 125, 139 ,0.3);;
+    border-radius: 4px;
+}
+#header-wellcome .idiomas ul li.active > a {
+    color: #fff;
+}

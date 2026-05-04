@@ -1,0 +1,307 @@
+#main-menu-responsive {
+    display:none;
+}
+@media only screen and (min-width : 320px) and (max-width : 1024px) {
+    #main-menu-responsive {
+        display: block;
+    }
+}
+
+#main-menu-responsive {
+    transition: all .3s ease 0s;
+    -webkit-overflow-scrolling: touch;
+}
+
+#main-menu-responsive {
+    position: absolute;
+    top: 70px;
+    bottom: 0px;
+    left: -290px;
+    width: 280px;
+    /*background: #141414 !important;*/
+    background: #1f1f1f !important;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    z-index: 503;
+}
+
+#main-menu-responsive.active {
+    left: 0px;
+}
+
+#main-menu-responsive .scroll-menu {
+    position: relative;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    height: 85%;
+    -webkit-overflow-scrolling: touch;
+}
+ul.menu-responsive{
+    margin:0;
+    padding:15px;
+
+}
+
+ul.menu-responsive > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    font-weight: 400;
+}
+ul.menu-responsive > li::after {
+    border-top: 1px solid #949191 !important;
+    content: '' !important;
+    width: 100%;
+    height: 1px;
+    color: #d1d1d1;
+    align-self: flex-start;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+ul.menu-responsive > li > a {
+    color: #fff !important;
+    display: flex;
+    width: 100%;
+    min-width:100%;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    font-size: 1rem;
+    padding: 12px 0 12px 0px;
+    text-decoration:none;
+}
+
+ul.menu-responsive > li.active > a > p{
+    color:#972323;
+}
+
+ul.menu-responsive > li > a > i {
+    margin-right: 10px;
+}
+ul.menu-responsive > li > a > p {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+ul.menu-responsive > li > div > .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    font-weight: 400;
+}
+ul.menu-responsive > li > div > .nav > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    font-weight: 400;
+}
+ul.menu-responsive > li > div > .nav > li > a {
+    color: #fff !important;
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    font-size: 0.8rem;
+    padding: 8px 0 8px 25px;
+    text-decoration: none;
+    position:relative;
+}
+ul.menu-responsive > li > div > .nav > li > a:after {
+    content: '';
+    width: 3px;
+    height: 20px;
+    position: absolute;
+    left: 13px;
+    top: 0;
+    top: -webkit-calc(50% - 10px);
+    top: -moz-calc(50% - 10px);
+    top: calc(50% - 10px);
+    background: transparent;
+}
+ul.menu-responsive > li > div > .nav > li.active > a:after {
+    background: #972323;
+}
+
+ul.menu-responsive > li > div > .nav > li > div > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    font-weight: 400;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+ul.menu-responsive > li > div > .nav > li > div > ul > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    font-weight: 400;
+}
+ul.menu-responsive > li > div > .nav > li > div > ul > li > a {
+    color: #fff !important;
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    font-size: 0.6rem;
+    padding: 5px 0 5px 25px;
+    text-decoration: none;
+    position:relative;
+}
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li > a:after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: 13px;
+    top: 0;
+    top: -webkit-calc(50% - 3px);
+    top: -moz-calc(50% - 3px);
+    top: calc(50% - 3px);
+    background: transparent;
+}
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li > a:after {
+    content: '';
+    width: 3px;
+    height: 20px;
+    position: absolute;
+    left: 13px;
+    top: 0;
+    top: -webkit-calc(50% - 10px);
+    top: -moz-calc(50% - 10px);
+    top: calc(50% - 10px);
+    background: transparent;
+}
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li.active > a:after {
+    background: #972323;
+}
+
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li.activo_fijo > a:after {
+    background: #972323;
+}
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li > a > i {
+    display:none;
+}
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    font-weight: 400;
+}
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    font-weight: 400;
+}
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li > a {
+    color: #fff !important;
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    font-size: 0.6rem;
+    padding: 8px 0 8px 35px;
+    text-decoration: none;
+    position: relative;
+}
+
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li > a > i {
+    display: none;
+}
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li > a:after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: 24px;
+    top: 0;
+    top: -webkit-calc(50% - 3px);
+    top: -moz-calc(50% - 3px);
+    top: calc(50% - 3px);
+    background: transparent;
+}
+
+    ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li.active > a:after,
+    ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li.activo_fijo > a:after {
+        background: #972323;
+    }
+
+/**/
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li > div > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    font-weight: 400;
+    padding-left:20px;
+}
+
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li > div > ul > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    font-weight: 400;
+}
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li > div > ul > li > a {
+    color: #fff !important;
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    font-size: 0.6rem;
+    padding: 8px 0 8px 35px;
+    text-decoration: none;
+    position: relative;
+}
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li > div > ul > li > a > i {
+    display: none;
+}
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li > div > ul > li > a:after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: 24px;
+    top: 0;
+    top: -webkit-calc(50% - 3px);
+    top: -moz-calc(50% - 3px);
+    top: calc(50% - 3px);
+    background: transparent;
+}
+ul.menu-responsive > li > div > .nav > li > div > ul > li > div > ul > li > div > ul > li.activo_fijo > a:after {
+    background: #972323;
+}

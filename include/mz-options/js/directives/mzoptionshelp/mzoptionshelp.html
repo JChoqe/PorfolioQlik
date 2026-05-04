@@ -1,0 +1,12 @@
+<div class="header-section-configurador">
+    <h2>{{'views.acciones.ayuda'  | translate}}</h2>    
+    <span class="pin-active-visibility" ng-attr-title="{{message}}" ng-click="anclarThis($event)" ng-class="isActive == true ? 'active' : ''">
+        <i class="icofont icofont-tack-pin"></i>
+        <i class="icofont icofont-minus-circle pin-desanclar"></i>
+    </span>
+</div>
+<div class="content-section-configurador">
+    <div class="notificationsScroll d-flex">
+        <div class="include-box" ng-include="'include/mz-options/js/directives/mzoptionshelp/dialog-template.ng.html'"></div>
+    </div>
+</div>

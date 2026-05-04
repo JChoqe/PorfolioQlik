@@ -1,0 +1,62 @@
+<lui-tab-view id="lui-tabview">
+    <lui-tabset> 
+        <lui-tab ref="tab_alertas" ng-if="mzAlerting" class="lui-active">
+            <span class="tab-item">
+                <span class="ri-notification-3-line qs-no-margin" aria-hidden="true"></span>
+                <span class="texto">Alertas</span>
+                <span class="badge badge-pill badge-danger">{{(BubbleAlerts | filter:{read_at:null}).length}}</span>
+            </span>
+        </lui-tab>                   
+        <lui-tab ref="tab_marcadores">
+            <span class="tab-item">
+                <span class="lui-icon lui-icon--bookmark qs-no-margin" aria-hidden="true"></span>
+                <span class="texto">Marcadores</span>
+            </span>
+        </lui-tab>
+        <lui-tab ref="tab_filtros">
+            <span class="tab-item">
+                <span class="lui-icon lui-icon--filterpane qs-no-margin" aria-hidden="true"></span>
+                <span class="texto">Filtros</span>
+            </span>
+        </lui-tab>
+        <lui-tab ref="tab_glosario">
+            <span class="tab-item">
+                <span class="lui-icon lui-icon--library qs-no-margin" aria-hidden="true"></span>
+                <span class="texto">Glosario</span>
+            </span>
+        </lui-tab>
+        <lui-tab ref="tab_ayuda">
+            <span class="tab-item">
+                <span class="lui-icon lui-icon--info qs-no-margin" aria-hidden="true"></span>
+                <span class="texto">Ayuda</span></span>
+            </span>
+        </lui-tab>
+        <lui-tab ref="tab_mode" ng-if="mzOptions">
+            <span class="tab-item">
+                <span class="icofont icofont-moon" ng-if="!darkView"></span>
+                <span class="icofont icofont-sun-alt" ng-if="darkView"></span>
+                <span class="texto">Modo</span></span>
+            </span>
+        </lui-tab>
+
+
+                    </lui-tabset>
+    <lui-tab-content class="tabs-content" ref="tab_alertas" ng-if="mzAlerting">
+        <mzoptionsalertas></mzoptionsalertas>
+    </lui-tab-content>
+    <lui-tab-content class="tabs-content" ref="tab_marcadores">
+        <mzoptionsmarcadores idapp="{{appID}}"></mzoptionsmarcadores>
+    </lui-tab-content>
+    <lui-tab-content class="tabs-content" ref="tab_filtros">
+        <mzoptionsfilters idfiltro="{{IdFiltros}}"></mzoptionsfilters>
+    </lui-tab-content>
+    <lui-tab-content class="tabs-content" ref="tab_glosario">
+        <mzoptionsglosario idapp="{{appID}}"></mzoptionsglosario>
+    </lui-tab-content>
+    <lui-tab-content class="tabs-content" ref="tab_ayuda">
+        <mzoptionshelp></mzoptionshelp>
+    </lui-tab-content>
+    <lui-tab-content class="tabs-content" ref="tab_mode">
+        <mzoptionsmode></mzoptionsmode>
+    </lui-tab-content>
+</lui-tab-view>

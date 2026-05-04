@@ -1,0 +1,105 @@
+#mz-options-mashup{
+    height: 50px !important;
+    padding: 0;
+    z-index: 1;
+    /* position: absolute; */
+    right: 0;
+    top: 0;
+    width: auto;
+    background: var(--qv-panel-current-selections-bgcolor);
+    overflow: hidden;
+}
+
+#mz-options-mashup #options-btns{
+    display: flex;
+    flex: 1;
+    height: 100%;
+    margin: 0;
+}
+#mz-options-mashup #options-btns > li{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+    min-width: 50px;
+}
+#mz-options-mashup #options-btns > li > span{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 4px;
+    background-color: var(--second-color);
+    color: #fff !important;
+    border: 1px solid var(--second-color);
+    cursor: pointer;
+    line-height: 140%;
+    min-height: 32px;
+
+}
+#mz-options-mashup #options-btns > li > span > i{
+    transition: all 0.2s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+#mz-options-mashup #options-btns > li > span:hover > i{
+    font-size: 1.1rem;
+}
+
+.mz-btn-dark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: auto;
+    min-width: 250px;
+    padding: .375rem .75rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #ded9d9;
+    background-clip: padding-box;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--menu-bg-color);    
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    z-index: 2;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+}
+.mz-btn-dark:hover{
+    text-decoration: none;
+    color: #fff;
+    outline:none !important;
+}
+.mz-btn-dark.lui-button.lui-active,
+.mz-btn-dark.lui-button:active,
+.mz-btn-dark.lui-button:focus {
+    color: #75a7de;
+    background-color: var(--menu-bg-color);
+    background: var(--menu-bg-color);
+    border-color: transparent;
+    box-shadow: none !important;
+    outline:none !important;
+}
+.mz-btn-dark > i {
+    margin: 0 5px;
+}
+
+/* .body-presentacionfull-size #page-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    background: #f5f5f5;
+    z-index: 9;
+    height: 100%;
+}
+.body-presentacionfull-size #main-menu{
+    z-index: 0;
+} */

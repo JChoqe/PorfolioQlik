@@ -1,0 +1,77 @@
+mzoptionsglosario{    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+}
+.content-section-configurador .notificationsScroll .glossary-box {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    position: relative;
+    top: inherit;
+    padding: 0;
+}
+
+
+
+#glossary-search {
+    height:40px;
+    display:flex;
+    align-content:center;
+    align-items:center;
+    justify-content:center;
+}
+#glossary-scroll {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 50px;
+    padding: 10px;
+    overflow: auto;
+}
+
+.glossary-item {
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+}
+
+.glossary-item-type > span{
+    line-height:25px;
+    font-size:0.8rem;
+    font-weight: normal;
+}
+
+.glossary-item-name > span {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #22333e;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.glossary-item-name > p {
+    padding: 4px 8px 4px 0;
+    margin: 0;
+    font-size: 12px;
+    line-height: 140%;
+    margin-bottom: 5px;
+}
+
+.glossary-item-name > p .highlighted {
+    background: #009688;
+    color: #fff;
+    padding: 3px;
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+    #glossary {
+        width: 100%;
+        right: -120%;
+    }
+}
+

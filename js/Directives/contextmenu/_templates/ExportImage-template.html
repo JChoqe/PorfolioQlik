@@ -1,0 +1,97 @@
+<div lui-class-list="classList" id="print-dialog" class="lui-dialog lui-dialog-mz">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title" q-translation="Print.Image.Title"></div>
+    </div>
+    <div class="print-dialog lui-dialog__body">
+
+        <div class="section">
+            <div class="lui-buttongroup">
+                <button class="lui-button lui-active" ng-class="{ 'lui-active': ! imageCustomSize }" ng-click="onImageCustomSize(false)" q-translation="Print.Image.CurrentSize"></button>
+                <button class="lui-button" ng-class="{ 'lui-active': imageCustomSize }" ng-click="onImageCustomSize(true)" q-translation="Common.Custom"></button>
+            </div>
+        </div>
+        <div class="section" ng-show="! imageCustomSize" aria-hidden="false">
+            {{imageSetting.captureSize.width}} x {{imageSetting.captureSize.height}} px @ 96 dpi
+        </div>
+
+        <div class="section ng-hide" ng-show="imageCustomSize" aria-hidden="true">
+            <div class="section-title" q-translation="Print.Image.Width"></div>
+            <div class="print-image" data-quiMin="0" data-quiMax="2000">
+                <span class="qui-input-number lui-input-group">
+                    <button class="lui-input-group__item lui-input-group__button lui-button" qva-activate="onChangeWidth(-1, $event)">
+                        <span class="lui-button__icon">-</span>
+                    </button>
+                    <input type="tel" class="lui-input-group__item  lui-input-group__input  lui-input " id="captureSizeWidth" ng-model="imageSetting.captureSize.width"  ng-change="onChangeImputWidth(null,'captureSizeWidth')" ng-model-options="{ updateOn: 'blur' }">
+                    <button class="lui-input-group__item lui-input-group__button lui-button" qva-activate="onChangeWidth(1, $event)">
+                        <span class="lui-button__icon">+</span>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="section ng-hide" ng-show="imageCustomSize" aria-hidden="true">
+            <div class="section-title" q-translation="Print.Image.Height"></div>
+            <div class="print-image" data-quiMin="0" data-quiMax="2000">
+                <span class="qui-input-number lui-input-group">
+                    <button class="lui-input-group__item lui-input-group__button lui-button" ng-click="onChangeHeight(-1, $event)">
+                        <span class="lui-button__icon">-</span>
+                    </button>
+                    <input type="tel" class="lui-input-group__item  lui-input-group__input  lui-input" id="captureSizeHeight"  ng-model="imageSetting.captureSize.height" ng-change="onChangeImputHeight(null,'captureSizeHeight')" ng-model-options="{ updateOn: 'blur' }">
+                    <button class="lui-input-group__item lui-input-group__button lui-button" ng-click="onChangeHeight(1, $event)" >
+                        <span class="lui-button__icon">+</span>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="section ng-hide" ng-show="imageCustomSize" aria-hidden="true">
+            <div class="section-title" q-translation="Print.Image.Dpi"></div>
+            <div class="print-image" data-quiMin="0" data-quiMax="300">
+                <span class="qui-input-number lui-input-group" qui-min="0" qui-max="300">
+                    <button class="lui-input-group__item lui-input-group__button lui-button" ng-click="onChangeDpi(-1, $event)">
+                        <span class="lui-button__icon">-</span>
+                    </button>
+                    <input type="tel" class="lui-input-group__item  lui-input-group__input  lui-input " id="captureSizeDpi" ng-model="imageSetting.captureSize.dpi" ng-model-options="{ updateOn: 'blur' }" ng-change="onChangeImputDpi(null,'captureSizeDpi')"">
+                    <button class="lui-input-group__item lui-input-group__button lui-button" ng-click="onChangeDpi(1, $event)">
+                        <span class="lui-button__icon">+</span>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title" q-translation="Print.Image.Format"></div>
+            <div class="print-image">
+                <div class="component-wrapper">
+                    <select class="lui-select" ng-model="format" ng-options="f as f for f in availableFormats" aria-invalid="false">
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="state === states.PENDING" class="loading-screen">
+            <div class="spinner"><div class="qv-loader"></div></div>
+        </div>
+        <div ng-if="state === states.COMPLETED">
+            <div class="section">
+                <a ng-href="{{printUrl}}" target="_blank" q-translation="Print.Image.CompletedLink"></a>
+
+            </div>
+        </div>
+
+        <div ng-if="state === states.TIMEOUT">
+            <div class="section">
+                <p class="dm-p" q-translation="Print.Failed.TimeoutMessage"></p>
+            </div>
+        </div>
+        <div ng-if="state === states.FAILED">
+            <div class="section">
+                <p class="dm-p" q-translation="Print.Failed.GenericMessage"></p>
+            </div>
+        </div>
+     </div>
+    <div class="lui-dialog__footer">        
+        <button lui-class-list="classList" ng-click="$event.preventDefault(); dowloadImage()" name="confirm" autofocus="autofocus" q-translation="Print.Download" class="lui-button"></button>
+        <button lui-class-list="classList" ng-click="$event.preventDefault(); close()" name="cancel" q-translation="Common.Cancel" tid="print-cancel" class=" lui-button"></button>
+    </div>
+</div>

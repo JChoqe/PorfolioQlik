@@ -1,0 +1,146 @@
+mzoptionsalertas{    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+
+}
+.content-section-configurador .notificationsScroll .item-notifications {
+    width: 100%;
+    min-height: 80px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+/* .content-section-configurador .notificationsScroll .item-notifications::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #ccd6d6;
+    bottom: 0px;
+    left: 0px;
+} */
+
+.content-section-configurador .notificationsScroll .item-notifications:hover {
+        background: #f5f5f5;         
+}
+
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner {
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    padding: 5px;
+    /* border: 1px solid rgba(0, 0, 0, 0.12);    
+    border-radius: 4px; */
+}
+
+
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-input {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 40px;
+}
+
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-input > i {
+    font-size:2rem;
+    margin-top:2rem;
+}
+
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-input > i.upIcon {
+    transform: rotate(45deg);
+    color: #1b8c14;
+}
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-input > i.upIcon.isKo {
+    color: #a50b0b;
+}
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-input > i.downIcon {
+    transform: rotate(135deg);
+    color: #a50b0b;
+}
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-input > i.downIcon.isOk {
+    transform: rotate(135deg);
+    color: #1b8c14;
+}
+
+
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    flex: 1;
+    font-size: 12px;
+    font-family: var(--font-family);
+}
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-text h3 {
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--main-color);
+    margin-bottom:0.5rem;
+}
+
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-text p {
+    width: 100%;
+    font-size: 0.8rem;
+    line-height: 140%;
+    color: #444;
+    margin-bottom:0.5rem;
+}
+
+
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-text .noti-tag {
+    width: 100%;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center flex-start;
+    align-items: center;
+    flex: 1;
+    margin-bottom: 0.5rem;
+}
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-text .noti-tag .tag-color {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    border-radius: 50%;
+    
+}
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-text .noti-tag .tag-color[data-type=success]{
+    background-color: #218838;
+}
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-text .noti-tag .tag-color[data-type=info]{
+    background-color: #138496;
+}
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-text .noti-tag .tag-color[data-type=warning]{
+    background-color: #ffc107;
+}
+.content-section-configurador .notificationsScroll .item-notifications .item-notifications-inner .noti-text .noti-tag .tag-color[data-type=danger]{
+    background-color: #dc3545;
+}
+.content-section-configurador .notificationsScroll .aviso-empty {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    font-size: 1rem;
+    color: #595959;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}

@@ -1,0 +1,14 @@
+<div class="lui-dialog lui-dialog-mz" style="width: 600px;">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title" title="{{'compare.pdf.addtitle' | translate}}">{{'compare.pdf.addtitle' | translate}}</div>
+    </div>
+    <div class="lui-dialog__body">
+        <p>{{'compare.pdf.askForTitle' | translate}}</p>
+        <input class="lui-input" id="titulo" ng-model="titulo" ng-maxlength="{{caracteres}}" maxlength="{{caracteres}}" type="text" autofocus> 
+        <span class="advisorCaracter"><span class="currentCaracter">{{titulo.length}}</span> / {{caracteres}} <span class="totalCaracter">{{'compare.pdf.txtCaracter' | translate}}</span></span>          
+    </div>
+    <div class="lui-dialog__footer">        
+        <button ng-disabled="titulo.length === 0 || titulo.length > caracteres" class="lui-button lui-dialog__button close-button" ng-click="sendTitle();">{{'views.modal.aceptar' | translate}}</button>
+        <button class="lui-button lui-dialog__button" ng-click="closeDialog();">{{'views.modal.cerrar' | translate}}</button>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="header-section-configurador">
+    <h2>{{'views.label.filtros'  | translate}}</h2>    
+    <span class="pin-active-visibility" ng-attr-title="{{message}}" ng-click="anclarThis($event)" ng-class="isVisibleLinkFilters == true ? 'active' : ''">
+        <i class="icofont icofont-tack-pin"></i>
+        <i class="icofont icofont-minus-circle pin-desanclar"></i>
+    </span>
+</div>
+<div class="content-section-configurador" id="filters-panel-options">
+    <div class="notificationsScroll d-flex">
+        <div class="cuerposSelecciones">
+            <div class="coverSeleciones">
+                <ul class="content-selecciones">
+                    <li class="selected-field-container clearfix" id="{{item.field}}" ng-repeat="item in listFiltros | orderBy:'index'  track by item.index">
+                        <span> 
+                            <div class="row m-0 wrapper">
+                                <div class="col-sm-12 col-xs-12 p-0">
+                                    <span class="label label-info selected-field" title="{{item.field}}">
+                                        <span class="selected-field-txt">{{item.field}}</span>
+                                    </span>
+                                    <p class="selectedelements m-0">{{item.selectedStr}}</p>
+                                </div> 
+                                <div class="col-sm-1 col-xs-1 item-remove p-0">
+                                    <div ng-if="!item.qLocked && !item.qOneAndOnlyOne" class='col-sm-1 col-xs-1 item-remove p-0'><span class='lui-icon lui-icon--bin clear-field' ng-click="clearItemFilter(item.field, $event)"></span></div>
+                                        <div ng-if="item.qLocked && !item.qOneAndOnlyOne"class='col-sm-1 col-xs-1 item-remove p-0'><span class='lui-icon lui-icon--lock unlock-field' ng-click="unlockFilter(item.field, $event)"></span></div>
+                                        <div ng-if="!item.qLocked  && item.qOneAndOnlyOne"class='col-sm-1 col-xs-1 item-remove p-0'></div>
+                                </div>
+                            </div>
+                        </span>
+                    </li>
+                    <li id="emptyFilters" ng-if="NoFiltersSelected">{{'views.label.nofiltros' | translate}}</li>
+                </ul>
+                <div id="btn-clear-selections" ng-if="!NoFiltersSelected">
+                    <div class="clear-all"><div class="mz-btn-dark" ng-click="clearAllFilter($event)"><i class="icofont icofont-refresh"></i>{{'views.acciones.limpiarselecciones' | translate}}</div></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="cuerpoFiltros">
+            <div class="cover_cuerpo_filtros">
+                <div class="box_object box_object_filter_item clearfix" ng-if="!paneles">
+                    <div class="qlik-embed filtrosHomePanel" data-qlik-objid="{{IdFiltros}}" ng-model="model"></div>
+                </div>
+                <div id="accordionPanel" class="accordion" ng-if="paneles" ng-init="getAltoAcordeonFilters()"> 
+                    <div class="card" ng-repeat="item in listPaneles track by $index">
+                        <div class="card-header" id="headingOne">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{$index}}" aria-expanded="{{$index == 0 ? 'true' : ''}}" aria-controls="collapse{{$index}}" ng-click="openCollapse(item.id)">
+                                <span class="text-header-card"><span class="{{item.icon}} ico-20 pr-2"></span>{{ item.title}}</span>
+                            </button>
+                        </div>
+
+                                <div id="collapse{{$index}}" class="collapse" ng-class="$index == 0 ? 'show' : ''" data-parent="#accordionPanel">
+                            <div class="innerCollapse">
+                            <div class="card-body box_object box_object_filter_item">
+                                <div class="qlik-embed filtrosHomePanel" data-qlik-objid="{{item.id}}" ng-model="model"></div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>

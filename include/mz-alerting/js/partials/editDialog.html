@@ -1,0 +1,235 @@
+<style>
+    .ta-editor {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+</style>
+<div class="lui-dialog lui-dialog-mz mz-edit-alert-dialog" ng-class="{'lui-dialog--inverse': darkView}">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title">
+            Configuración de alerta
+        </div>
+    </div>
+    <div class="lui-dialog__body">
+
+
+                <div class="md-stepper-horizontal orange">
+            <div class="md-step" ng-click="step=1" ng-class="{active: step==1}">
+                <div class="md-step-circle"><span>1</span></div>
+                <div class="md-step-title">Datos generales</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step" ng-click="step=2" ng-class="{active: step==2}">
+                <div class="md-step-circle"><span>2</span></div>
+                <div class="md-step-title">Condiciones y reglas</div>
+                <div class="md-step-optional">(En desarrollo)</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step" ng-click="step=3" ng-class="{active: step==3}">
+                <div class="md-step-circle"><span>3</span></div>
+                <div class="md-step-title">Horario de ejecución</div>
+                <div class="md-step-optional">(En desarrollo)</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step" ng-click="step=4" ng-class="{active: step==4}">
+                <div class="md-step-circle"><span>4</span></div>
+                <div class="md-step-title">Notificaciones</div>
+                <div class="md-step-optional">(En desarrollo)</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+        </div>
+
+
+                <div class="col-sm-12 col-12 page" ng-if="step==1">
+
+                        <div class="col-xl-4 col-md-4 col-sm-12 col-12 float-left p-0 mr-3">
+                <div class="d-flex flex-column">
+                    <div class="btn-list">
+                        <label class="section-title"><i class="lui-icon lui-icon--info"></i> General </label>
+                    </div>
+                    <div class="row col-xl-12 content">
+                        <div class="list-item">
+                            <div class="item">
+                                <span class="label"> Nombre de la alerta </span>
+                                <span class="value">
+                                    <input type="text" class="lui-input" ng-class="{'lui-input--inverse': darkView}"
+                                        ng-model="model.name" />
+                                </span>
+                            </div>
+                            <div class="item">
+                                <span class="label"> Mensaje </span>
+                                <span class="value">
+                                    <input type="text" class="lui-input" ng-class="{'lui-input--inverse': darkView}"
+                                        ng-model="model.message" />
+                                </span>
+                            </div>
+                            <div class="item">
+                                <span class="label"> Tipo de evento </span>
+                                <div class="value">
+                                    <label class="lui-radiobutton" ng-repeat="option in eventTypes" ng-class="{'lui-radiobutton--inverse': darkView}">
+                                        <input class="lui-radiobutton__input" type="radio" name="eventType" value="{{option.id}}" ng-checked="{{$index==0}}">
+                                        <div class="lui-radiobutton__radio-wrap">
+                                          <span class="lui-radiobutton__radio"></span>
+                                          <span class="lui-radiobutton__radio-text">{{option.name}}</span>
+                                        </div>
+                                      </label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <span class="label"> Tipo de alerta </span>
+                                <span class="value">
+                                    <select class="lui-select" ng-class="{'lui-select--inverse': darkView}"
+                                        ng-model="model.type"
+                                        ng-options="option.name for option in types track by option.id">
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="item">
+                                <span class="label"> Aplicación </span>
+                                <span class="value">
+                                    <select disabled class="lui-select" ng-class="{'lui-select--inverse': darkView}"
+                                    ng-model="model.type"
+                                    ng-options="option.name for option in types track by option.id">
+                                </select>
+                                </span>
+                            </div>
+                            <div class="item">
+                                <span class="label"> Gráfico </span>
+                                <span class="value">
+                                    <select disabled class="lui-select" ng-class="{'lui-select--inverse': darkView}"
+                                    ng-model="model.type"
+                                    ng-options="option.name for option in types track by option.id">
+                                </select>
+                                </span>
+                            </div>
+                            <div class="item">
+                                <span class="label"> Hoja de Mashup </span>
+                                <span class="value">
+                                    <select disabled class="lui-select" ng-class="{'lui-select--inverse': darkView}"
+                                    ng-model="model.type"
+                                    ng-options="option.name for option in types track by option.id">
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                        <div class="col-xl-4 col-md-4 col-sm-12 col-12 float-left p-0 mr-3">
+                <div class="d-flex flex-column">
+                    <div class="btn-list">
+                        <label class="labelSection"><i class="lui-icon lui-icon--measure"></i>
+                            Añadir medidas </label>
+                    </div>
+                    <div class="row col-xl-12 content">
+                        <div class="list-item">
+                            <div class="item">
+                                <span class="label"> Medida </span>
+                                <span class="value">
+                                    <select class="lui-select" ng-class="{'lui-select--inverse': darkView}"
+                                        ng-model="measure"
+                                        ng-options="option.name for option in masters.measures track by option.id">
+                                    </select>
+                                    <button class="ml-1 lui-button lui-button--rounded lui-button--success"><i class="lui-icon lui-icon--add"></i></button>
+                                </span>
+                            </div>
+                            <div class="item">
+                                <ul class="data-list lui-list">
+                                    <li class="lui-list__header">
+                                        <span class="lui-list__text">Medidas añadidas</span>
+                                    </li>
+                                    <li class="lui-list__item">
+                                        <span class="lui-list__text"> Ejecutado </span>
+                                        <span class="lui-list__aside">
+                                        <span class="lui-icon  lui-icon--remove btn"></span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                        <div class="col-xl-4 col-md-4 col-sm-12 col-12 float-left p-0 mr-3">
+                <div class="d-flex flex-column">
+                    <div class="btn-list">
+                        <label class="labelSection"><i class="lui-icon lui-icon--object"></i>
+                            Añadir Dimensiones </label>
+                    </div>
+                    <div class="row col-xl-12 content">
+                        <div class="list-item">
+                            <div class="item">
+                                <span class="label"> Dimensión </span>
+                                <span class="value">
+                                    <select class="lui-select" ng-class="{'lui-select--inverse': darkView}"
+                                        ng-model="dimension"
+                                        ng-options="option.name for option in masters.dimensions track by option.id">
+                                    </select>
+                                    <button class="ml-1 lui-button lui-button--rounded lui-button--success"><i class="lui-icon lui-icon--add"></i></button>
+                                </span>
+                            </div>
+                            <div class="item">
+                                <ul class="data-list lui-list">
+                                    <li class="lui-list__header">
+                                        <span class="lui-list__text">Dimensiones añadidas</span>
+                                    </li>
+                                    <li class="lui-list__item">
+                                        <span class="lui-list__text"> Sección Gasto </span>
+                                        <span class="lui-list__aside">
+                                        <span class="lui-icon  lui-icon--remove btn"></span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+                <div class="col-sm-12 col-12 page" ng-if="step==2">
+            <div class="alert alert-info">
+                <strong>Example Output</strong><br>
+
+                                <pre>{{options.query | json}}</pre>
+            </div>
+            <div query-builder="options"></div>
+
+                    </div>
+
+
+                <div class="col-sm-12 col-12 page" ng-if="step==3">
+            <cron-gen ng-model="cronExpression" ng-disabled="isCronDisabled" options="cronOptions"></cron-gen>
+            <div>{{cronExpression}}</div>
+        </div>
+
+
+                <div class="col-sm-12 col-12 page" ng-if="step==4">
+            <div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled='disabled'></div>
+        </div>
+
+
+    </div>
+    <div class="lui-dialog__footer">
+        <button class="lui-button lui-dialog__button" ng-class="{'lui-button--inverse': darkView}" ng-click="save(model);">
+            {{'views.modal.guardar'  | translate}}
+        </button>
+        <button class="lui-button lui-dialog__button" ng-class="{'lui-button--inverse': darkView}" ng-click="close();">
+            {{'alerting.label.cancel' | translate}}
+        </button>
+    </div>
+</div>

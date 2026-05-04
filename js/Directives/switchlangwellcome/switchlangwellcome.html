@@ -1,0 +1,11 @@
+<div class="idiomas" ng-if="multilanguage">
+    <ul>
+        <li ng-repeat="item in langs" ng-click="activeLang(item)" ng-class="{'active': item.active}">
+            <a href="javascript:void(0)">{{item.langKey | uppercase}}</a> 
+        </li>
+        
+    </ul>
+</div>
+
+
+

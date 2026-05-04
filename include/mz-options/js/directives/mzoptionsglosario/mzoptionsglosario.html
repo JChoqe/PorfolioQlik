@@ -1,0 +1,32 @@
+<div class="header-section-configurador">
+    <h2>{{'views.label.glosario'  | translate}}</h2>    
+    <span class="pin-active-visibility" ng-attr-title="{{message}}" ng-click="anclarThis($event)" ng-class="isVisibleLinkGlosario == true ? 'active' : ''">
+        <i class="icofont icofont-tack-pin"></i>
+        <i class="icofont icofont-minus-circle pin-desanclar"></i>
+    </span>
+</div>
+<div class="content-section-configurador">
+    <div class="notificationsScroll d-flex">
+        <div class="glossary-box">
+            <span id="glossary-search"><input ng-model="searchTextGlosario" class="form-control" placeholder="{{'views.label.buscar'  | translate}}" /></span>
+            <div id="glossary-scroll">
+                <div class="glossary-item" ng-repeat="glossary in glossaryArr  | orderBy:'name' | filter:searchTextGlosario track by $index">
+                    <div class="glossary-item-type">
+                        <span data-tipo="{{glossary.type}}">{{glossary.type}}</span>
+                    </div>
+                    <div class="glossary-item-name">
+                        <span>{{glossary.name}}</span>
+                        <p ng-if="glossary.descripcion" ng-bind-html="glossary.descripcion"></p>
+                    </div>
+
+                        <div class="glossary-item-tags" ng-if="glossary.tags.length > 0 ">
+                        <div class="glossatyTag lui-tag" ng-repeat="tag in glossary.tags">
+                            <div class="qv-tagContent">{{tag}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+    </div>
+</div>

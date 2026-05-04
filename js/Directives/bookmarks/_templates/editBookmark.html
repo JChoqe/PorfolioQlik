@@ -1,0 +1,22 @@
+<div class="lui-dialog lui-dialog-mz" style="width: 600px;">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title">{{'views.acciones.editarmarcadores' | translate}}</div>
+    </div>
+    <div class="lui-dialog__body">
+        <label class="control-label" for="bmtitle">{{'views.modal.crearmarcadortitulo' | translate}}:</label>
+        <input class="lui-input" id="bmtitle" ng-model="TitleBookmark"  maxlength="255" ng-value="TitleBookmark" type="text" autofocus>
+        <label class="control-label" for="bmdesc">{{'views.modal.crearmarcadordescripcion' | translate}}:</label>
+        <textarea class="lui-textarea" id="bmdesc" ng-model="DescriptionBookmark" type="text" tabindex="0" maxlength="512"></textarea>
+        <label class="label-switch" ng-if="!isDefaultBookmark">
+            <div class="label-switch-toggle">
+              <input class="toggle-state" type="checkbox" name="bookmarkDefaultUser" value="1"  aria-label="Label" id="bookmarkDefaultUser"  ng-checked="isDefaultBookmarkByUser" ng-model="isDefaultBookmarkByUser" />
+              <div class="indicator"></div>
+            </div>
+            <div class="label-switch-text">{{'label.Bookmarks.GuardarByUser' | translate}}</div> 
+        </label> 
+    </div>
+    <div class="lui-dialog__footer">
+        <button class="lui-button  lui-dialog__button" ng-click="closeDialog();">{{'views.modal.cerrar' | translate}}</button>
+        <button class="lui-button  lui-dialog__button  close-button" ng-click="addBookmarkConfirm();">{{'views.modal.aceptar' | translate}}</button>
+    </div>
+</div>

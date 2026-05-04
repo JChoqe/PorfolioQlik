@@ -1,0 +1,80 @@
+<div class="panel" id="template_scatterplot" ng-controller="scatterPlotProperties">
+    <div id="collapsePresentacion">
+        <div class="em-section-content">
+            <div class="em-grouped">
+                <div class="col-lg-12 border-bottom">
+                    <div class="em-switch-component">
+                        <div class="clearfix">
+                            <div class="title">{{'equalizer.label.navegacion'  | translate}}</div>
+                            <div class="value"><strong>{{etiquetaNavegacion}}</strong></div>
+                        </div>
+                        <div class="lui-switch">
+                            <label class="lui-switch__label" for="checkboxNavegacion">
+                                <input type="checkbox" ng-model="checkboxNavegacion" class="lui-switch__checkbox" aria-label="Label" id="checkboxNavegacion" ng-change="changeNavegacion($event)" ng-checked="checkboxNavegacion" />
+                                <span class="lui-switch__wrap">
+                                    <span class="lui-switch__inner"></span>
+                                    <span class="lui-switch__switch"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 border-bottom">
+                    <div class="em-item em-item-inner">{{'equalizer.label.etiquetas'  | translate}}</div>
+                    <div class="clearfix">
+                        <div class="em-item em-item-inner em-radiobuttons-component">
+                            <label class="lui-radiobutton  lui-radiobutton--inverse" title="{{'equalizer.label.automatico'  | translate}}">
+                                <input class="lui-radiobutton__input" type="radio" ng-value="1" ng-model="showLabel" ng-change="changeLabel(1)" name="showLabel" value="1">
+                                <div class="lui-radiobutton__radio-wrap" qva-tabindex="0">
+                                    <span class="lui-radiobutton__radio"></span>
+                                    <span class="lui-radiobutton__radio-text">{{'equalizer.label.automatico'  | translate}}</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="em-item em-item-inner em-radiobuttons-component ">
+                            <label class="lui-radiobutton  lui-radiobutton--inverse" title="{{'equalizer.label.todos'  | translate}}">
+                                <input class="lui-radiobutton__input" type="radio" ng-value="2" ng-model="showLabel" ng-change="changeLabel(2)" name="showLabel" value="2">
+                                <div class="lui-radiobutton__radio-wrap" qva-tabindex="0">
+                                    <span class="lui-radiobutton__radio"></span>
+                                    <span class="lui-radiobutton__radio-text">{{'equalizer.label.todos'  | translate}}</span>
+                                </div>
+                            </label>
+                        </div>
+
+
+                        <div class="em-item em-item-inner em-radiobuttons-component">
+                            <label class="lui-radiobutton  lui-radiobutton--inverse" title="{{'equalizer.label.ninguna'  | translate}}">
+                                <input class="lui-radiobutton__input" type="radio" ng-value="0" ng-model="showLabel" ng-change="changeLabel(0)" name="showLabel" value="0">
+                                <div class="lui-radiobutton__radio-wrap" qva-tabindex="0">
+                                    <span class="lui-radiobutton__radio"></span>
+                                    <span class="lui-radiobutton__radio-text">{{'equalizer.label.ninguna'  | translate}}</span>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-12 border-bottom qui-dark">
+                    <div class="em-item em-item-inner">{{'equalizer.label.tamanioburbuja'  | translate}}</div>
+                    <div class="clearfix em-slider-component">
+                        <div class="value">
+                            <div class="slider" id="slider-range" ng-model="value" ng-change="change()"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 border-bottom qui-dark" ng-show="isVisibleCompresionResolution== true">
+                    <div class="em-item em-item-inner">{{'equalizer.label.reolucioncompresion'  | translate}}</div>
+                    <div class="clearfix em-slider-component">
+                        <div class="value">
+                            <div class="slider" id="slider-range-resolution" ng-model="value"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

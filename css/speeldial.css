@@ -1,0 +1,92 @@
+
+/*Nuevo estilo sppeldial*/
+
+/*RIGHT*/
+.speeldial-center {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: 15px;
+    opacity: 1;
+    visibility: visible;
+    top: 14px;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: #fff;
+    /* border: 1px solid #b1adad; */
+    border-radius: 3px;
+    cursor: pointer;
+    /* transition: all 0.4s ease-in-out 0s; */
+    background: rgba(241, 232,232, 0.79);
+}
+.box_object_inner_grafico .speeldial-center{
+    left: -15px;
+    top: 2px;
+}
+.body-full-size .box_object_inner_grafico .speeldial-center,
+.open-equalizador .box_object_inner_grafico .speeldial-center{
+    left: 14px;
+    top: 22px;
+}
+
+/* objectsense:hover .cover-object-sense > .speeldial-center {
+    right: 3px;
+    opacity: 1;
+    visibility: visible;
+} */
+
+.speeldial-center > i {
+    /* transform: rotate(90deg); */
+    display: inline-block;
+    font-size: 20px;
+}
+
+/*BOTTOM*/
+.speeldial-bottom {
+    height: 14px;
+    width: 40px;
+    position: absolute;
+    bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+    right: 50%;
+    right: calc(50% - 20px);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: #fff;
+    border: 1px solid #b1adad;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out 0s;
+    background: rgba(241, 232,232, 0.79);
+}
+
+.cover-object-sense:hover > .speeldial-bottom {
+    bottom: 15px;
+    opacity: 1;
+    visibility: visible;
+}
+.open-equalizador .speeldial-bottom,
+.open-equalizador .speeldial-center,
+.mz-sidebar-open .speeldial-bottom,
+.mz-sidebar-open .speeldial-center{
+    display: none;
+}
+/*Los tres puntitos añaden espacio y crea scroll horizontal, esto es para que no salga el scroll en las vistas*/
+.box_object {
+    /*overflow: hidden !important;*/
+    padding:0;
+}
+
+/* .body-full-size .speeldial-center{
+    display:none;
+} */
+.body-full-size .object-full-size .speeldial-center{
+    display:flex;
+}

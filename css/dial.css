@@ -1,0 +1,86 @@
+mz-alerting-dial {
+    position: absolute;
+    top: 10px;
+    text-align: center;
+    z-index: 7;
+    overflow: hidden;
+    transition: opacity 0s ease-in 0s, height 0s linear 0s;
+    height: 0;
+    color: #595959;
+    opacity: 0;
+    margin-top: -9px;
+    max-width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+mz-alerting-dial .list-alert {
+    min-width: 300px;
+    top: 80px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+mz-alerting-dial.left {
+    left: 10px;
+}
+
+mz-alerting-dial.right {
+    right: 0px;
+}
+
+.box_object:hover>mz-alerting-dial,
+mz-alerting-dial.active,
+mz-alerting-dial.defined {
+    opacity: 1;
+    transition: opacity .2s ease-in .2s, height 0s linear 0s;
+    overflow: visible;
+    z-index: 99999;
+}
+
+mz-alerting-dial.defined .mdl-button {
+    border: none !important;
+}
+
+mz-alerting-dial.active .mdl-button {
+    color: #FF8400;
+    border: none !important;
+    background-color: transparent !important;
+    -webkit-animation: ring 4s .7s ease-in-out infinite;
+    transform-origin: 50% 4px;
+    -webkit-transform-origin: 50% 4px;
+    -moz-animation: ring 4s .7s ease-in-out infinite;
+    -moz-transform-origin: 50% 4px;
+    animation: ring 4s .7s ease-in-out infinite;
+}
+
+
+/*.div-alerting-edition {
+    text-align: center;
+}*/
+
+mz-alerting-dial.active:hover .list-alert {
+    opacity: 1;
+    visibility: visible;
+    top: 40px;
+}
+
+mz-alerting-dial.active:hover .list-alert:before {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #09354a transparent;
+    z-index: 9999;
+}
+
+mz-alerting-dial .list-alert .wrapper {
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

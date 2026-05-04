@@ -1,0 +1,29 @@
+<div class="lui-dialog lui-dialog-mz" style="width: 600px;">
+    <div class="lui-dialog__header">
+        <div class="lui-dialog__title">{{'views.acciones.crearmarcadores' | translate}}</div>
+    </div>
+    <div class="lui-dialog__body">
+        <label class="control-label" for="bmtitle">{{'views.modal.crearmarcadortitulo' | translate}}</label>
+        <input class="lui-input" id="bmtitle" ng-model="titleBookmark" type="text" autofocus>
+        <label class="control-label" for="bmdesc">{{'views.modal.crearmarcadordescripcion' | translate}} <span class="opacity">{{'views.modal.opcional' | translate}}</span></label> 
+        <textarea class="lui-textarea" id="bmdesc" ng-model="desBookmark" type="text" tabindex="0" maxlength="512"></textarea>
+        <label class="label-switch" ng-disabled="bookmarkDefaultUser">
+            <div class="label-switch-toggle">
+              <input class="toggle-state" type="checkbox" name="ubicacionHoja" value="1"  aria-label="Label" id="ubicacionHoja"  ng-checked="true" checked ng-disabled="bookmarkDefaultUser"/>
+              <div class="indicator"></div>
+            </div>
+            <div class="label-switch-text">{{'views.modal.hoja' | translate}}</div> 
+        </label>
+        <label class="label-switch">
+            <div class="label-switch-toggle">
+              <input class="toggle-state" type="checkbox" name="bookmarkDefaultUser" value="1"  aria-label="Label" id="bookmarkDefaultUser"  ng-checked="false" ng-model="bookmarkDefaultUser" ng-change="setProperties()"/>
+              <div class="indicator"></div>
+            </div>
+            <div class="label-switch-text">{{'label.Bookmarks.GuardarByUser' | translate}}</div>  
+        </label>                   
+    </div>
+    <div class="lui-dialog__footer">        
+        <button class="lui-button lui-dialog__button close-button" ng-click="addBookmarkConfirm();">{{'views.modal.crear' | translate}}</button>
+        <button class="lui-button lui-dialog__button" ng-click="closeDialog();">{{'views.modal.cerrar' | translate}}</button>
+    </div>
+</div>

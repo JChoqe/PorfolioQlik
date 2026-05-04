@@ -1,0 +1,21 @@
+<div id="mz-options-mashup">
+    <ul id="options-btns">
+        <li ng-click="initPresentacion($event)">
+            <span>
+                <i class="lui-icon lui-icon--slide-show"></i>
+            </span>
+        </li>
+        <li ng-click="toggleMzOptions($event)">
+            <span >
+                <i class="lui-icon lui-icon--cogwheel"></i>
+            </span>
+        </li>
+        <li ng-click="changeScreeenView()">
+            <span>
+                <i class="lui-icon lui-icon--expand" ng-if="!isFullCreen"></i>
+                <i class="lui-icon lui-icon--collapse" ng-if="isFullCreen"></i>
+            </span>
+        </li>
+
+            </ul>
+</div>
