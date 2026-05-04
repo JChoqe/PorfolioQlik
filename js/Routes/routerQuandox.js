@@ -5,7 +5,7 @@ define([
 ], function (app) {
     app.config(['$stateProvider', function ($stateProvider) {
         $stateProvider
-            .state('App.Personal.View', {
+            .state('App.Quandox.View', {
                 templateUrl: "views/View.html",
                 controller: 'StateParentCtrl',
                 resolve: {
@@ -29,17 +29,17 @@ define([
                 ],
                 abstract: true
             })
-            .state('App.Personal.View.Dashboard', {
-                url: '/Personal/Dashboard',
+            .state('App.Quandox.View.Dashboard', {
+                url: '/Quandox/Dashboard',
                 templateProvider: ['$templateCache', function ($templateCache) {
-                    return $templateCache.get('/_Personal/Dashboard.html');
+                    return $templateCache.get('/_Quandox/Dashboard.html');
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
                     idFav: null,
                     IDFILTRO: 'eanBw',
-                    PATH: ['Personal', 'Dashboard'],
-                    URLMENU: '/_Personal/__menus/_PersonalMenu.html',
+                    PATH: ['Quandox', 'Dashboard'],
+                    URLMENU: '/_Quandox/__menus/_QuandoxMenu.html',
                     OBJECTSTOP: {
                         arrObject: null,
                         urlHtml: null,
@@ -47,21 +47,21 @@ define([
                     }
                 }
             })
-            .state('App.Personal.View.Analisis', {
+            .state('App.Quandox.View.Analisis', {
                 template: "<ui-view class='container-view row'></ui-view>",
                 abstract: true
             })
-            .state('App.Personal.View.Analisis.Distribucion', {
-                url: '/Personal/Analisis/Distribucion',
+            .state('App.Quandox.View.Analisis.Distribucion', {
+                url: '/Quandox/Analisis/Distribucion',
                 templateProvider: ['$templateCache', function ($templateCache) {
-                    return $templateCache.get('/_Personal/_Analisis/Distribucion.html');
+                    return $templateCache.get('/_Quandox/_Analisis/Distribucion.html');
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
                     idFav: null,
                     IDFILTRO: 'eanBw',
-                    PATH: ['Personal', 'Análisis', 'Distribución'],
-                    URLMENU: '/_Personal/__menus/_PersonalMenu.html',
+                    PATH: ['Quandox', 'Análisis', 'Distribución'],
+                    URLMENU: '/_Quandox/__menus/_QuandoxMenu.html',
                     OBJECTSTOP: {
                         arrObject: null,
                         urlHtml: null,
@@ -69,17 +69,17 @@ define([
                     }
                 }
             })
-            .state('App.Personal.View.Analisis.Evolutivo', {
-                url: '/Personal/Analisis/Evolutivo',
+            .state('App.Quandox.View.Analisis.Evolutivo', {
+                url: '/Quandox/Analisis/Evolutivo',
                 templateProvider: ['$templateCache', function ($templateCache) {
-                    return $templateCache.get('/_Personal/_Analisis/Evolutivo.html');
+                    return $templateCache.get('/_Quandox/_Analisis/Evolutivo.html');
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
                     idFav: null,
                     IDFILTRO: 'eanBw',
-                    PATH: ['Personal', 'Análisis', 'Evolutivo'],
-                    URLMENU: '/_Personal/__menus/_PersonalMenu.html',
+                    PATH: ['Quandox', 'Análisis', 'Evolutivo'],
+                    URLMENU: '/_Quandox/__menus/_QuandoxMenu.html',
                     OBJECTSTOP: {
                         arrObject: null,
                         urlHtml: null,
@@ -87,17 +87,17 @@ define([
                     }
                 }
             })
-            .state('App.Personal.View.Analisis.Acumulado', {
-                url: '/Personal/Analisis/Acumulado',
+            .state('App.Quandox.View.Analisis.Acumulado', {
+                url: '/Quandox/Analisis/Acumulado',
                 templateProvider: ['$templateCache', function ($templateCache) {
-                    return $templateCache.get('/_Personal/_Analisis/Acumulado.html');
+                    return $templateCache.get('/_Quandox/_Analisis/Acumulado.html');
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
                     idFav: null,
                     IDFILTRO: 'eanBw',
-                    PATH: ['Personal', 'Análisis', 'Acumulado'],
-                    URLMENU: '/_Personal/__menus/_PersonalMenu.html',
+                    PATH: ['Quandox', 'Análisis', 'Acumulado'],
+                    URLMENU: '/_Quandox/__menus/_QuandoxMenu.html',
                     OBJECTSTOP: {
                         arrObject: null,
                         urlHtml: null,
@@ -105,17 +105,17 @@ define([
                     }
                 }
             })
-            .state('App.Personal.View.Analisis.Personal', {
-                url: '/Personal/Analisis/Personal',
+            .state('App.Quandox.View.Analisis.Quandox', {
+                url: '/Quandox/Analisis/Quandox',
                 templateProvider: ['$templateCache', function ($templateCache) {
-                    return $templateCache.get('/_Personal/_Analisis/Personal.html');
+                    return $templateCache.get('/_Quandox/_Analisis/Quandox.html');
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
                     idFav: null,
                     IDFILTRO: 'eanBw',
-                    PATH: ['Personal', 'Análisis', 'Personal'],
-                    URLMENU: '/_Personal/__menus/_PersonalMenu.html',
+                    PATH: ['Quandox', 'Análisis', 'Quandox'],
+                    URLMENU: '/_Quandox/__menus/_QuandoxMenu.html',
                     OBJECTSTOP: {
                         arrObject: null,
                         urlHtml: null,
@@ -123,50 +123,17 @@ define([
                     }
                 }
             })
-            .state('App.Personal.View.Analisis.Comparativa', {
-                url: '/Personal/Analisis/Comparativa',
+            .state('App.Quandox.View.Analisis.Comparativa', {
+                url: '/Quandox/Analisis/Comparativa',
                 templateProvider: ['$templateCache', function ($templateCache) {
-                    return $templateCache.get('/_Personal/_Analisis/Comparativa.html');
+                    return $templateCache.get('/_Quandox/_Analisis/Comparativa.html');
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
                     idFav: null,
                     IDFILTRO: 'eanBw',
-                    PATH: ['Personal', 'Análisis', 'Comparativa'],
-                    URLMENU: '/_Personal/__menus/_PersonalMenu.html',
-                    OBJECTSTOP: {
-                        arrObject: null,
-                        urlHtml: null,
-                        templateHtml: '<timeline data-year="Año" data-month="Mes"></timeline>'
-                    }
-                }
-            })
-
-            .state('App.Personal.View.Reporting', {
-                url: '/Personal/Reporting',
-                templateProvider: ['$templateCache', function ($templateCache) {
-                    return $templateCache.get('/_Personal/Reporting.html');
-                }],
-                toSheet: true,
-                controller: 'StateChildrenCtrl',
-                params: {
-                    idFav: null,
-                    IDFILTRO: 'eanBw',
-                    PATH: ['Personal', 'Reporting'],
-                    URLMENU: '/_Personal/__menus/_PersonalMenu.html'
-                }
-            })
-            .state('App.Personal.View.Piramide', {
-                url: '/Personal/Piramide',
-                templateProvider: ['$templateCache', function ($templateCache) {
-                    return $templateCache.get('/_Personal/Piramide.html');
-                }],
-                controller: 'StateChildrenCtrl',
-                params: {
-                    idFav: null,
-                    IDFILTRO: 'eanBw',
-                    PATH: ['Personal', 'Pirámide de Edad'],
-                    URLMENU: '/_Personal/__menus/_PersonalMenu.html',
+                    PATH: ['Quandox', 'Análisis', 'Comparativa'],
+                    URLMENU: '/_Quandox/__menus/_QuandoxMenu.html',
                     OBJECTSTOP: {
                         arrObject: null,
                         urlHtml: null,
@@ -175,29 +142,62 @@ define([
                 }
             })
 
-            .state('App.Personal.View.Mapa', {
-                url: '/Personal/Mapa',
+            .state('App.Quandox.View.Reporting', {
+                url: '/Quandox/Reporting',
                 templateProvider: ['$templateCache', function ($templateCache) {
-                    return $templateCache.get('/_Personal/Mapa.html');
+                    return $templateCache.get('/_Quandox/Reporting.html');
                 }],
                 toSheet: true,
                 controller: 'StateChildrenCtrl',
                 params: {
                     idFav: null,
                     IDFILTRO: 'eanBw',
-                    PATH: ['Personal', 'Mapa'],
-                    URLMENU: '/_Personal/__menus/_PersonalMenu.html'
+                    PATH: ['Quandox', 'Reporting'],
+                    URLMENU: '/_Quandox/__menus/_QuandoxMenu.html'
                 }
             })
-            .state('App.Personal.View.Sheets', {
-                url: '/Personal/Sheets',
+            .state('App.Quandox.View.Piramide', {
+                url: '/Quandox/Piramide',
+                templateProvider: ['$templateCache', function ($templateCache) {
+                    return $templateCache.get('/_Quandox/Piramide.html');
+                }],
+                controller: 'StateChildrenCtrl',
+                params: {
+                    idFav: null,
+                    IDFILTRO: 'eanBw',
+                    PATH: ['Quandox', 'Pirámide de Edad'],
+                    URLMENU: '/_Quandox/__menus/_QuandoxMenu.html',
+                    OBJECTSTOP: {
+                        arrObject: null,
+                        urlHtml: null,
+                        templateHtml: '<timeline data-year="Año" data-month="Mes"></timeline>'
+                    }
+                }
+            })
+
+            .state('App.Quandox.View.Mapa', {
+                url: '/Quandox/Mapa',
+                templateProvider: ['$templateCache', function ($templateCache) {
+                    return $templateCache.get('/_Quandox/Mapa.html');
+                }],
+                toSheet: true,
+                controller: 'StateChildrenCtrl',
+                params: {
+                    idFav: null,
+                    IDFILTRO: 'eanBw',
+                    PATH: ['Quandox', 'Mapa'],
+                    URLMENU: '/_Quandox/__menus/_QuandoxMenu.html'
+                }
+            })
+            .state('App.Quandox.View.Sheets', {
+                url: '/Quandox/Sheets',
                 template: "<customsheets></customsheets>",
                 controller: 'StateChildrenCtrl',
                 params: {
                     SHEETSENSE: true,
                     IDFILTRO: 'eanBw',
-                    PATH: ['Personal', 'sheets.menu.sheet'],
-                    URLMENU: '/_Personal/__menus/_PersonalMenu.html'
+                    PATH: ['Quandox', 'sheets.menu.sheet'],
+                    URLMENU: '/_Quandox/__menus/_QuandoxMenu.html'
                 }
             })
     }]);

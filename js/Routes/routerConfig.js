@@ -1,6 +1,6 @@
 define([
     'app',
-    './routerPersonal',
+    './routerQuandox',
     './routerAbsentismo',
     './routerKPI',
     './routerFormacion',
@@ -51,12 +51,12 @@ define([
             })
 
 
-            .state('App.Personal', {
+            .state('App.Quandox', {
                 template: "<ui-view></ui-view>",
                 abstract: true,
                 params: {
                     isModule: true,
-                    moduleName: 'Personal'
+                    moduleName: 'Quandox'
                 }
             })
             .state('App.Absentismo', {
@@ -189,9 +189,5 @@ define([
                     PATH: ['Insight Advisor'],
                 }
             })
-
     }]);
 });
-
-
-
