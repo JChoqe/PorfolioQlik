@@ -16,7 +16,7 @@ define([
                         if ($rootScope.Apps[indexApp]) {
                             return $rootScope.Apps[indexApp];
                         } else {
-                            return getAppService.getDataApp(InitConfig.arrApps[$rootScope.indexApp].idapp).then((res) => res);
+                            return getAppService.getDataApp(InitConfig.arrApps[$rootScope.indexApp].idapp).then((res) => res); 
                         }
                     }],
                     defaulltBookmark: ['dataApp', 'getDefaulltBookmarkService', '$rootScope', function (dataApp, getDefaulltBookmarkService, $rootScope) {
@@ -36,7 +36,7 @@ define([
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
-                    idFav: null,
+                    idFav:null,
                     IDFILTRO: 'eanBw',
                     PATH: ['Personal', 'Dashboard'],
                     URLMENU: '/_Personal/__menus/_PersonalMenu.html',
@@ -58,7 +58,7 @@ define([
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
-                    idFav: null,
+                    idFav:null,
                     IDFILTRO: 'eanBw',
                     PATH: ['Personal', 'Análisis', 'Distribución'],
                     URLMENU: '/_Personal/__menus/_PersonalMenu.html',
@@ -76,7 +76,7 @@ define([
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
-                    idFav: null,
+                    idFav:null,
                     IDFILTRO: 'eanBw',
                     PATH: ['Personal', 'Análisis', 'Evolutivo'],
                     URLMENU: '/_Personal/__menus/_PersonalMenu.html',
@@ -94,7 +94,7 @@ define([
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
-                    idFav: null,
+                    idFav:null,
                     IDFILTRO: 'eanBw',
                     PATH: ['Personal', 'Análisis', 'Acumulado'],
                     URLMENU: '/_Personal/__menus/_PersonalMenu.html',
@@ -112,7 +112,7 @@ define([
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
-                    idFav: null,
+                    idFav:null,
                     IDFILTRO: 'eanBw',
                     PATH: ['Personal', 'Análisis', 'Personal'],
                     URLMENU: '/_Personal/__menus/_PersonalMenu.html',
@@ -130,7 +130,7 @@ define([
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
-                    idFav: null,
+                    idFav:null,
                     IDFILTRO: 'eanBw',
                     PATH: ['Personal', 'Análisis', 'Comparativa'],
                     URLMENU: '/_Personal/__menus/_PersonalMenu.html',
@@ -150,7 +150,7 @@ define([
                 toSheet: true,
                 controller: 'StateChildrenCtrl',
                 params: {
-                    idFav: null,
+                    idFav:null,
                     IDFILTRO: 'eanBw',
                     PATH: ['Personal', 'Reporting'],
                     URLMENU: '/_Personal/__menus/_PersonalMenu.html'
@@ -163,7 +163,7 @@ define([
                 }],
                 controller: 'StateChildrenCtrl',
                 params: {
-                    idFav: null,
+                    idFav:null,
                     IDFILTRO: 'eanBw',
                     PATH: ['Personal', 'Pirámide de Edad'],
                     URLMENU: '/_Personal/__menus/_PersonalMenu.html',
@@ -183,7 +183,7 @@ define([
                 toSheet: true,
                 controller: 'StateChildrenCtrl',
                 params: {
-                    idFav: null,
+                    idFav:null,
                     IDFILTRO: 'eanBw',
                     PATH: ['Personal', 'Mapa'],
                     URLMENU: '/_Personal/__menus/_PersonalMenu.html'

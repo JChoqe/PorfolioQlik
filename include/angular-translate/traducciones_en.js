@@ -545,9 +545,8 @@ var appEN = {
     'presentacion.tooltips.init': 'Presentation mode'
 };
 var custom = {
-    'view.wellcome.title': `Welcome to the Qlik portfolio of Jherlan Choque Calle`,
-    'view.wellcome.bigText': `Explore my data without limits.`,
-    'view.wellcome.smallText': `Comprehensive analysis of business, infrastructure, and official statistical data.`,
+    'view.wellcome.bigText': `Explore your data without limits.`,
+    'view.wellcome.smallText': `Empower your team's talent, transforming data into strategic decisions.`,
     'view.menu.ventas': 'Sales',
     'view.menu.compras': "Purchases",
     'view.menu.financiero': 'Financial',

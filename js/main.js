@@ -28,7 +28,7 @@
         'extDirectives/compareobject/compareobject',
         'extDirectives/compareobject/services/compareobjectService',
 
-        'extDirectives/mztabs/mztabs',
+                'extDirectives/mztabs/mztabs',
         'extDirectives/favoritos/favoritos',
         'extDirectives/favoritesfullsize/favoritesfullsize',
         'extDirectives/customsheets/customsheets',
@@ -67,5 +67,9 @@
 
     ], function (qlik, $, app, Modernizr) {
 
+
     });
 }());
+
+
+

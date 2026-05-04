@@ -546,9 +546,8 @@ var appES = {
 
 };
 var custom = {
-    'view.wellcome.title': `Bienvenido al portafolio Qlik de Jherlan Choque Calle`,
-    'view.wellcome.bigText': `Explora mis datos sin límites.`,
-    'view.wellcome.smallText': `Análisis integral de datos empresariales, infraestructuras y estadísticas oficiales`,  
+    'view.wellcome.bigText': `Explora tus datos sin límites.`,
+    'view.wellcome.smallText': `Potencia el talento de tu equipo, transformando datos en decisiones estratégicas.`,  
     'view.menu.ventas': 'Ventas',
     "view.menu.compras": "Compras",
     'view.menu.financiero': 'Financiero',

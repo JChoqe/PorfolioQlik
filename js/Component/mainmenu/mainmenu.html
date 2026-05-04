@@ -21,46 +21,82 @@
             <li data-ui-sref-active="{'active': 'App.Personal.**'}">
                 <a data-ui-sref="App.Personal.View.Dashboard" href="javascript:void(0)" class="level-top">
                     <i class="ri-user-line"></i>
-                    <p>Quadox</p>
+                    <p>Personal</p>
                 </a>
-                <ul class="sub-menu-clone sub-menu-clone-level-0" ng-include="'/_Personal/__menus/_PersonalMenu.html'">
-                </ul>
+                <ul class="sub-menu-clone sub-menu-clone-level-0" ng-include="'/_Personal/__menus/_PersonalMenu.html'"></ul>
             </li>
-
+            
             <li data-ui-sref-active="{'active': 'App.Absentismo.**'}">
                 <a data-ui-sref="App.Absentismo.View.Dashboard" href="javascript:void(0)" class="level-top">
                     <i class="ri-sun-line"></i>
-                    <p>Carreteras</p>
+                    <p>Absentismo</p>
                 </a>
-                <ul class="sub-menu-clone sub-menu-clone-level-0"
-                    ng-include="'/_Absentismo/__menus/_AbsentismoMenu.html'"></ul>
+                <ul class="sub-menu-clone sub-menu-clone-level-0" ng-include="'/_Absentismo/__menus/_AbsentismoMenu.html'"></ul>
             </li>
 
             <li data-ui-sref-active="{'active': 'App.KPI.**'}">
                 <a data-ui-sref="App.KPI.View.Dashboard" href="javascript:void(0)" class="level-top">
                     <i class="ri-bar-chart-line"></i>
-                    <p>INE</p>
+                    <p>KPI</p>
                 </a>
                 <ul class="sub-menu-clone sub-menu-clone-level-0" ng-include="'/_KPI/__menus/_KPIMenu.html'"></ul>
+            </li>
+            <li data-ui-sref-active="{'active': 'App.Formacion.**'}">
+                <a data-ui-sref="App.Formacion.View.Dashboard" href="javascript:void(0)" class="level-top">
+                    <i class="ri-book-3-line"></i>
+                    <p>Formación</p>
+                </a>
+                <ul class="sub-menu-clone sub-menu-clone-level-0" ng-include="'/_Formacion/__menus/_FormacionMenu.html'"></ul>
+            </li>
+            <li data-ui-sref-active="{'active': 'App.Costes.**'}">
+                <a data-ui-sref="App.Costes.View.Dashboard" href="javascript:void(0)" class="level-top">
+                    <i class="ri-hand-coin-line"></i>
+                    <p>Costes</p>
+                </a>
+                <ul class="sub-menu-clone sub-menu-clone-level-0" ng-include="'/_Costes/__menus/_CostesMenu.html'"></ul>
+            </li>
+            <li data-ui-sref-active="{'active': 'App.Seguridad.**'}">
+                <a data-ui-sref="App.Seguridad.View.Dashboard" href="javascript:void(0)" class="level-top">
+                    <i class="ri-honour-line"></i>
+                    <p>Seguridad</p>
+                </a>
+                <ul class="sub-menu-clone sub-menu-clone-level-0" ng-include="'/_Seguridad/__menus/_SeguridadMenu.html'"></ul>
+            </li>
+            <li data-ui-sref-active="{'active': 'App.Presencia.**'}">
+                <a data-ui-sref="App.Presencia.View.Dashboard" href="javascript:void(0)" class="level-top">
+                    <i class="ri-checkbox-line"></i>
+                    <p>Control de Presencia</p>
+                </a>
+                <ul class="sub-menu-clone sub-menu-clone-level-0" ng-include="'/_Presencia/__menus/_PresenciaMenu.html'"></ul>
+            </li>
+            
+
+            <li data-ui-sref-active="active" ng-if="mzFavoritos">
+                <a title="Favoritos" href="javascript:void(0)" class="level-top"
+                    data-ui-sref="App.Favoritos.View.Dashboard">
+                    <i class="ri-star-line"></i>
+                    <p>Favoritos</p>
+                </a>
+            </li>
+            <li data-ui-sref-active="active">
+                <a title="Visualizaciones" href="javascript:void(0)" class="level-top"
+                    data-ui-sref="App.Visualizaciones.View.Visualizaciones">
+                    <i class="ri-archive-line"></i>
+                    <p>Visualizaciones</p>
+                </a>
             </li>
         </ul>
         <div id="pastilla-footer">
             <div id="bookmarkActiveInfo" ng-controller="BookmarkActiveCtrl">
-                <label><span class="lui-icon lui-icon--bookmark qs-no-margin" aria-hidden="true"></span>
-                    {{'label.Bookmarks.BookmarkActive' | translate}}</label>
-                <label id="hideBookmark" ng-if="!hasBookmarkActive">{{'label.Bookmarks.NoBookmarkActive' |
-                    translate}}</label>
+                <label><span class="lui-icon lui-icon--bookmark qs-no-margin" aria-hidden="true"></span> {{'label.Bookmarks.BookmarkActive' | translate}}</label>
+                <label id="hideBookmark" ng-if="!hasBookmarkActive">{{'label.Bookmarks.NoBookmarkActive' | translate}}</label>
                 <div class="cover_bk_active" ng-if="hasBookmarkActive">
                     <label title="{{BOOKMARKACTIVO[0].title}}">{{BOOKMARKACTIVO[0].title}}</label>
-                </div>
-                <div class="bookmark-collapse" ng-class="hasBookmarkActive == true ? 'hasBookmarkActive' : ''"
-                    ng-mouseenter="openTooltip($event)" ng-mouseleave="closeTooltip()"
-                    data-title="{{'views.label.LastReloadTime' | translate}}: <br/> {{LastReloadTime}}"
-                    ng-if="OpenSidebarMenu">
+                </div> 
+                <div class="bookmark-collapse" ng-class="hasBookmarkActive == true ? 'hasBookmarkActive' : ''" ng-mouseenter="openTooltip($event)" ng-mouseleave="closeTooltip()"
+                    data-title="{{'views.label.LastReloadTime' | translate}}: <br/> {{LastReloadTime}}" ng-if="OpenSidebarMenu">
                     <svg class="svg-icon" viewBox="0 0 20 20" width="24" height="24">
-                        <path
-                            d="M14.467,1.771H5.533c-0.258,0-0.47,0.211-0.47,0.47v15.516c0,0.414,0.504,0.634,0.802,0.331L10,13.955l4.136,4.133c0.241,0.241,0.802,0.169,0.802-0.331V2.241C14.938,1.982,14.726,1.771,14.467,1.771 M13.997,16.621l-3.665-3.662c-0.186-0.186-0.479-0.186-0.664,0l-3.666,3.662V2.711h7.994V16.621z">
-                        </path>
+                        <path d="M14.467,1.771H5.533c-0.258,0-0.47,0.211-0.47,0.47v15.516c0,0.414,0.504,0.634,0.802,0.331L10,13.955l4.136,4.133c0.241,0.241,0.802,0.169,0.802-0.331V2.241C14.938,1.982,14.726,1.771,14.467,1.771 M13.997,16.621l-3.665-3.662c-0.186-0.186-0.479-0.186-0.664,0l-3.666,3.662V2.711h7.994V16.621z"></path>
                     </svg>
                 </div>
             </div>
@@ -78,15 +114,15 @@
                                 data-title="{{'views.label.LastReloadTime' | translate}}: <br/> {{LastReloadTime}}"
                                 ng-if="OpenSidebarMenu">
                                 <svg class="svg-icon" viewBox="0 0 20 20" width="24" height="24">
-                                    <path
-                                        d="M10.25,2.375c-4.212,0-7.625,3.413-7.625,7.625s3.413,7.625,7.625,7.625s7.625-3.413,7.625-7.625S14.462,2.375,10.25,2.375M10.651,16.811v-0.403c0-0.221-0.181-0.401-0.401-0.401s-0.401,0.181-0.401,0.401v0.403c-3.443-0.201-6.208-2.966-6.409-6.409h0.404c0.22,0,0.401-0.181,0.401-0.401S4.063,9.599,3.843,9.599H3.439C3.64,6.155,6.405,3.391,9.849,3.19v0.403c0,0.22,0.181,0.401,0.401,0.401s0.401-0.181,0.401-0.401V3.19c3.443,0.201,6.208,2.965,6.409,6.409h-0.404c-0.22,0-0.4,0.181-0.4,0.401s0.181,0.401,0.4,0.401h0.404C16.859,13.845,14.095,16.609,10.651,16.811 M12.662,12.412c-0.156,0.156-0.409,0.159-0.568,0l-2.127-2.129C9.986,10.302,9.849,10.192,9.849,10V5.184c0-0.221,0.181-0.401,0.401-0.401s0.401,0.181,0.401,0.401v4.651l2.011,2.008C12.818,12.001,12.818,12.256,12.662,12.412">
-                                    </path>
+                                    <path d="M10.25,2.375c-4.212,0-7.625,3.413-7.625,7.625s3.413,7.625,7.625,7.625s7.625-3.413,7.625-7.625S14.462,2.375,10.25,2.375M10.651,16.811v-0.403c0-0.221-0.181-0.401-0.401-0.401s-0.401,0.181-0.401,0.401v0.403c-3.443-0.201-6.208-2.966-6.409-6.409h0.404c0.22,0,0.401-0.181,0.401-0.401S4.063,9.599,3.843,9.599H3.439C3.64,6.155,6.405,3.391,9.849,3.19v0.403c0,0.22,0.181,0.401,0.401,0.401s0.401-0.181,0.401-0.401V3.19c3.443,0.201,6.208,2.965,6.409,6.409h-0.404c-0.22,0-0.4,0.181-0.4,0.401s0.181,0.401,0.4,0.401h0.404C16.859,13.845,14.095,16.609,10.651,16.811 M12.662,12.412c-0.156,0.156-0.409,0.159-0.568,0l-2.127-2.129C9.986,10.302,9.849,10.192,9.849,10V5.184c0-0.221,0.181-0.401,0.401-0.401s0.401,0.181,0.401,0.401v4.651l2.011,2.008C12.818,12.001,12.818,12.256,12.662,12.412"></path>
                                 </svg>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
+
+
     </div>
 </nav>
