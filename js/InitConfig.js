@@ -29,8 +29,6 @@ define([
         this.ThemesInit = "-Pallete-Theme-Green";
         this.ThemesChange = "-Pallete-Theme-Green-Dark";
         this.ThemesWellcome = "-Pallete-Theme-Green-Dark";
-
-
         this.mzFavoritos = true;
         this.ISSAAS = false;
         this.prefSheets = 'Personalizada.'
@@ -54,8 +52,8 @@ define([
                 }
             },
             {
-                name: 'Hominem-RRHH-Seguridad',
-                idapp: 'Hominem-RRHH-Seguridad',
+                name: 'TIT_DASHBOARD',
+                idapp: 'TIT_DASHBOARD',
                 init: false,
                 bookmarkApp: {
                     hasBookmarkDefaultUser: false,
@@ -73,7 +71,6 @@ define([
                     bookmarkDefaultUser: ''
                 }
             }
-
         ];
 
         this.$get = function () {
