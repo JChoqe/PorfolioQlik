@@ -19,10 +19,68 @@ define([
 
         // ==================== /Carreteras ====================
         // nav
-        $templateCache.put('/_Absentismo/__menus/_AbsentismoMenu.html', '<li data-ui-sref-active="activo_fijo" ng-mouseenter="showSubmenu($event)"><a data-ui-sref="App.Absentismo.View.Dashboard" href="javascript:void(0)"><i class="icofont icofont-dashboard-web ico-14"></i> <span class="texto-enlaces">Resum Ejecutivo</span></a></li><li data-ui-sref-active="{\'activo_fijo\': \'App.Absentismo.View.Analisis.**\'}" ng-mouseenter="showSubmenu($event)"><a class="no-link" href="javascript:void(0)"><i class="icofont icofont-chart-histogram-alt ico-14"></i> <span class="texto-enlaces">Hojas</span> <i class="icofont icofont-caret-down ico-moreMenu"></i></a><ul class="subMenuVistas"><li data-ui-sref-active="activo_fijo"><a data-ui-sref="App.Absentismo.View.Analisis.Distribucion" href="javascript:void(0)">1. - Infraestructura </a></li><li data-ui-sref-active="activo_fijo"><a data-ui-sref="App.Absentismo.View.Analisis.Dispersion" href="javascript:void(0)">2.- Rendimiento Tecnico</a></li><li data-ui-sref-active="activo_fijo"><a data-ui-sref="App.Absentismo.View.Analisis.Personal" href="javascript:void(0)">3.- Listado</a></li><li data-ui-sref-active="activo_fijo"><a data-ui-sref="App.Absentismo.View.Analisis.Detalle" href="javascript:void(0)">4.- Comparativa</a></li></ul></li><li data-ui-sref-active="activo_fijo" ng-mouseenter="showSubmenu($event)"><a data-ui-sref="App.Absentismo.View.Sheets" href="javascript:void(0)"><i class="icofont icofont-layout ico-14"></i> <span class="texto-enlaces">{{\'sheets.menu.sheet\' | translate}}</span></a><div class="help-sheets" ng-click="showInfoSheets()"><i class="ri-question-line"></i></div></li>');
+        $templateCache.put('/_Absentismo/__menus/_AbsentismoMenu.html',
+            '<li data-ui-sref-active="activo_fijo" ng-mouseenter="showSubmenu($event)">' +
+            '<a data-ui-sref="App.Absentismo.View.Dashboard" href="javascript:void(0)">' +
+            '<i class="icofont icofont-dashboard-web ico-14"></i> ' +
+            '<span class="texto-enlaces">Resum Ejecutivo</span>' +
+            '</a>' +
+            '</li>' +
+            '<li data-ui-sref-active="{\'activo_fijo\': \'App.Absentismo.View.Analisis.**\'}" ng-mouseenter="showSubmenu($event)">' +
+            '<a class="no-link" href="javascript:void(0)">' +
+            '<i class="icofont icofont-chart-histogram-alt ico-14"></i> ' +
+            '<span class="texto-enlaces">Hojas</span> ' +
+            '<i class="icofont icofont-caret-down ico-moreMenu"></i>' +
+            '</a>' +
+            '<ul class="subMenuVistas">' +
+            '<li data-ui-sref-active="activo_fijo">' +
+            '<a data-ui-sref="App.Absentismo.View.Analisis.Distribucion" href="javascript:void(0)">1.- Infraestructura</a>' +
+            '</li>' +
+            '<li data-ui-sref-active="activo_fijo">' +
+            '<a data-ui-sref="App.Absentismo.View.Analisis.Dispersion" href="javascript:void(0)">2.- Rendimiento Técnico</a>' +
+            '</li>' +
+            '</ul>' +
+            '</li>'
+        );
         // Carreteras > Dashboard
-        $templateCache.put('/_Absentismo/Dashboard.html', '<!-- PERSONAL > DASHBOARD --><!-- Todo dashboard --><div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 mzh-xxl-60 mzh-xl-60 mzh-lg-60 mzh-md-100 mzh-sm-100 mzh-xs-150 mzh-60 box_mix_object"><div class="box_mix box_mix_dashboard"><div class="box_object_inner_kpi mzh-xxl-15 mzh-xl-15 mzh-lg-20 mzh-md-10 mzh-sm-20 mzh-xs-20 mzh-15"><div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-50 mzh-100 item-inner-kpi"><objectsense object-id="JYJQgUm" is-kpi="true"></objectsense></div><div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-50 mzh-100 item-inner-kpi"><objectsense object-id="qVRYSd" is-kpi="true"></objectsense></div><div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-50 mzh-100 item-inner-kpi"><objectsense object-id="WkTqJP" is-kpi="true"></objectsense></div><div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-50 mzh-100 item-inner-kpi"><objectsense object-id="RamyWz" is-kpi="true"></objectsense></div></div><div class="box_object_inner_grafico mzh-xxl-85 mzh-xl-85 mzh-lg-80 mzh-md-90 mzh-sm-80 mzh-xs-80 mzh-85 box_object"><objectsense object-id="Xmc"></objectsense></div></div></div><!-- MAPA --><div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mzh-xxl-60 mzh-xl-60 mzh-lg-60 mzh-md-100 mzh-sm-100 mzh-xs-100 box_object"><objectsense object-id="cVBtWmY"></objectsense></div><!-- DISTRIBUCI\xD3N --><div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 mzh-xxl-40 mzh-xl-40 mzh-lg-40 mzh-md-100 mzh-sm-100 mzh-xs-100 mzh-40 box_object"><objectsense object-id="nqXfvmV"></objectsense></div><!-- % KPI --><div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mzh-xxl-40 mzh-xl-40 mzh-lg-40 mzh-md-50 mzh-sm-100 mzh-xs-50 mzh-40 box_object"><objectsense object-id="zNeRQw"></objectsense></div>');        
-        // Carreteras > Infraestructura
+        $templateCache.put('/_Absentismo/Dashboard.html',
+            '<!-- PERSONAL > DASHBOARD -->' +
+            '<div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 mzh-xxl-60 mzh-xl-60 mzh-lg-60 mzh-md-100 mzh-sm-100 mzh-xs-150 mzh-60 box_mix_object">' +
+            '<div class="box_mix box_mix_dashboard">' +
+            '<!-- CONTENEDOR DE KPIs SUPERIORES -->' +
+            '<div class="box_object_inner_kpi mzh-xxl-15 mzh-xl-15 mzh-lg-20 mzh-md-10 mzh-sm-20 mzh-xs-20 mzh-15">' +
+            '<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-50 mzh-100 item-inner-kpi">' +
+            '<objectsense object-id="WuzMxL" is-kpi="true"></objectsense>' +
+            '</div>' +
+            '<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-50 mzh-100 item-inner-kpi">' +
+            '<objectsense object-id="qVRYSd" is-kpi="true"></objectsense>' +
+            '</div>' +
+            '<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-50 mzh-100 item-inner-kpi">' +
+            '<objectsense object-id="WkTqJP" is-kpi="true"></objectsense>' +
+            '</div>' +
+            '<div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-50 mzh-100 item-inner-kpi">' +
+            '<objectsense object-id="RamyWz" is-kpi="true"></objectsense>' +
+            '</div>' +
+            '</div>' +
+            '<!-- GRÁFICO PRINCIPAL DASHBOARD -->' +
+            '<div class="box_object_inner_grafico mzh-xxl-85 mzh-xl-85 mzh-lg-80 mzh-md-90 mzh-sm-80 mzh-xs-80 mzh-85 box_object">' +
+            '<objectsense object-id="Xmc"></objectsense>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<!-- MAPA -->' +
+            '<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mzh-xxl-60 mzh-xl-60 mzh-lg-60 mzh-md-100 mzh-sm-100 mzh-xs-100 box_object">' +
+            '<objectsense object-id="cVBtWmY"></objectsense>' +
+            '</div>' +
+            '<!-- DISTRIBUCIÓN (ANCHO 8) -->' +
+            '<div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 mzh-xxl-40 mzh-xl-40 mzh-lg-40 mzh-md-100 mzh-sm-100 mzh-xs-100 mzh-40 box_object">' +
+            '<objectsense object-id="nqXfvmV"></objectsense>' +
+            '</div>' +
+            '<!-- % KPI (ANCHO 4) -->' +
+            '<div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mzh-xxl-40 mzh-xl-40 mzh-lg-40 mzh-md-50 mzh-sm-100 mzh-xs-50 mzh-40 box_object">' +
+            '<objectsense object-id="zNeRQw"></objectsense>' +
+            '</div>'
+        );        // Carreteras > Infraestructura
         $templateCache.put('/_Absentismo/__kpi/_AbsentismoKPI.html', '<div class="row col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-100 m-0 p-0 mzh-100"><div class="mz-box-kpi col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mzh-xxl-100 mzh-xl-100 mzh-lg-50 mzh-md-50 mzh-sm-50 mzh-xs-25"><div class="mz-box-kpi-inner"><objectsense object-id="QLsE" is-kpi="true"></objectsense></div></div><div class="mz-box-kpi col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mzh-xxl-100 mzh-xl-100 mzh-lg-50 mzh-md-50 mzh-sm-50 mzh-xs-25"><div class="mz-box-kpi-inner"><objectsense object-id="FYPGtr" is-kpi="true"></objectsense></div></div><div class="mz-box-kpi col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mzh-xxl-100 mzh-xl-100 mzh-lg-50 mzh-md-50 mzh-sm-50 mzh-xs-25"><div class="mz-box-kpi-inner"><objectsense object-id="JXuZU" is-kpi="true"></objectsense></div></div><div class="mz-box-kpi col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mzh-xxl-100 mzh-xl-100 mzh-lg-50 mzh-md-50 mzh-sm-50 mzh-xs-25"><div class="mz-box-kpi-inner"><objectsense object-id="dPgeum" is-kpi="true"></objectsense></div></div></div><div class="row col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 mzh-xxl-100 mzh-xl-100 mzh-lg-100 mzh-md-100 mzh-sm-100 mzh-xs-100 m-0 p-0 mzh-100"><div class="mz-box-kpi col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mzh-xxl-100 mzh-xl-100 mzh-lg-50 mzh-md-50 mzh-sm-50 mzh-xs-25"><div class="mz-box-kpi-inner"><objectsense object-id="zPBHtQF" is-kpi="true"></objectsense></div></div><div class="mz-box-kpi col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mzh-xxl-100 mzh-xl-100 mzh-lg-50 mzh-md-50 mzh-sm-50 mzh-xs-25"><div class="mz-box-kpi-inner"><objectsense object-id="jEt" is-kpi="true"></objectsense></div></div><div class="mz-box-kpi col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mzh-xxl-100 mzh-xl-100 mzh-lg-50 mzh-md-50 mzh-sm-50 mzh-xs-25"><div class="mz-box-kpi-inner"><objectsense object-id="NhpnmFA" is-kpi="true"></objectsense></div></div><div class="mz-box-kpi col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mzh-xxl-100 mzh-xl-100 mzh-lg-50 mzh-md-50 mzh-sm-50 mzh-xs-25"><div class="mz-box-kpi-inner"><objectsense object-id="kLXnEp" is-kpi="true"></objectsense></div></div></div>');
         // Carreteras > Rendimiento Técnico
         $templateCache.put('/_Absentismo/_Analisis/Detalle.html', '<!-- KPIS --><div class="mzh-xxl-20 mzh-xl-20 mzh-lg-30 mzh-md-30 mzh-sm-60 mzh-xs-80 mzh-20 box_object_kpi" ng-include="\'/_Absentismo/__kpi/_AbsentismoKPI.html\'"></div><div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 mzh-xxl-80 mzh-xl-80 mzh-lg-70 mzh-md-100 mzh-sm-100 mzh-xs-100 box_object"><objectsense object-id="fbc2d5f9-65fe-4e3a-a6c2-22191e9fe9c1"></objectsense></div>');
